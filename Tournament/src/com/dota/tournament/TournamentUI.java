@@ -46,7 +46,7 @@ public class TournamentUI extends UI {
 		mainLayout.setSizeFull();
 		
 		
-		Label verify = new Label("Verify Layout");
+		Label verify = new Label("Verify Layout1");
 		Label verify2 = new Label("Verify Layout");
 		Label verify3 = new Label("Verify Layout");
 		Label verify4 = new Label("Verify Layout");
