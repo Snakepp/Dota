@@ -1,0 +1,7 @@
+@import "../chameleon/chameleon";
+@import "colors";
+
+.my-chameleon {
+  @include chameleon;
+  @include colors;
+}
