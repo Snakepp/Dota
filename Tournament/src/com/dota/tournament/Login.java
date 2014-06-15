@@ -6,6 +6,8 @@ import com.vaadin.shared.ui.MarginInfo;
 import com.vaadin.ui.Button;
 import com.vaadin.ui.Button.ClickEvent;
 import com.vaadin.ui.FormLayout;
+import com.vaadin.ui.HorizontalLayout;
+import com.vaadin.ui.Label;
 import com.vaadin.ui.Notification;
 import com.vaadin.ui.PasswordField;
 import com.vaadin.ui.TextField;
@@ -18,19 +20,25 @@ import com.vaadin.ui.themes.BaseTheme;
 public class Login extends Window{
 
 	private VerticalLayout mainlayout;
+	private HorizontalLayout submitlayout;
 	private FormLayout form;
 	private TextField user;
 	private PasswordField password;
 	private Button login;
 	private Button register;
-	DBConnection conn;
+	private DBConnection conn;
+	private VerticalLayout loggedInUserLayout;
 	
-	public Login( DBConnection connection){
+	public Login( DBConnection connection, VerticalLayout loggedInUserlayout){
 		super("Login");
 		center();
 		setModal(true);
+		setDraggable(false);
+		setResizable(false);
 		conn=connection;
+		this.loggedInUserLayout = loggedInUserlayout;
 		mainlayout = new VerticalLayout();
+		submitlayout = new HorizontalLayout();
 		setClosable(false);
 		form = new FormLayout();
 		user = new TextField("User", "");
@@ -51,6 +59,9 @@ public class Login extends Window{
 		register.addClickListener(RegisterListener());
 		login = new Button("Login");
 		login.addClickListener(LoginListener());
+
+		submitlayout.addComponent(login);
+		submitlayout.addComponent(register);
 		
 		form.addStyleName("outlined");
 		form.setSizeFull();
@@ -58,8 +69,8 @@ public class Login extends Window{
 
 		form.addComponent(user);
 		form.addComponent(password);
-	    form.addComponent(login);
-	    form.addComponent(register);
+	    
+	    form.addComponent(submitlayout);
 //	    form.setComponentAlignment(login, Alignment.MIDDLE_CENTER);
 	    mainlayout.addComponent(form);
 	    setContent(mainlayout);
@@ -71,7 +82,7 @@ public class Login extends Window{
 
 			@Override
 			public void buttonClick(ClickEvent event) {
-				UI.getCurrent().addWindow(new Register(conn));
+				UI.getCurrent().addWindow(new Register(conn, loggedInUserLayout));
 				close();
 			}
 		};
@@ -83,6 +94,9 @@ public class Login extends Window{
 			public void buttonClick(com.vaadin.ui.Button.ClickEvent event) {
 				boolean exists=conn.isUserExistent(user.getValue(), password.getValue());
 				if(exists){
+					User logedUser = conn.getUser(user.getValue(), password.getValue());
+					loggedInUserLayout.addComponent(new Label(logedUser.getName()));
+					loggedInUserLayout.addComponent(new Label(logedUser.getEmail()));
 					Notification.show("Login Successfuly!","Enjoy!",
 							Notification.Type.TRAY_NOTIFICATION);
 					close();

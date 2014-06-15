@@ -3,25 +3,24 @@ package com.dota.tournament;
 import java.io.File;
 
 import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 import com.dota.db.DBConnection;
 import com.vaadin.annotations.Theme;
 import com.vaadin.annotations.VaadinServletConfiguration;
 import com.vaadin.server.FileResource;
-import com.vaadin.server.ThemeResource;
 import com.vaadin.server.VaadinRequest;
 import com.vaadin.server.VaadinService;
 import com.vaadin.server.VaadinServlet;
 import com.vaadin.ui.Button;
 import com.vaadin.ui.Button.ClickEvent;
-import com.vaadin.ui.Component;
 import com.vaadin.ui.GridLayout;
 import com.vaadin.ui.HorizontalLayout;
 import com.vaadin.ui.Image;
 import com.vaadin.ui.Label;
 import com.vaadin.ui.UI;
 import com.vaadin.ui.VerticalLayout;
-import com.vaadin.ui.Window;
 
 @SuppressWarnings("serial")
 @Theme("my-chameleon")
@@ -45,8 +44,6 @@ public class TournamentUI extends UI {
 	protected void init(VaadinRequest request) {
 		mainLayout.addStyleName("outlined");
 		mainLayout.setSizeFull();
-		
-		
 		Label verify = new Label("Verify Layout1");
 		Label verify2 = new Label("Verify Layout");
 		Label verify3 = new Label("Verify Layout");
@@ -74,7 +71,7 @@ public class TournamentUI extends UI {
 		notificationLayout.addComponent(verify4);
 		creditsLayout.addComponent(verify5);
 		
-		addWindow(new Login(connection));
+		addWindow(new Login(connection, presentationLayout));
 		
 		generateBorderLayout();
 		setContent(mainLayout);

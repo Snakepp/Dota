@@ -8,6 +8,8 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
+import com.dota.tournament.User;
+
 
 public class DBConnection {
 
@@ -58,6 +60,26 @@ public class DBConnection {
 		return data;
 	}
 	
+	public User getUser(String userName, String pass){
+		User user = new User();
+		PreparedStatement preparedStatement;
+		ResultSet querRslt = null;
+		try {
+			preparedStatement = connect.prepareStatement("select * from users where name =? and pass = ?");
+			preparedStatement.setString(1, userName);
+			preparedStatement.setString(2, pass);
+			querRslt = preparedStatement.executeQuery();
+			while(querRslt.next()) { 
+				 user.setName(querRslt.getString(2));
+				 user.setEmail(querRslt.getString(4));
+			}
+					
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return user;
+	}
+	
 	public boolean isUserExistent(String user, String pass){
 		boolean exists = false;
 		
@@ -77,6 +99,39 @@ public class DBConnection {
 		}
 		
 		return exists;
+	}
+	public boolean isUserExistent(String user){
+		boolean exists = false;
+		
+		PreparedStatement preparedStatement;
+		ResultSet querRslt = null;
+		try {
+			preparedStatement = connect.prepareStatement("select id from users where name =?");
+			preparedStatement.setString(1, user);
+			querRslt = preparedStatement.executeQuery();
+			while(querRslt.next()) { 
+				 exists = true;
+			}
+					
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		
+		return exists;
+	}
+	public void saveUser(String username, String pass, String email){
+		PreparedStatement preparedStatement;
+		ResultSet querRslt = null;
+		try {
+			preparedStatement = connect.prepareStatement("insert into users(name,pass,email) values(?,?,?)");
+			preparedStatement.setString(1, username);
+			preparedStatement.setString(2, pass);
+			preparedStatement.setString(3, email);
+			preparedStatement.executeUpdate();
+					
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
 	}
 	public void example() throws Exception{
 		 try {
