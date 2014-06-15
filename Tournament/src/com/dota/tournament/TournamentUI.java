@@ -4,6 +4,7 @@ import java.io.File;
 
 import javax.servlet.annotation.WebServlet;
 
+import com.dota.db.DBConnection;
 import com.vaadin.annotations.Theme;
 import com.vaadin.annotations.VaadinServletConfiguration;
 import com.vaadin.server.FileResource;
@@ -38,6 +39,7 @@ public class TournamentUI extends UI {
 	final VerticalLayout bodyLayout = new VerticalLayout();
 	final VerticalLayout notificationLayout = new VerticalLayout();
 	final VerticalLayout creditsLayout = new VerticalLayout();
+	private DBConnection connection;
 	
 	@Override
 	protected void init(VaadinRequest request) {
@@ -52,7 +54,7 @@ public class TournamentUI extends UI {
 		Label verify5 = new Label("Verify Layout");
 		Label verify6 = new Label("Verify Layout");
 		
-		
+		connection = new DBConnection("localhost", "root", "", "ghost", "3306");
 		
 		// Find the application directory
 		String basepath = VaadinService.getCurrent()
@@ -72,7 +74,7 @@ public class TournamentUI extends UI {
 		notificationLayout.addComponent(verify4);
 		creditsLayout.addComponent(verify5);
 		
-		addWindow(new Login());
+		addWindow(new Login(connection));
 		
 		generateBorderLayout();
 		setContent(mainLayout);

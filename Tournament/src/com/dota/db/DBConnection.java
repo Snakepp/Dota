@@ -57,6 +57,27 @@ public class DBConnection {
 		data += " id:"+key;
 		return data;
 	}
+	
+	public boolean isUserExistent(String user, String pass){
+		boolean exists = false;
+		
+		PreparedStatement preparedStatement;
+		ResultSet querRslt = null;
+		try {
+			preparedStatement = connect.prepareStatement("select id from users where name =? and pass = ?");
+			preparedStatement.setString(1, user);
+			preparedStatement.setString(2, pass);
+			querRslt = preparedStatement.executeQuery();
+			while(querRslt.next()) { 
+				 exists = true;
+			}
+					
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		
+		return exists;
+	}
 	public void example() throws Exception{
 		 try {
 		 // statements allow to issue SQL queries to the database

@@ -1,6 +1,7 @@
 package com.dota.tournament;
 
 
+import com.dota.db.DBConnection;
 import com.vaadin.shared.ui.MarginInfo;
 import com.vaadin.ui.Button;
 import com.vaadin.ui.Button.ClickEvent;
@@ -22,11 +23,13 @@ public class Login extends Window{
 	private PasswordField password;
 	private Button login;
 	private Button register;
+	DBConnection conn;
 	
-	public Login(){
+	public Login( DBConnection connection){
 		super("Login");
 		center();
 		setModal(true);
+		conn=connection;
 		mainlayout = new VerticalLayout();
 		setClosable(false);
 		form = new FormLayout();
@@ -68,8 +71,7 @@ public class Login extends Window{
 
 			@Override
 			public void buttonClick(ClickEvent event) {
-				
-				UI.getCurrent().addWindow(new Register());
+				UI.getCurrent().addWindow(new Register(conn));
 				close();
 			}
 		};
@@ -79,9 +81,15 @@ public class Login extends Window{
 
 			@Override
 			public void buttonClick(com.vaadin.ui.Button.ClickEvent event) {
-				Notification.show("Login Successfuly!","Enjoy!",
-		                  Notification.Type.TRAY_NOTIFICATION);
-				close();
+				boolean exists=conn.isUserExistent(user.getValue(), password.getValue());
+				if(exists){
+					Notification.show("Login Successfuly!","Enjoy!",
+							Notification.Type.TRAY_NOTIFICATION);
+					close();
+				}else{
+					Notification.show("Incorrect login","Badd pass/User",
+							Notification.Type.ERROR_MESSAGE);
+				}
 			}
 			
 		};

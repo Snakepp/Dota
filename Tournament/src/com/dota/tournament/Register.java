@@ -1,6 +1,7 @@
 package com.dota.tournament;
 
 
+import com.dota.db.DBConnection;
 import com.vaadin.data.validator.EmailValidator;
 import com.vaadin.event.MouseEvents.ClickEvent;
 import com.vaadin.event.MouseEvents.ClickListener;
@@ -25,10 +26,12 @@ public class Register extends Window{
 	private PasswordField password;
 	private PasswordField verifyPassword;
 	private Button register;
+	private DBConnection conn;
 	
-	public Register(){
+	public Register(DBConnection connection){
 		super("Register");
 		center();
+		conn = connection;
 		mainlayout = new VerticalLayout();
 		form = new FormLayout();
 		user = new TextField("User", "");
@@ -75,7 +78,7 @@ public class Register extends Window{
 				Notification.show("Register Successful!","the register was completed successfully, to activate your account follow the mail instructions that we sent to your mail.",
 		                  Notification.Type.TRAY_NOTIFICATION);
 				close();
-				UI.getCurrent().addWindow(new Login());
+				UI.getCurrent().addWindow(new Login(conn));
 			}
 		};
 	}
