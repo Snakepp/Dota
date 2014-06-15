@@ -9,6 +9,7 @@ import com.vaadin.ui.Alignment;
 import com.vaadin.ui.Button;
 import com.vaadin.ui.FormLayout;
 import com.vaadin.ui.Notification;
+import com.vaadin.ui.Window;
 import com.vaadin.ui.Notification.Type;
 import com.vaadin.ui.PasswordField;
 import com.vaadin.ui.TextField;
@@ -68,6 +69,9 @@ public class Register extends VerticalLayout{
 			public void buttonClick(com.vaadin.ui.Button.ClickEvent event) {
 				Notification.show("Register Successful!","the register was completed successfully, to activate your account follow the mail instructions that we sent to your mail.",
 		                  Notification.Type.TRAY_NOTIFICATION);
+				Window subWindow = new Window();
+				subWindow.setContent(new Login());
+				subWindow.center();
 			}
 		};
 	}

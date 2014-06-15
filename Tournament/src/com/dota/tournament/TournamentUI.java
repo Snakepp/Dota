@@ -53,7 +53,7 @@ public class TournamentUI extends UI {
 		Label verify5 = new Label("Verify Layout");
 		Label verify6 = new Label("Verify Layout");
 		
-		headLayout.addComponent(verify);
+		
 		
 		// Find the application directory
 		String basepath = VaadinService.getCurrent()
@@ -65,26 +65,17 @@ public class TournamentUI extends UI {
 		Image image = new Image("Image from file", resource);
 		
 //		headLayout.addComponent(image);
+		
 		headLayout.addComponent(verify);
 		presentationLayout.addComponent(verify6);
-		
-		Button register = new Button("Register");
-		register.addClickListener(new Button.ClickListener() {
-			public void buttonClick(ClickEvent event) {
-				//make something here
-				subWindow.setContent(new Register());
-				addWindow(subWindow);
-			}
-		});
-		
-		
-		presentationLayout.addComponent(register);
 		menuLayout.addComponent(verify2);
 		bodyLayout.addComponent(verify3);
 		notificationLayout.addComponent(verify4);
 		creditsLayout.addComponent(verify5);
 		
-		
+		subWindow.setContent(new Login());
+		subWindow.center();
+		addWindow(subWindow);
 		
 		generateBorderLayout();
 		setContent(mainLayout);
