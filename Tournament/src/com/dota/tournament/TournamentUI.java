@@ -72,10 +72,7 @@ public class TournamentUI extends UI {
 		notificationLayout.addComponent(verify4);
 		creditsLayout.addComponent(verify5);
 		
-		Login login = new Login();
-		login.setModal(true);
-		login.center();
-		addWindow(login);
+		addWindow(new Login());
 		
 		generateBorderLayout();
 		setContent(mainLayout);

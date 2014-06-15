@@ -25,6 +25,9 @@ public class Login extends Window{
 	
 	public Login(){
 		super("Login");
+		center();
+		setModal(true);
+		mainlayout = new VerticalLayout();
 		setClosable(false);
 		form = new FormLayout();
 		user = new TextField("User", "");
@@ -67,6 +70,7 @@ public class Login extends Window{
 			public void buttonClick(ClickEvent event) {
 				
 				UI.getCurrent().addWindow(new Register());
+				close();
 			}
 		};
 	}

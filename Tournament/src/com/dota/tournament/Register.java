@@ -25,9 +25,11 @@ public class Register extends Window{
 	private PasswordField password;
 	private PasswordField verifyPassword;
 	private Button register;
-	private Notification registerNotif;
 	
 	public Register(){
+		super("Register");
+		center();
+		mainlayout = new VerticalLayout();
 		form = new FormLayout();
 		user = new TextField("User", "");
 		user.setRequired(true);
