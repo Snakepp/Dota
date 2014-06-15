@@ -14,8 +14,9 @@ import com.vaadin.ui.Window;
 import com.vaadin.ui.themes.BaseTheme;
 
 @SuppressWarnings("serial")
-public class Login extends VerticalLayout{
+public class Login extends Window{
 
+	private VerticalLayout mainlayout;
 	private FormLayout form;
 	private TextField user;
 	private PasswordField password;
@@ -23,6 +24,8 @@ public class Login extends VerticalLayout{
 	private Button register;
 	
 	public Login(){
+		super("Login");
+		setClosable(false);
 		form = new FormLayout();
 		user = new TextField("User", "");
 		user.setRequired(true);
@@ -33,8 +36,8 @@ public class Login extends VerticalLayout{
 		password.setInvalidAllowed(false);
 		password.setWidth("300px");
 		setCaption("Login");
-		setSpacing(true);
-		setMargin(new MarginInfo(true,true,true,false));
+		mainlayout.setSpacing(true);
+		mainlayout.setMargin(new MarginInfo(true,true,true,false));
 		setSizeUndefined();
 		
 		register = new Button("Register");
@@ -52,7 +55,9 @@ public class Login extends VerticalLayout{
 	    form.addComponent(login);
 	    form.addComponent(register);
 //	    form.setComponentAlignment(login, Alignment.MIDDLE_CENTER);
-	    addComponent(form);
+	    mainlayout.addComponent(form);
+	    setContent(mainlayout);
+	   
 	}
 	
 	public Button.ClickListener RegisterListener(){
@@ -61,11 +66,7 @@ public class Login extends VerticalLayout{
 			@Override
 			public void buttonClick(ClickEvent event) {
 				
-				Window subWindow = new Window();
-				subWindow.setContent(new Register());
-				subWindow.center();
-				UI.getCurrent().addWindow(subWindow);
-				((Window)subWindow.getParent()).close();
+				UI.getCurrent().addWindow(new Register());
 			}
 		};
 	}
@@ -76,7 +77,9 @@ public class Login extends VerticalLayout{
 			public void buttonClick(com.vaadin.ui.Button.ClickEvent event) {
 				Notification.show("Login Successfuly!","Enjoy!",
 		                  Notification.Type.TRAY_NOTIFICATION);
+				close();
 			}
+			
 		};
 	}
 }

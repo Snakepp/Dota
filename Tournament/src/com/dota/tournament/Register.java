@@ -9,6 +9,7 @@ import com.vaadin.ui.Alignment;
 import com.vaadin.ui.Button;
 import com.vaadin.ui.FormLayout;
 import com.vaadin.ui.Notification;
+import com.vaadin.ui.UI;
 import com.vaadin.ui.Window;
 import com.vaadin.ui.Notification.Type;
 import com.vaadin.ui.PasswordField;
@@ -16,8 +17,9 @@ import com.vaadin.ui.TextField;
 import com.vaadin.ui.VerticalLayout;
 
 @SuppressWarnings("serial")
-public class Register extends VerticalLayout{
+public class Register extends Window{
 
+	private VerticalLayout mainlayout;
 	private FormLayout form;
 	private TextField user,email;
 	private PasswordField password;
@@ -42,8 +44,8 @@ public class Register extends VerticalLayout{
 		password.setWidth("300px");
 		verifyPassword = new PasswordField("Verify Password");
 		setCaption("register new member");
-		setSpacing(true);
-		setMargin(new MarginInfo(true,true,true,false));
+		mainlayout.setSpacing(true);
+		mainlayout.setMargin(new MarginInfo(true,true,true,false));
 		setSizeUndefined();
 		
 		register = new Button("Register");
@@ -59,7 +61,8 @@ public class Register extends VerticalLayout{
 		form.addComponent(verifyPassword);
 	    form.addComponent(register);
 	    form.setComponentAlignment(register, Alignment.MIDDLE_CENTER);
-	    addComponent(form);
+	    mainlayout.addComponent(form);
+	    setContent(mainlayout);
 	}
 	
 	public Button.ClickListener RegisterListener(){
@@ -69,9 +72,8 @@ public class Register extends VerticalLayout{
 			public void buttonClick(com.vaadin.ui.Button.ClickEvent event) {
 				Notification.show("Register Successful!","the register was completed successfully, to activate your account follow the mail instructions that we sent to your mail.",
 		                  Notification.Type.TRAY_NOTIFICATION);
-				Window subWindow = new Window();
-				subWindow.setContent(new Login());
-				subWindow.center();
+				close();
+				UI.getCurrent().addWindow(new Login());
 			}
 		};
 	}

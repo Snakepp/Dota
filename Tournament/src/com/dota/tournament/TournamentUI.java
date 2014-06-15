@@ -38,7 +38,6 @@ public class TournamentUI extends UI {
 	final VerticalLayout bodyLayout = new VerticalLayout();
 	final VerticalLayout notificationLayout = new VerticalLayout();
 	final VerticalLayout creditsLayout = new VerticalLayout();
-	final Window subWindow = new Window();
 	
 	@Override
 	protected void init(VaadinRequest request) {
@@ -73,9 +72,10 @@ public class TournamentUI extends UI {
 		notificationLayout.addComponent(verify4);
 		creditsLayout.addComponent(verify5);
 		
-		subWindow.setContent(new Login());
-		subWindow.center();
-		addWindow(subWindow);
+		Login login = new Login();
+		login.setModal(true);
+		login.center();
+		addWindow(login);
 		
 		generateBorderLayout();
 		setContent(mainLayout);
