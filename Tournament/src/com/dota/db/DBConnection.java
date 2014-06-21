@@ -34,11 +34,7 @@ public class DBConnection {
 			} catch (ClassNotFoundException e) {
 				e.printStackTrace();
 			}
-//			 try {
-				connect = DriverManager.getConnection("jdbc:mysql://"+host+":"+port+"/"+db,user, pass);
-//			} catch (SQLException e) {
-//				e.printStackTrace();
-//			}
+			connect = DriverManager.getConnection("jdbc:mysql://"+host+":"+port+"/"+db,user, pass);
 	     
 	 }
 	
@@ -97,13 +93,14 @@ public class DBConnection {
 				user.setId(querRslt.getLong(1));
 				 user.setName(querRslt.getString(2));
 				 user.setEmail(querRslt.getString(4));
+				 user.setAvatarName(querRslt.getString(5));
 			}
-					
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
 		return user;
 	}
+	
 	
 	public boolean isUserExistent(String user, String pass){
 		boolean exists = false;
@@ -144,14 +141,16 @@ public class DBConnection {
 		
 		return exists;
 	}
-	public void saveUser(String username, String pass, String email){
+	public void saveUser(String username, String pass, String email, String heroName){
 		PreparedStatement preparedStatement;
 		ResultSet querRslt = null;
+		
 		try {
-			preparedStatement = connect.prepareStatement("insert into users(name,pass,email) values(?,?,?)");
+			preparedStatement = connect.prepareStatement("insert into users(name,pass,email,avatar) values(?,?,?,?)");
 			preparedStatement.setString(1, username);
 			preparedStatement.setString(2, pass);
 			preparedStatement.setString(3, email);
+			preparedStatement.setString(4, heroName);
 			preparedStatement.executeUpdate();
 					
 		} catch (SQLException e) {

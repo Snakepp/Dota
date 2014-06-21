@@ -1,13 +1,22 @@
 package com.dota.tournament;
 
 
+import java.io.File;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Map;
+import java.util.Set;
+
 import com.dota.db.DBConnection;
 import com.vaadin.data.validator.EmailValidator;
 import com.vaadin.event.FieldEvents.TextChangeEvent;
 import com.vaadin.event.FieldEvents.TextChangeListener;
+import com.vaadin.server.FileResource;
 import com.vaadin.server.UserError;
+import com.vaadin.server.VaadinService;
 import com.vaadin.shared.ui.MarginInfo;
 import com.vaadin.ui.Button;
+import com.vaadin.ui.ComboBox;
 import com.vaadin.ui.FormLayout;
 import com.vaadin.ui.HorizontalLayout;
 import com.vaadin.ui.Notification;
@@ -29,6 +38,7 @@ public class Register extends Window{
 	private Button register;
 	private Button cancel;
 	private DBConnection conn;
+	private ComboBox comboHeroes;
 	
 	public Register(DBConnection connection){
 		super("Register");
@@ -55,7 +65,13 @@ public class Register extends Window{
 		password.setInvalidAllowed(false);
 		password.setWidth("300px");
 		verifyPassword = new PasswordField("Verify Password");
-		verifyPassword.addTextChangeListener(passwordValidator());
+		comboHeroes = new ComboBox();
+		comboHeroes.setInputPrompt("select a hero");
+		comboHeroes.addItems(getHeroes());
+		comboHeroes.setNullSelectionAllowed(false);
+		comboHeroes.setRequired(true);
+		setIcons(comboHeroes);
+//		verifyPassword.addTextChangeListener(passwordValidator());
 		setCaption("register new member");
 		mainlayout.setSpacing(true);
 		mainlayout.setMargin(new MarginInfo(true,true,true,false));
@@ -78,6 +94,7 @@ public class Register extends Window{
 		form.addComponent(email);
 		form.addComponent(password);
 		form.addComponent(verifyPassword);
+		form.addComponent(comboHeroes);
 	    form.addComponent(submitlayout);
 //	    form.setComponentAlignment(register, Alignment.MIDDLE_CENTER);
 	    mainlayout.addComponent(form);
@@ -91,7 +108,9 @@ public class Register extends Window{
 			public void buttonClick(com.vaadin.ui.Button.ClickEvent event) {
 				String error = validateRegister();
 				if(error==null){
-					conn.saveUser(user.getValue(), password.getValue(), email.getValue());
+					conn.saveUser(user.getValue(), password.getValue(), email.getValue(),(String)comboHeroes.getValue());
+//					SendMail sendMail = new SendMail();
+//					sendMail.send("raiblakmon@gmail.com");
 					Notification.show("Register Successful!","the register was completed successfully, to activate your account follow the mail instructions that we sent to your mail.",
 		                  Notification.Type.TRAY_NOTIFICATION);
 					close();
@@ -137,6 +156,9 @@ public class Register extends Window{
 //		if(!email.getErrorMessage().toString().equals("")){
 //			validate = "Bad email, please provide a valid email.";
 //		}
+		if(((String)comboHeroes.getValue()) == null){
+			validate= "Select a hero please.";
+		}
 		return validate;
 	}
 	public String validateUser(){
@@ -156,4 +178,34 @@ public class Register extends Window{
 		}
 		return error;
 	}
+	
+	public Set<String> getHeroes(){
+		Set<String> heroes = new HashSet<String>();
+		
+		String basepath = VaadinService.getCurrent().getBaseDirectory().getAbsolutePath();
+		String filePath = basepath +"/WEB-INF/images/Heroes";
+		
+		File heroesDir = new File(filePath);
+		for(File image : heroesDir.listFiles()){
+			String heroName = image.getName();
+			heroName=heroName.substring(0,heroName.indexOf("."));
+			heroes.add(heroName);
+		}
+		
+		return heroes;
+	}
+	
+	public void setIcons(ComboBox heroes){
+		String basepath = VaadinService.getCurrent().getBaseDirectory().getAbsolutePath();
+		String filePath = basepath +"/WEB-INF/images/Heroes/";
+		String extencion=".jpg";
+		Map<String,FileResource> heroesMap = new HashMap<String, FileResource>();
+		for(String hero : getHeroes()){
+			heroesMap.put(hero, new FileResource(new File(filePath+hero+extencion)));
+		}
+		for(String hero : heroesMap.keySet()){
+			heroes.setItemIcon(hero, heroesMap.get(hero));
+		}
+	}
+	
 }

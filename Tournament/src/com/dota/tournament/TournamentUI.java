@@ -30,7 +30,7 @@ public class TournamentUI extends UI {
 	}
 
 	final GridLayout mainLayout = new GridLayout();
-	final VerticalLayout presentationLayout = new VerticalLayout();
+	final HorizontalLayout presentationLayout = new HorizontalLayout();
 	final HorizontalLayout headLayout = new HorizontalLayout();
 	final VerticalLayout menuLayout = new VerticalLayout();
 	final VerticalLayout bodyLayout = new VerticalLayout();
@@ -68,7 +68,7 @@ public class TournamentUI extends UI {
 		headLayout.addComponent(img);
 		
 //		headLayout.addComponent(verify);
-		presentationLayout.addComponent(verify6);
+//		presentationLayout.addComponent(verify6);
 		menuLayout.addComponent(verify2);
 		bodyLayout.addComponent(verify3);
 		notificationLayout.addComponent(verify4);
@@ -80,6 +80,8 @@ public class TournamentUI extends UI {
 			long loggedUserId = (Long) getSession().getAttribute("usernameId");
 			User userLogged = connection.getUser(loggedUserId);
 			presentationLayout.addComponent(new UserPresentation(userLogged));
+//			SendMail send = new SendMail();
+//			send.send("cj10jose1@gmail.com");
 		}
 		generateBorderLayout();
 		setContent(mainLayout);
@@ -98,6 +100,7 @@ public class TournamentUI extends UI {
 		creditsLayout.setMargin(true);
 		headLayout.setHeight("20%");
 		headLayout.setWidth("80%");
+		presentationLayout.setWidth("100%");
 		mainLayout.addComponent(headLayout, 0, 0);
 		mainLayout.addComponent(presentationLayout, 2, 0);
         mainLayout.addComponent(menuLayout, 0, 1);

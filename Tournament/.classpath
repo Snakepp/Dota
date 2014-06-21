@@ -16,5 +16,8 @@
 	<classpathentry kind="con" path="org.apache.ivyde.eclipse.cpcontainer.IVYDE_CONTAINER/?project=Tournament&amp;ivyXmlPath=ivy.xml&amp;confs=widgetset-compile&amp;ivySettingsPath=%24%7Bworkspace_loc%3ATournament%2Fivysettings.xml%7D&amp;loadSettingsOnDemand=false&amp;ivyUserDir=&amp;propertyFiles="/>
 	<classpathentry kind="con" path="org.apache.ivyde.eclipse.cpcontainer.IVYDE_CONTAINER/?project=Tournament&amp;ivyXmlPath=ivy.xml&amp;confs=nodeploy&amp;ivySettingsPath=%24%7Bworkspace_loc%3ATournament%2Fivysettings.xml%7D&amp;loadSettingsOnDemand=false&amp;ivyUserDir=&amp;propertyFiles="/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="lib" path="/home/pepe/Downloads/javaee-api-6.0.jar"/>
+	<classpathentry kind="lib" path="/home/pepe/Downloads/javamail1_4_7/javamail-1.4.7/mail.jar"/>
+	<classpathentry kind="lib" path="/home/pepe/Downloads/activation-1.1.1.jar"/>
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>
