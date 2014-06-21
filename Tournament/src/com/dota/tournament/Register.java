@@ -2,15 +2,11 @@ package com.dota.tournament;
 
 
 import com.dota.db.DBConnection;
-import com.vaadin.data.Property.ValueChangeEvent;
-import com.vaadin.data.Property.ValueChangeListener;
 import com.vaadin.data.validator.EmailValidator;
 import com.vaadin.event.FieldEvents.TextChangeEvent;
 import com.vaadin.event.FieldEvents.TextChangeListener;
-import com.vaadin.server.ErrorMessage;
 import com.vaadin.server.UserError;
 import com.vaadin.shared.ui.MarginInfo;
-import com.vaadin.ui.Alignment;
 import com.vaadin.ui.Button;
 import com.vaadin.ui.FormLayout;
 import com.vaadin.ui.HorizontalLayout;
@@ -33,9 +29,8 @@ public class Register extends Window{
 	private Button register;
 	private Button cancel;
 	private DBConnection conn;
-	private VerticalLayout layout;
 	
-	public Register(DBConnection connection, VerticalLayout layout){
+	public Register(DBConnection connection){
 		super("Register");
 		setClosable(false);
 		setDraggable(false);
@@ -43,7 +38,6 @@ public class Register extends Window{
 		setModal(true);
 		center();
 		conn = connection;
-		this.layout = layout;
 		mainlayout = new VerticalLayout();
 		submitlayout = new HorizontalLayout();
 		form = new FormLayout();
@@ -101,7 +95,7 @@ public class Register extends Window{
 					Notification.show("Register Successful!","the register was completed successfully, to activate your account follow the mail instructions that we sent to your mail.",
 		                  Notification.Type.TRAY_NOTIFICATION);
 					close();
-					UI.getCurrent().addWindow(new Login(conn, layout));
+					UI.getCurrent().addWindow(new Login(conn));
 				}else{
 					Notification.show("Error!",error,
 			                  Notification.Type.ERROR_MESSAGE);
@@ -115,7 +109,7 @@ public class Register extends Window{
 			@Override
 			public void buttonClick(com.vaadin.ui.Button.ClickEvent event) {
 				close();
-				UI.getCurrent().addWindow(new Login(conn, layout));
+				UI.getCurrent().addWindow(new Login(conn));
 			}
 		};
 	}

@@ -269,6 +269,7 @@ td.v-datefield-calendarpanel-month,
 	}
 
 .v-button-default,
+.myStyle,
 .v-disabled.v-button-default,
 .v-disabled.v-button-default:focus,
 .v-button-default:active,
@@ -285,7 +286,9 @@ td.v-datefield-calendarpanel-month,
 	background-color: rgb(90,149,204);
 	}
 
+
 .v-button-default:active .v-button-wrap,
+.myStyle,
 .v-ie7 .v-button-default.v-pressed .v-button-wrap,
 .v-ie8 .v-button-default.v-pressed .v-button-wrap,
 .v-progressindicator-indicator,

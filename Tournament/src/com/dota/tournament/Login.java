@@ -2,29 +2,13 @@ package com.dota.tournament;
 
 
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStream;
-import java.security.Principal;
-import java.util.Enumeration;
-import java.util.Locale;
-import java.util.Map;
-
-import javax.servlet.http.Cookie;
-import javax.servlet.http.HttpServletRequestWrapper;
-
 import com.dota.db.DBConnection;
-import com.google.gwt.http.client.Request;
-import com.vaadin.server.VaadinRequest;
-import com.vaadin.server.VaadinService;
-import com.vaadin.server.WrappedSession;
 import com.vaadin.shared.ui.MarginInfo;
 import com.vaadin.ui.Alignment;
 import com.vaadin.ui.Button;
 import com.vaadin.ui.Button.ClickEvent;
 import com.vaadin.ui.FormLayout;
 import com.vaadin.ui.HorizontalLayout;
-import com.vaadin.ui.Label;
 import com.vaadin.ui.Notification;
 import com.vaadin.ui.PasswordField;
 import com.vaadin.ui.TextField;
@@ -44,16 +28,14 @@ public class Login extends Window{
 	private Button login;
 	private Button register;
 	private DBConnection conn;
-	private VerticalLayout loggedInUserLayout;
 	
-	public Login( DBConnection connection, VerticalLayout loggedInUserlayout){
+	public Login( DBConnection connection){
 		super("Login");
 		center();
 		setModal(true);
 		setDraggable(false);
 		setResizable(false);
 		conn=connection;
-		this.loggedInUserLayout = loggedInUserlayout;
 		mainlayout = new VerticalLayout();
 		submitlayout = new HorizontalLayout();
 		setClosable(false);
@@ -102,7 +84,7 @@ public class Login extends Window{
 
 			@Override
 			public void buttonClick(ClickEvent event) {
-				UI.getCurrent().addWindow(new Register(conn, loggedInUserLayout));
+				UI.getCurrent().addWindow(new Register(conn));
 				close();
 			}
 		};
