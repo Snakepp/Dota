@@ -4,8 +4,6 @@ import java.io.File;
 import java.sql.SQLException;
 
 import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpSession;
 
 import com.dota.db.DBConnection;
 import com.vaadin.annotations.Theme;
@@ -14,8 +12,6 @@ import com.vaadin.server.FileResource;
 import com.vaadin.server.VaadinRequest;
 import com.vaadin.server.VaadinService;
 import com.vaadin.server.VaadinServlet;
-import com.vaadin.ui.Button;
-import com.vaadin.ui.Button.ClickEvent;
 import com.vaadin.ui.GridLayout;
 import com.vaadin.ui.HorizontalLayout;
 import com.vaadin.ui.Image;
@@ -79,7 +75,7 @@ public class TournamentUI extends UI {
 		creditsLayout.addComponent(verify5);
 		
 		if(getSession().getAttribute("usernameId")==null)
-			addWindow(new Login(connection, presentationLayout));
+			addWindow(new Login(connection));
 		else{
 			long loggedUserId = (Long) getSession().getAttribute("usernameId");
 			User userLogged = connection.getUser(loggedUserId);
@@ -92,7 +88,6 @@ public class TournamentUI extends UI {
 	private void generateBorderLayout() {
 		mainLayout.setRows(3);
 		mainLayout.setColumns(3);
-
 		
 //        mainLayout.addComponent(headLayout, 0, 0, 2, 0);
 		headLayout.setMargin(true);
@@ -118,33 +113,4 @@ public class TournamentUI extends UI {
         mainLayout.setColumnExpandRatio(1, 4.0f);
         mainLayout.setColumnExpandRatio(2, 1.0f);
     }
-	
-	@Deprecated
-	private void demo(){
-		final HorizontalLayout headLayout = new HorizontalLayout();
-		final VerticalLayout mainLayout = new VerticalLayout();
-		final VerticalLayout bodyLayout = new VerticalLayout();
-		
-			
-		mainLayout.setMargin(true);
-		mainLayout.addStyleName("outlined");		
-		headLayout.setMargin(true);
-		headLayout.addStyleName("outlined");
-		
-		
-		Button login = new Button("Login");
-		login.addClickListener(new Button.ClickListener() {
-			public void buttonClick(ClickEvent event) {
-				//make something here
-				bodyLayout.addComponent(new Label("pepe"));
-			}
-		});
-		
-		
-		
-		
-		mainLayout.addComponent(headLayout);
-		mainLayout.addComponent(bodyLayout);
-		setContent(mainLayout);
-	}
 }
