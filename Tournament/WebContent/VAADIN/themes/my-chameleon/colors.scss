@@ -2,7 +2,7 @@
 
 /* Application background */
 &.v-app {
-	background: rgb(45,45,45);
+	background: rgb(0,0,0);
 	}
 
 .v-window,
@@ -89,16 +89,16 @@ body.v-ie7 .v-menubar-submenu,
 .v-ie .v-button.v-pressed,
 div.v-button-down,
 .v-slider .v-slider-handle-active {
-	background-color: rgb(30,30,30);
-	border-color: rgb(19,19,19);
+	background-color: rgb(81,137,247);
+	border-color: rgb(71,127,237);
 	}
 
 div.v-button-down:active {
-	background-color: rgb(24,24,24);
+	background-color: rgb(81,137,247);
 	}
 	
 .v-button:focus {
-	background-color: rgb(30,30,30);
+	background-color: rgb(81,137,247);
 	}
 
 /* Base border color */
@@ -118,7 +118,7 @@ div.v-table-focus-slot-right,
 input.v-textfield,
 textarea.v-textarea,
 .v-filterselect {
-	border-color: rgb(24,24,24);
+	border-color: rgb(81,137,247);
 	}
 
 
@@ -157,7 +157,7 @@ td.v-datefield-calendarpanel-month,
 .v-tabsheet-scroller,
 .v-csslayout-toolbar,
 .v-menubar {
-	background-color: rgb(38,38,38);
+	background-color: rgb(81,137,247);
 	border-color: rgb(24,24,24);
 	}
 

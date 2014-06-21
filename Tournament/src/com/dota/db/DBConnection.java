@@ -23,18 +23,22 @@ public class DBConnection {
 	private String port;
 	private String host;
 	 
-	 public DBConnection(String host, String user, String pass, String database, String port){
+	 public DBConnection(String host, String user, String pass, String database, String port) throws SQLException{
 		 this.user = user;
 		 this.pass = pass;
 		 this.host = host;
 		 this.db = database;
 		 this.port = port;
-		 try {
-			 Class.forName("com.mysql.jdbc.Driver");
-			 connect = DriverManager.getConnection("jdbc:mysql://"+host+":"+port+"/"+db,user, pass);
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
+			 try {
+				Class.forName("com.mysql.jdbc.Driver");
+			} catch (ClassNotFoundException e) {
+				e.printStackTrace();
+			}
+//			 try {
+				connect = DriverManager.getConnection("jdbc:mysql://"+host+":"+port+"/"+db,user, pass);
+//			} catch (SQLException e) {
+//				e.printStackTrace();
+//			}
 	     
 	 }
 	
@@ -69,7 +73,28 @@ public class DBConnection {
 			preparedStatement.setString(1, userName);
 			preparedStatement.setString(2, pass);
 			querRslt = preparedStatement.executeQuery();
-			while(querRslt.next()) { 
+			while(querRslt.next()) {
+				user.setId(querRslt.getLong(1));
+				 user.setName(querRslt.getString(2));
+				 user.setEmail(querRslt.getString(4));
+			}
+					
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return user;
+	}
+	
+	public User getUser(long id){
+		User user = new User();
+		PreparedStatement preparedStatement;
+		ResultSet querRslt = null;
+		try {
+			preparedStatement = connect.prepareStatement("select * from users where id =?");
+			preparedStatement.setLong(1, id);
+			querRslt = preparedStatement.executeQuery();
+			while(querRslt.next()) {
+				user.setId(querRslt.getLong(1));
 				 user.setName(querRslt.getString(2));
 				 user.setEmail(querRslt.getString(4));
 			}

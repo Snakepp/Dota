@@ -40,6 +40,7 @@ public class Register extends Window{
 		setClosable(false);
 		setDraggable(false);
 		setResizable(false);
+		setModal(true);
 		center();
 		conn = connection;
 		this.layout = layout;
@@ -73,6 +74,7 @@ public class Register extends Window{
 		
 		submitlayout.addComponent(register);
 		submitlayout.addComponent(cancel);
+		submitlayout.setSpacing(true);
 		
 		form.addStyleName("outlined");
 		form.setSizeFull();

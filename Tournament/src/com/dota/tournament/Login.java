@@ -1,8 +1,25 @@
 package com.dota.tournament;
 
 
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStream;
+import java.security.Principal;
+import java.util.Enumeration;
+import java.util.Locale;
+import java.util.Map;
+
+import javax.servlet.http.Cookie;
+import javax.servlet.http.HttpServletRequestWrapper;
+
 import com.dota.db.DBConnection;
+import com.google.gwt.http.client.Request;
+import com.vaadin.server.VaadinRequest;
+import com.vaadin.server.VaadinService;
+import com.vaadin.server.WrappedSession;
 import com.vaadin.shared.ui.MarginInfo;
+import com.vaadin.ui.Alignment;
 import com.vaadin.ui.Button;
 import com.vaadin.ui.Button.ClickEvent;
 import com.vaadin.ui.FormLayout;
@@ -60,8 +77,11 @@ public class Login extends Window{
 		login = new Button("Login");
 		login.addClickListener(LoginListener());
 
+		
+		submitlayout.setSpacing(true);
 		submitlayout.addComponent(login);
 		submitlayout.addComponent(register);
+		submitlayout.setComponentAlignment(register, Alignment.BOTTOM_RIGHT);
 		
 		form.addStyleName("outlined");
 		form.setSizeFull();
@@ -95,10 +115,14 @@ public class Login extends Window{
 				boolean exists=conn.isUserExistent(user.getValue(), password.getValue());
 				if(exists){
 					User logedUser = conn.getUser(user.getValue(), password.getValue());
-					loggedInUserLayout.addComponent(new Label(logedUser.getName()));
-					loggedInUserLayout.addComponent(new Label(logedUser.getEmail()));
+//					loggedInUserLayout.addComponent(new Label(logedUser.getName()));
+//					loggedInUserLayout.addComponent(new Label(logedUser.getEmail()));
+//					UserPresentation loggedUser = new UserPresentation(logedUser);
+//					loggedInUserLayout = loggedUser;
+					UI.getCurrent().getSession().setAttribute("usernameId", logedUser.getId());
 					Notification.show("Login Successfuly!","Enjoy!",
 							Notification.Type.TRAY_NOTIFICATION);
+					UI.getCurrent().getPage().reload();
 					close();
 				}else{
 					Notification.show("Incorrect login","Badd pass/User",

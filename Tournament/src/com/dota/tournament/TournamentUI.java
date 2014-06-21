@@ -1,6 +1,7 @@
 package com.dota.tournament;
 
 import java.io.File;
+import java.sql.SQLException;
 
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -19,6 +20,7 @@ import com.vaadin.ui.GridLayout;
 import com.vaadin.ui.HorizontalLayout;
 import com.vaadin.ui.Image;
 import com.vaadin.ui.Label;
+import com.vaadin.ui.Notification;
 import com.vaadin.ui.UI;
 import com.vaadin.ui.VerticalLayout;
 
@@ -50,29 +52,39 @@ public class TournamentUI extends UI {
 		Label verify4 = new Label("Verify Layout");
 		Label verify5 = new Label("Verify Layout");
 		Label verify6 = new Label("Verify Layout");
-		
+		try{
 		connection = new DBConnection("localhost", "root", "", "ghost", "3306");
-		
+		}catch(SQLException e){
+			//if there is an exception then that means that we could not connect to database
+			Notification.show("Database issue!","Could not connect to database",
+	                  Notification.Type.ERROR_MESSAGE);
+		}
 		// Find the application directory
 		String basepath = VaadinService.getCurrent()
 		                  .getBaseDirectory().getAbsolutePath();
 		// Image as a file resource
 		FileResource resource = new FileResource(new File(basepath +
-		                        "/WEB-INF/images/logo/head.jpg"));
+		                        "/WEB-INF/images/logo/Head3.jpg"));
 		// Show the image in the application
-		Image image = new Image("Image from file", resource);
+		Image image = new Image("Title",resource);
+		Image img = new Image();
+		img.setSource(resource);
+		headLayout.addComponent(img);
 		
-//		headLayout.addComponent(image);
-		
-		headLayout.addComponent(verify);
+//		headLayout.addComponent(verify);
 		presentationLayout.addComponent(verify6);
 		menuLayout.addComponent(verify2);
 		bodyLayout.addComponent(verify3);
 		notificationLayout.addComponent(verify4);
 		creditsLayout.addComponent(verify5);
 		
-		addWindow(new Login(connection, presentationLayout));
-		
+		if(getSession().getAttribute("usernameId")==null)
+			addWindow(new Login(connection, presentationLayout));
+		else{
+			long loggedUserId = (Long) getSession().getAttribute("usernameId");
+			User userLogged = connection.getUser(loggedUserId);
+			presentationLayout.addComponent(new UserPresentation(userLogged));
+		}
 		generateBorderLayout();
 		setContent(mainLayout);
 	}
@@ -89,7 +101,8 @@ public class TournamentUI extends UI {
 		bodyLayout.setMargin(true);
 		notificationLayout.setMargin(true);
 		creditsLayout.setMargin(true);
-		
+		headLayout.setHeight("20%");
+		headLayout.setWidth("80%");
 		mainLayout.addComponent(headLayout, 0, 0);
 		mainLayout.addComponent(presentationLayout, 2, 0);
         mainLayout.addComponent(menuLayout, 0, 1);
@@ -97,7 +110,7 @@ public class TournamentUI extends UI {
         mainLayout.addComponent(notificationLayout, 2, 1);
         mainLayout.addComponent(creditsLayout, 0, 2, 2, 2);
 
-        mainLayout.setRowExpandRatio(0, 1.0f);
+        mainLayout.setRowExpandRatio(0, 1.4f);
         mainLayout.setRowExpandRatio(1, 5.0f);
         mainLayout.setRowExpandRatio(2, 1.0f);
 
