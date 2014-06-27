@@ -29,6 +29,7 @@ public class TournamentUI extends UI {
 	public static class Servlet extends VaadinServlet {
 	}
 
+	private boolean loggedUser=false;
 	final GridLayout mainLayout = new GridLayout();
 	final HorizontalLayout presentationLayout = new HorizontalLayout();
 	final HorizontalLayout headLayout = new HorizontalLayout();
@@ -42,14 +43,14 @@ public class TournamentUI extends UI {
 	protected void init(VaadinRequest request) {
 		mainLayout.addStyleName("outlined");
 		mainLayout.setSizeFull();
-		Label verify = new Label("Verify Layout1");
-		Label verify2 = new Label("Verify Layout");
-		Label verify3 = new Label("Verify Layout");
 		Label verify4 = new Label("Verify Layout");
 		Label verify5 = new Label("Verify Layout");
-		Label verify6 = new Label("Verify Layout");
 		try{
+//			Test environment
 		connection = new DBConnection("localhost", "root", "", "ghost", "3306");
+//			Production environment
+//		connection = new DBConnection("127.0.0.1", "adminQT3aEtS", "AMF84AreG5ZU", "ghost", "3307");
+			
 		}catch(SQLException e){
 			//if there is an exception then that means that we could not connect to database
 			Notification.show("Database issue!","Could not connect to database",
@@ -62,15 +63,11 @@ public class TournamentUI extends UI {
 		FileResource resource = new FileResource(new File(basepath +
 		                        "/WEB-INF/images/logo/Head3.jpg"));
 		// Show the image in the application
-		Image image = new Image("Title",resource);
 		Image img = new Image();
 		img.setSource(resource);
 		headLayout.addComponent(img);
 		
-//		headLayout.addComponent(verify);
-//		presentationLayout.addComponent(verify6);
-		menuLayout.addComponent(verify2);
-		bodyLayout.addComponent(verify3);
+		menuLayout.addComponent(new Menu(bodyLayout,connection));
 		notificationLayout.addComponent(verify4);
 		creditsLayout.addComponent(verify5);
 		
@@ -80,9 +77,11 @@ public class TournamentUI extends UI {
 			long loggedUserId = (Long) getSession().getAttribute("usernameId");
 			User userLogged = connection.getUser(loggedUserId);
 			presentationLayout.addComponent(new UserPresentation(userLogged));
+			loggedUser = true;
 //			SendMail send = new SendMail();
 //			send.send("cj10jose1@gmail.com");
 		}
+		
 		generateBorderLayout();
 		setContent(mainLayout);
 	}
@@ -116,4 +115,7 @@ public class TournamentUI extends UI {
         mainLayout.setColumnExpandRatio(1, 4.0f);
         mainLayout.setColumnExpandRatio(2, 1.0f);
     }
+	private void generateTournament(){
+		
+	}
 }

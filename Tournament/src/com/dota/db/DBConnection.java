@@ -7,6 +7,8 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.List;
 
 import com.dota.tournament.User;
 
@@ -99,6 +101,27 @@ public class DBConnection {
 			e.printStackTrace();
 		}
 		return user;
+	}
+	
+	public List<User> getUsers(){
+		PreparedStatement preparedStatement;
+		ResultSet querRslt = null;
+		List<User> users = new ArrayList<User>();
+		try {
+			preparedStatement = connect.prepareStatement("select * from users");
+			querRslt = preparedStatement.executeQuery();
+			while(querRslt.next()) {
+				User user = new User();
+				user.setId(querRslt.getLong(1));
+				user.setName(querRslt.getString(2));
+				user.setEmail(querRslt.getString(4));
+				user.setAvatarName(querRslt.getString(5));
+				users.add(user);
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return users;
 	}
 	
 	

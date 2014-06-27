@@ -15,6 +15,7 @@ import com.vaadin.server.FileResource;
 import com.vaadin.server.UserError;
 import com.vaadin.server.VaadinService;
 import com.vaadin.shared.ui.MarginInfo;
+import com.vaadin.shared.ui.combobox.FilteringMode;
 import com.vaadin.ui.Button;
 import com.vaadin.ui.ComboBox;
 import com.vaadin.ui.FormLayout;
@@ -70,6 +71,8 @@ public class Register extends Window{
 		comboHeroes.addItems(getHeroes());
 		comboHeroes.setNullSelectionAllowed(false);
 		comboHeroes.setRequired(true);
+		comboHeroes.setPageLength(3);
+		comboHeroes.setFilteringMode(FilteringMode.CONTAINS);
 		setIcons(comboHeroes);
 //		verifyPassword.addTextChangeListener(passwordValidator());
 		setCaption("register new member");
