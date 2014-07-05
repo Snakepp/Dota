@@ -107,16 +107,18 @@ public class Login extends Window{
 				boolean exists = false;
 				boolean existsToken = false;
 				Encripter encripter = new Encripter();
-				exists=conn.isUserExistent(user.getValue(), encripter.encript(password.getValue()).substring(0,20));
+				String pass = encripter.encript2(password.getValue());
+				
+				exists=conn.isUserExistent(user.getValue(), pass);
 				if(!exists){
-					existsToken= conn.isTokenExistent(user.getValue(), password.getValue());
+					existsToken= conn.isTokenExistent(user.getValue(), pass);
 				}
 				if(exists || existsToken){
 					User logedUser = null;
 					if(exists)
-						logedUser = conn.getUser(user.getValue(), password.getValue());
+						logedUser = conn.getUser(user.getValue(), pass);
 					else
-						logedUser = conn.getUserByToken(user.getValue(), password.getValue());
+						logedUser = conn.getUserByToken(user.getValue(), pass);
 //					loggedInUserLayout.addComponent(new Label(logedUser.getName()));
 //					loggedInUserLayout.addComponent(new Label(logedUser.getEmail()));
 //					UserPresentation loggedUser = new UserPresentation(logedUser);

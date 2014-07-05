@@ -115,7 +115,9 @@ public class Register extends Window{
 				String error = validateRegister();
 				if(error==null){
 					Encripter encripter = new Encripter();
-					conn.saveUser(user.getValue(), encripter.encript(password.getValue()).substring(0,20), email.getValue(),(String)comboHeroes.getValue());
+					System.out.println(encripter.encript2(password.getValue()));
+					System.out.println(encripter.encript2(password.getValue()).length());
+					conn.saveUser(user.getValue(), encripter.encript2(password.getValue()), email.getValue(),(String)comboHeroes.getValue());
 //					SendMail sendMail = new SendMail();
 //					sendMail.send("raiblakmon@gmail.com");
 					Notification.show("Register Successful!","the register was completed successfully, to activate your account follow the mail instructions that we sent to your mail.",

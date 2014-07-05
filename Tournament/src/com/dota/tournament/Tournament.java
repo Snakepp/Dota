@@ -24,9 +24,9 @@ public class Tournament  extends VerticalLayout{
 		
 		if(users.size()%2==0){
 			//par
-			while(counter != (users.size()/2)){
+			while(counter != users.size()){
 				teams.add(new VersusLayout(users.get(counter), users.get(counter+1)));
-				counter++;
+				counter+=2;
 			}
 		}else{
 			//impar
