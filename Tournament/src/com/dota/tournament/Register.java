@@ -8,6 +8,9 @@ import java.util.Map;
 import java.util.Set;
 
 import com.dota.db.DBConnection;
+import com.dota.db.SendMail;
+import com.dota.utils.Encript;
+import com.dota.utils.Encripter;
 import com.vaadin.data.validator.EmailValidator;
 import com.vaadin.event.FieldEvents.TextChangeEvent;
 import com.vaadin.event.FieldEvents.TextChangeListener;
@@ -111,11 +114,16 @@ public class Register extends Window{
 			public void buttonClick(com.vaadin.ui.Button.ClickEvent event) {
 				String error = validateRegister();
 				if(error==null){
-					conn.saveUser(user.getValue(), password.getValue(), email.getValue(),(String)comboHeroes.getValue());
+					Encripter encripter = new Encripter();
+					conn.saveUser(user.getValue(), encripter.encript(password.getValue()).substring(0,20), email.getValue(),(String)comboHeroes.getValue());
 //					SendMail sendMail = new SendMail();
 //					sendMail.send("raiblakmon@gmail.com");
 					Notification.show("Register Successful!","the register was completed successfully, to activate your account follow the mail instructions that we sent to your mail.",
 		                  Notification.Type.TRAY_NOTIFICATION);
+					User registerUser = conn.getUser(user.getValue(), password.getValue());
+					SendMail mail = new SendMail();
+					//testing
+//					mail.sendActivate((int)registerUser.getId(), registerUser.getEmail());
 					close();
 					UI.getCurrent().addWindow(new Login(conn));
 				}else{
@@ -190,9 +198,11 @@ public class Register extends Window{
 		
 		File heroesDir = new File(filePath);
 		for(File image : heroesDir.listFiles()){
-			String heroName = image.getName();
-			heroName=heroName.substring(0,heroName.indexOf("."));
-			heroes.add(heroName);
+			if(image.getName().contains(".jpg") || image.getName().contains(".gif")){
+				String heroName = image.getName();
+				heroName=heroName.substring(0,heroName.indexOf("."));
+				heroes.add(heroName);
+			}
 		}
 		
 		return heroes;

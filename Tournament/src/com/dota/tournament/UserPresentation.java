@@ -24,7 +24,7 @@ public class UserPresentation extends HorizontalLayout{
 	private Button logout;
 	
 	public UserPresentation(User userLogged){
-		setSizeFull();
+//		setSizeFull();
 		loggedUser = userLogged;
 		logout = new Button("logout");
 		logout.setStyleName(BaseTheme.BUTTON_LINK);

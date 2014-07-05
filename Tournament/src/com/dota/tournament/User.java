@@ -14,6 +14,8 @@ public class User {
 	private Image avatarGif;
 	private Image avatarJpg;
 	private long id;
+	private boolean active;
+	private String token;
 	
 	public String getName(){
 		return name;
@@ -24,6 +26,13 @@ public class User {
 	public long getId(){
 		return id;
 	}
+	public boolean activated(){
+		return active;
+	}
+	public String getToken(){
+		return token;
+	}
+	
 	public void setName(String name){
 		this.name = name;
 	}
@@ -33,6 +42,13 @@ public class User {
 	public void setId(long id){
 		this.id = id;
 	}
+	public void setActive(boolean active){
+		this.active = active;
+	}
+	public void setToken(String token){
+		this.token = token;
+	}
+	
 	
 	public Image getAvatarGif(){
 		return avatarGif;

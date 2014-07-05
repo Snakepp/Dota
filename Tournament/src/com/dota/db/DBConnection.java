@@ -9,6 +9,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.UUID;
 
 import com.dota.tournament.User;
 
@@ -75,6 +76,9 @@ public class DBConnection {
 				user.setId(querRslt.getLong(1));
 				 user.setName(querRslt.getString(2));
 				 user.setEmail(querRslt.getString(4));
+				 user.setAvatarName(querRslt.getString(5));
+				 user.setActive(querRslt.getInt(6) == 0 ? false : true);
+				 user.setToken(querRslt.getString(7));
 			}
 					
 		} catch (SQLException e) {
@@ -82,7 +86,29 @@ public class DBConnection {
 		}
 		return user;
 	}
-	
+	public User getUserByToken(String userName, String token){
+		User user = new User();
+		PreparedStatement preparedStatement;
+		ResultSet querRslt = null;
+		try {
+			preparedStatement = connect.prepareStatement("select * from users where name =? and token = ?");
+			preparedStatement.setString(1, userName);
+			preparedStatement.setString(2, token);
+			querRslt = preparedStatement.executeQuery();
+			while(querRslt.next()) {
+				user.setId(querRslt.getLong(1));
+				 user.setName(querRslt.getString(2));
+				 user.setEmail(querRslt.getString(4));
+				 user.setAvatarName(querRslt.getString(5));
+				 user.setActive(querRslt.getInt(6) == 0 ? false : true);
+				 user.setToken(querRslt.getString(7));
+			}
+					
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return user;
+	}
 	public User getUser(long id){
 		User user = new User();
 		PreparedStatement preparedStatement;
@@ -96,6 +122,34 @@ public class DBConnection {
 				 user.setName(querRslt.getString(2));
 				 user.setEmail(querRslt.getString(4));
 				 user.setAvatarName(querRslt.getString(5));
+				 user.setActive(querRslt.getInt(6) == 0 ? false : true);
+				 user.setToken(querRslt.getString(7));
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return user;
+	}
+	public User getUser(String token){
+		User user = new User();
+		PreparedStatement preparedStatement;
+		ResultSet querRslt = null;
+		try {
+			preparedStatement = connect.prepareStatement("select * from users where token =?");
+			preparedStatement.setString(1, token);
+			querRslt = preparedStatement.executeQuery();
+			int count=0;
+			while(querRslt.next()) {
+				user.setId(querRslt.getLong(1));
+				 user.setName(querRslt.getString(2));
+				 user.setEmail(querRslt.getString(4));
+				 user.setAvatarName(querRslt.getString(5));
+				 user.setActive(querRslt.getInt(6) == 0 ? false : true);
+				 user.setToken(querRslt.getString(7));
+				 count++;
+			}
+			if(count==0){
+				return null;
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -116,6 +170,8 @@ public class DBConnection {
 				user.setName(querRslt.getString(2));
 				user.setEmail(querRslt.getString(4));
 				user.setAvatarName(querRslt.getString(5));
+				user.setActive(querRslt.getInt(6) == 0 ? false : true);
+				user.setToken(querRslt.getString(7));
 				users.add(user);
 			}
 		} catch (SQLException e) {
@@ -164,22 +220,56 @@ public class DBConnection {
 		
 		return exists;
 	}
-	public void saveUser(String username, String pass, String email, String heroName){
+	public boolean isTokenExistent(String user, String token){
+		boolean exists = false;
+		
 		PreparedStatement preparedStatement;
 		ResultSet querRslt = null;
-		
 		try {
-			preparedStatement = connect.prepareStatement("insert into users(name,pass,email,avatar) values(?,?,?,?)");
+			preparedStatement = connect.prepareStatement("select id from users where token =? and name = ?");
+			preparedStatement.setString(1, token);
+			preparedStatement.setString(2, user);
+			querRslt = preparedStatement.executeQuery();
+			while(querRslt.next()) { 
+				 exists = true;
+			}
+					
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		
+		return exists;
+	}
+	public void saveUser(String username, String pass, String email, String heroName){
+		PreparedStatement preparedStatement;
+		UUID uniqueToken = UUID.randomUUID();
+		try {
+			preparedStatement = connect.prepareStatement("insert into users(name,pass,email,avatar,token) values(?,?,?,?,?)");
 			preparedStatement.setString(1, username);
 			preparedStatement.setString(2, pass);
 			preparedStatement.setString(3, email);
 			preparedStatement.setString(4, heroName);
+			preparedStatement.setString(5, uniqueToken.toString());
 			preparedStatement.executeUpdate();
 					
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
 	}
+	
+	public void activateUser(int id){
+		PreparedStatement preparedStatement;
+		
+		try {
+			preparedStatement = connect.prepareStatement("update users set activated = 1 where id = ?");
+			preparedStatement.setInt(1, id);
+			preparedStatement.executeUpdate();
+					
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+	}
+	
 	public void example() throws Exception{
 		 try {
 		 // statements allow to issue SQL queries to the database
