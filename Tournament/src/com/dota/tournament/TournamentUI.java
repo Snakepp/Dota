@@ -67,9 +67,11 @@ public class TournamentUI extends UI {
 			mainLayout.addStyleName("outlined");
 			mainLayout.setSizeFull();
 			try{
-//				Test environment
-			connection = new DBConnection("localhost", "root", "", "ghost", "3306");
 //				Production environment
+			connection = new DBConnection("127.0.250.1", "adminQT3aEtS", "AMF84AreG5ZU", "ghost", "3306");
+//				Local environment
+//			connection = new DBConnection("localhost", "root", "", "ghost", "3306");
+//				Local environment(Port forwarding)
 //			connection = new DBConnection("127.0.0.1", "adminQT3aEtS", "AMF84AreG5ZU", "ghost", "3307");
 				
 			}catch(SQLException e){
