@@ -5,8 +5,8 @@ package com.dota.tournament;
 import javax.servlet.http.Cookie;
 
 import com.dota.db.DBConnection;
-import com.dota.utils.Encript;
 import com.dota.utils.Encripter;
+import com.dota.utils.PropertyManager;
 import com.vaadin.server.VaadinService;
 import com.vaadin.shared.ui.MarginInfo;
 import com.vaadin.ui.Alignment;
@@ -35,9 +35,11 @@ public class Login extends Window{
 	private Button login;
 	private Button register;
 	private DBConnection conn;
+	private PropertyManager props;
 	
-	public Login( DBConnection connection){
+	public Login( DBConnection connection, PropertyManager props){
 		super("Login");
+		this.props = props;
 		center();
 		setModal(true);
 		setDraggable(false);
@@ -83,7 +85,6 @@ public class Login extends Window{
 		form.addComponent(rememberMe);
 	    
 	    form.addComponent(submitlayout);
-//	    form.setComponentAlignment(login, Alignment.MIDDLE_CENTER);
 	    mainlayout.addComponent(form);
 	    setContent(mainlayout);
 	   
@@ -94,7 +95,7 @@ public class Login extends Window{
 
 			@Override
 			public void buttonClick(ClickEvent event) {
-				UI.getCurrent().addWindow(new Register(conn));
+				UI.getCurrent().addWindow(new Register(conn, props));
 				close();
 			}
 		};
@@ -107,7 +108,7 @@ public class Login extends Window{
 				boolean exists = false;
 				boolean existsToken = false;
 				Encripter encripter = new Encripter();
-				String pass = encripter.encript2(password.getValue());
+				String pass = encripter.encript(password.getValue());
 				
 				exists=conn.isUserExistent(user.getValue(), pass);
 				if(!exists){
@@ -118,11 +119,8 @@ public class Login extends Window{
 					if(exists)
 						logedUser = conn.getUser(user.getValue(), pass);
 					else
-						logedUser = conn.getUserByToken(user.getValue(), pass);
-//					loggedInUserLayout.addComponent(new Label(logedUser.getName()));
-//					loggedInUserLayout.addComponent(new Label(logedUser.getEmail()));
-//					UserPresentation loggedUser = new UserPresentation(logedUser);
-//					loggedInUserLayout = loggedUser;
+						logedUser = conn.getUserByToken(user.getValue(), password.getValue());
+					
 					UI.getCurrent().getSession().setAttribute("usernameId", logedUser.getId());
 					
 					if(rememberMe.getValue()){
@@ -149,12 +147,6 @@ public class Login extends Window{
 		Cookie[] cookies = VaadinService.getCurrentRequest().getCookies();
 		
 		for(int x=0; x<cookies.length;x++){
-//			if(cookies[x].getName().equals("username")){
-//				user.setValue(cookies[x].getValue());
-//			}
-//			if(cookies[x].getName().equals("password")){
-//				password.setValue(cookies[x].getValue());
-//			}
 			if(cookies[x].getName().equals("loggedUser")){
 				User logUser = conn.getUser(cookies[x].getValue());
 				if(logUser!=null){
@@ -168,21 +160,10 @@ public class Login extends Window{
 	
 	public void saveDataIntoCookies(User userLogged){
 		Cookie user = new Cookie("loggedUser", userLogged.getToken());
-//		Cookie userCookie = new Cookie("username", user.getValue());
-//		Cookie passCookie = new Cookie("password", password.getValue());
-		// Set the cookie path.
-//		userCookie.setPath(VaadinService.getCurrentRequest().getContextPath());
 		user.setPath(VaadinService.getCurrentRequest().getContextPath());
 
-		// Save cookie
-//		VaadinService.getCurrentResponse().addCookie(userCookie);
 		VaadinService.getCurrentResponse().addCookie(user);
 		
-		// Set the cookie path.
-//		passCookie.setPath(VaadinService.getCurrentRequest().getContextPath());
-//
-//		// Save cookie
-//		VaadinService.getCurrentResponse().addCookie(passCookie);
 	}
 	public void deleteDataFromCookies(){
 		Cookie[] cookies = VaadinService.getCurrentRequest().getCookies();

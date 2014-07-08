@@ -2,13 +2,18 @@ package com.dota.tournament;
 
 import java.io.File;
 
+import com.dota.utils.PropertyManager;
 import com.vaadin.server.FileResource;
-import com.vaadin.server.VaadinService;
 import com.vaadin.ui.Image;
 
 
 public class User {
+	
+	public User(PropertyManager props){
+		this.props = props;
+	}
 
+	private PropertyManager props;
 	private String name;
 	private String email;
 	private Image avatarGif;
@@ -60,9 +65,7 @@ public class User {
 	public void setAvatarName(String avatarName){
 		avatarGif = new Image();
 		avatarJpg = new Image();
-		
-		String basepath = VaadinService.getCurrent().getBaseDirectory().getAbsolutePath();
-		String filePath = basepath +"/WEB-INF/images/Heroes/"+avatarName;
+		String filePath = props.getHeroesPath()+avatarName;
 		FileResource resource1 = new FileResource(new File(filePath+".jpg"));
 		FileResource resource2 = new FileResource(new File(filePath+".gif"));
 		

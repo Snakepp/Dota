@@ -12,6 +12,7 @@ import java.util.List;
 import java.util.UUID;
 
 import com.dota.tournament.User;
+import com.dota.utils.PropertyManager;
 
 
 public class DBConnection {
@@ -25,13 +26,16 @@ public class DBConnection {
 	private String db;
 	private String port;
 	private String host;
+	private PropertyManager prop;
 	 
-	 public DBConnection(String host, String user, String pass, String database, String port) throws SQLException{
-		 this.user = user;
-		 this.pass = pass;
-		 this.host = host;
-		 this.db = database;
-		 this.port = port;
+	 public DBConnection(PropertyManager props) throws SQLException{
+		 this.prop = props;
+		 
+		 this.user = props.getDBUser();
+		 this.pass = props.getDBPass();
+		 this.host = props.getDBHost();
+		 this.db = props.getDB();
+		 this.port = props.getDBPort();
 			 try {
 				Class.forName("com.mysql.jdbc.Driver");
 			} catch (ClassNotFoundException e) {
@@ -64,7 +68,7 @@ public class DBConnection {
 	}
 	
 	public User getUser(String userName, String pass){
-		User user = new User();
+		User user = new User(prop);
 		PreparedStatement preparedStatement;
 		ResultSet querRslt = null;
 		try {
@@ -87,7 +91,7 @@ public class DBConnection {
 		return user;
 	}
 	public User getUserByToken(String userName, String token){
-		User user = new User();
+		User user = new User(prop);
 		PreparedStatement preparedStatement;
 		ResultSet querRslt = null;
 		try {
@@ -110,7 +114,7 @@ public class DBConnection {
 		return user;
 	}
 	public User getUser(long id){
-		User user = new User();
+		User user = new User(prop);
 		PreparedStatement preparedStatement;
 		ResultSet querRslt = null;
 		try {
@@ -131,7 +135,7 @@ public class DBConnection {
 		return user;
 	}
 	public User getUser(String token){
-		User user = new User();
+		User user = new User(prop);
 		PreparedStatement preparedStatement;
 		ResultSet querRslt = null;
 		try {
@@ -165,7 +169,7 @@ public class DBConnection {
 			preparedStatement = connect.prepareStatement("select * from users");
 			querRslt = preparedStatement.executeQuery();
 			while(querRslt.next()) {
-				User user = new User();
+				User user = new User(prop);
 				user.setId(querRslt.getLong(1));
 				user.setName(querRslt.getString(2));
 				user.setEmail(querRslt.getString(4));
@@ -268,45 +272,6 @@ public class DBConnection {
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
-	}
-	
-	public void example() throws Exception{
-		 try {
-		 // statements allow to issue SQL queries to the database
-	      statement = connect.createStatement();
-	      // resultSet gets the result of the SQL query
-	      resultSet = statement
-	          .executeQuery("select * from FEEDBACK.COMMENTS");
-
-	      // preparedStatements can use variables and are more efficient
-	      preparedStatement = connect
-	          .prepareStatement("insert into  FEEDBACK.COMMENTS values (default, ?, ?, ?, ? , ?, ?)");
-	      // "myuser, webpage, datum, summary, COMMENTS from FEEDBACK.COMMENTS");
-	      // parameters start with 1
-	      preparedStatement.setString(1, "Test");
-	      preparedStatement.setString(2, "TestEmail");
-	      preparedStatement.setString(3, "TestWebpage");
-	      preparedStatement.setString(5, "TestSummary");
-	      preparedStatement.setString(6, "TestComment");
-	      preparedStatement.executeUpdate();
-
-	      preparedStatement = connect
-	          .prepareStatement("SELECT myuser, webpage, datum, summary, COMMENTS from FEEDBACK.COMMENTS");
-	      resultSet = preparedStatement.executeQuery();
-
-	      // remove again the insert comment
-	      preparedStatement = connect
-	      .prepareStatement("delete from FEEDBACK.COMMENTS where myuser= ? ; ");
-	      preparedStatement.setString(1, "Test");
-	      preparedStatement.executeUpdate();
-	      
-	      resultSet = statement
-	      .executeQuery("select * from FEEDBACK.COMMENTS");
-		 } catch (Exception e) {
-		      throw e;
-		 } finally {
-		      close();
-		 }
 	}
 	
 	

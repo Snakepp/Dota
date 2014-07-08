@@ -31,6 +31,7 @@ public class UserPresentation extends HorizontalLayout{
 		logout.addClickListener(logoutListener());
 		
 		addComponent(loggedUser.getAvatarGif());
+		//TODO: found a way to set the UserName with another kind of Font...
 		userInfoLayout.addComponent(new Label(loggedUser.getName()));
 		userInfoLayout.addComponent(new Label(loggedUser.getEmail()));
 		userInfoLayout.addComponent(logout);
@@ -40,6 +41,11 @@ public class UserPresentation extends HorizontalLayout{
 	
 	public Button.ClickListener logoutListener(){
 		return new Button.ClickListener() {
+
+			/**
+			 * 
+			 */
+			private static final long serialVersionUID = 1L;
 
 			@Override
 			public void buttonClick(ClickEvent event) {
