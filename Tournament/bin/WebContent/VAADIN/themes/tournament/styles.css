@@ -1,0 +1,7065 @@
+.v-assistive-device-only {
+	position: absolute;
+	top: -2000px;
+	left: -2000px;
+	width: 10px;
+	overflow: hidden;
+}
+
+.v-vaadin-version:after {
+	content: "7.2.2";
+}
+
+.v-generated-body {
+	width: 100%;
+	height: 100%;
+	border: 0;
+	margin: 0;
+	overflow: hidden;
+}
+
+.v-modal-window-open {
+	overflow: hidden;
+}
+
+.v-debug-console {
+	background: #fff;
+	opacity: 0.9;
+	border: 1px solid #000;
+	font-family: sans-serif;
+}
+
+.v-debug-console-caption {
+	background: #000;
+	border-bottom: 1px solid grey;
+	color: white;
+	font-weight: bold;
+}
+
+.v-debug-console-content {
+	font-size: x-small;
+	overflow: auto;
+	white-space: pre;
+}
+
+.v-debug-console-content input {
+	font-size: xx-small;
+}
+
+.v-app .invalidlayout, .v-app .invalidlayout * {
+	background: #f99 !important;
+}
+
+@font-face {
+	font-family: "vdebugfont";
+	src: url(../base/debug/fonts/font.eot);
+	src: url(../base/debug/fonts/font.eot?#iefix) format("embedded-opentype"), url(../base/debug/fonts/font.woff) format("woff"), url(../base/debug/fonts/font.ttf) format("truetype"), url(../base/debug/fonts/font.svg#fontawesome) format("svg");
+	font-weight: normal;
+	font-style: normal;
+}
+
+.v-debugwindow [data-icon]:before, .v-debugwindow-menu [data-icon]:before {
+	font-family: "vdebugfont";
+	content: attr(data-icon);
+	speak: none;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+	-webkit-font-smoothing: antialiased;
+	font-style: normal;
+	vertical-align: text-bottom;
+}
+
+.v-debugwindow {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	-moz-opacity: 0.8;
+	-webkit-opacity: 0.8;
+	opacity: 0.8;
+	color: #666;
+	font-family: Arial, Helvetica, Tahoma, Verdana, sans-serif;
+	font-size: 13px;
+}
+
+.v-debugwindow .v-debugwindow-handle {
+	position: absolute;
+	bottom: 0;
+	background-color: #fff;
+	-moz-opacity: 0;
+	-webkit-opacity: 0;
+	opacity: 0;
+	z-index: 1000;
+}
+
+.v-debugwindow .v-debugwindow-handle-sw {
+	width: 7px;
+	height: 7px;
+}
+
+.v-debugwindow .v-debugwindow-handle-se {
+	right: 0;
+	width: 14px;
+	height: 14px;
+}
+
+.v-debugwindow:hover {
+	-moz-opacity: 1;
+	-webkit-opacity: 1;
+	opacity: 1;
+}
+
+.v-debugwindow * {
+	font-size: inherit !important;
+}
+
+.v-debugwindow-size0, .v-debugwindow-menu .v-debugwindow-button-size0 {
+	font-size: 10px;
+}
+
+.v-debugwindow-size1, .v-debugwindow-menu .v-debugwindow-button-size1 {
+	font-size: 13px;
+}
+
+.v-debugwindow-size2, .v-debugwindow-menu .v-debugwindow-button-size2 {
+	font-size: 16px;
+}
+
+.v-debugwindow-head {
+	text-align: right;
+	background-color: transparent;
+}
+
+.v-debugwindow-tabs {
+	display: inline-block;
+	background-color: #fff;
+}
+
+.v-debugwindow-tab, .v-debugwindow-controls > * {
+	width: 2em;
+	border: none;
+	margin: 0;
+	line-height: 1.5em;
+	background-color: #fff;
+	color: #666;
+}
+
+.v-debugwindow-tab {
+	position: relative;
+	top: 1px;
+	border-width: 1px 0 1px 1px;
+	border-style: solid;
+	border-color: #666;
+	border-radius: 2px 2px 0 0;
+}
+
+.v-debugwindow-tab-selected {
+	color: #666;
+	background-color: #fff;
+	border-bottom: 1px solid #fff;
+}
+
+.v-debugwindow-controls {
+	position: relative;
+	top: 1px;
+	display: inline-block;
+	background-color: #fff;
+	border: 1px solid #666;
+	border-radius: 2px 2px 0 0;
+}
+
+.v-debugwindow-section-head {
+	text-align: left;
+	background-color: #fff;
+	border: 1px solid #666;
+	border-bottom: 1px solid #999;
+	box-shadow: 0px 0px 7px 0 rgba(55, 55, 55, 0.6);
+	min-height: 1.5em;
+	line-height: 1.5em;
+	padding-left: 5px;
+}
+
+.v-debugwindow-button {
+	border: none;
+	background-color: transparent;
+	color: #666;
+}
+
+.v-debugwindow-button:hover {
+	color: #000;
+	text-decoration: underline;
+}
+
+.v-debugwindow-button-active {
+	color: #666;
+	box-shadow: 1px 1px 3px 0 inset;
+}
+
+.v-debugwindow-content {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	box-shadow: 0px 0px 7px 0 rgba(55, 55, 55, 0.6);
+	background-color: #fff;
+	border: 1px solid #666;
+	border-top: none;
+}
+
+.v-debugwindow-menu {
+	background-color: #fff;
+	padding: 4px;
+	border: 1px solid #999;
+	border-top: none;
+	border-radius: 0 0 5px 5px;
+	box-shadow: 0px 0px 7px 0 rgba(55, 55, 55, 0.6);
+}
+
+.v-debugwindow-menu-content {
+	min-width: 100px;
+}
+
+.v-debugwindow-menu-content .v-debugwindow-button {
+	line-height: 22px;
+}
+
+.v-debugwindow-menu-content > div > .v-debugwindow-button {
+	width: 33%;
+}
+
+.v-debugwindow-row {
+	display: table-row;
+}
+
+.v-debugwindow-row:nth-child(odd) {
+	background-color: rgba(0, 61, 255, 0.11);
+}
+
+.v-debugwindow-row > span {
+	display: table-cell;
+	padding: 4px;
+}
+
+.v-debugwindow-row.SEVERE {
+	color: #550000;
+	background-color: #FFC5C5;
+}
+
+.v-debugwindow-row.WARNING {
+	background-color: #FFFF99;
+}
+
+.v-debugwindow-row.FINE {
+	color: #777;
+}
+
+.v-debugwindow-row.FINER {
+	color: #888;
+}
+
+.v-debugwindow-row.FINEST {
+	color: #888;
+}
+
+.v-debugwindow-row > span.caption {
+	color: #999;
+	text-align: right;
+	white-space: nowrap;
+}
+
+.v-debugwindow-row > span.value {
+	width: 100%;
+}
+
+.v-debugwindow-selector > span.value {
+	width: 100%;
+}
+
+.v-debugwindow-selector :hover {
+	background: rgba(255, 32, 32, 0.5);
+}
+
+.v-debugwindow-log {
+	font-family: monospace;
+}
+
+.v-debugwindow-log .v-debugwindow-reset {
+	color: #fff;
+	background-color: #4C92ED;
+	padding: 4px;
+}
+
+.v-debugwindow-log .v-debugwindow-time {
+	text-align: right;
+	color: #999;
+}
+
+.v-debugwindow-log .v-debugwindow-message {
+	white-space: nowrap;
+	width: 100%;
+}
+
+.v-debugwindow-log .v-debugwindow-message:hover {
+	white-space: normal;
+	word-wrap: break-word;
+}
+
+.v-debugwindow-log .v-debugwindow-message em {
+	background-color: #C4E6F8;
+}
+
+.v-debugwindow-hierarchy .v-debugwindow-info {
+	padding: 1em;
+}
+
+.v-debugwindow-network .v-debugwindow-row {
+	display: block !important;
+}
+
+.v-debugwindow-network .v-debugwindow-row > span {
+	display: inline;
+}
+
+@font-face {
+	font-family: "FontAwesome";
+	src: url(../base/fonts/fontawesome-webfont.eot);
+	src: url(../base/fonts/fontawesome-webfont.eot?#iefix) format("embedded-opentype"), url(../base/fonts/fontawesome-webfont.woff) format("woff"), url(../base/fonts/fontawesome-webfont.ttf) format("truetype"), url(../base/fonts/fontawesome-webfont.svg) format("svg");
+	font-weight: normal;
+	font-style: normal;
+}
+
+.FontAwesome {
+	font-family: "FontAwesome";
+	font-style: normal;
+	font-weight: normal;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	display: inline-block;
+}
+
+/** sprite: verticals; sprite-image: url(common/img/vertical-sprites.png); sprite-layout: vertical */
+
+/** sprite: horizontals; sprite-image: url(common/img/horizontal-sprites.png); sprite-layout: horizontal */
+
+/** sprite: black-verticals; sprite-image: url(common/img/black-vertical-sprites.png); sprite-layout: vertical; sprite-matte-color: #1e2022 */
+
+/** sprite: black-horizontals; sprite-image: url(common/img/black-horizontal-sprites.png); sprite-layout: horizontal; sprite-matte-color: #1e2022 */
+
+/** sprite: buttons; sprite-image: url(button/img/button-sprites.png); sprite-layout: vertical */
+
+/** sprite: black-buttons; sprite-image: url(button/img/black-button-sprites.png); sprite-layout: vertical */
+
+.v-generated-body {
+	background: #f5f5f5;
+}
+
+.tournament .v-widget {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	text-align: left;
+	display: inline-block;
+	white-space: normal;
+	vertical-align: bottom;
+	font-size: 12px;
+	line-height: normal;
+}
+
+.tournament .v-absolutelayout-wrapper {
+	position: absolute;
+	overflow: hidden;
+}
+
+.tournament .v-absolutelayout-margin, .tournament .v-absolutelayout-canvas {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+.tournament .v-absolutelayout.v-has-height > div, .tournament .v-absolutelayout.v-has-height > div > div {
+	height: 100%;
+}
+
+.tournament .v-absolutelayout.v-has-width > div, .tournament .v-absolutelayout.v-has-width > div > div {
+	width: 100%;
+}
+
+.tournament .v-accordion {
+	position: relative;
+	outline: none;
+	overflow: visible;
+	text-align: left;
+	font-size: 0;
+}
+
+.tournament .v-accordion-item {
+	position: relative;
+	display: inline-block;
+	width: 100%;
+}
+
+.tournament .v-accordion-item-caption {
+	overflow: visible;
+	white-space: nowrap;
+	background: #eee;
+	border-bottom: 1px solid #ddd;
+}
+
+.tournament .v-accordion-item-caption .v-caption {
+	cursor: pointer;
+	font-size: 12px;
+}
+
+.tournament .v-accordion-item-open .v-accordion-item-caption .v-caption {
+	cursor: default;
+}
+
+.tournament .v-accordion-item-content {
+	position: absolute;
+	width: 100%;
+}
+
+.tournament .v-browserframe {
+	font-size: 0;
+}
+
+.tournament .v-browserframe > span {
+	font-size: 12px;
+}
+
+.tournament .v-button {
+	display: inline-block;
+	zoom: 1;
+	text-align: center !important;
+	text-decoration: none;
+	border: 2px outset #ddd;
+	background: #eee;
+	cursor: pointer;
+	white-space: nowrap;
+	margin: 0;
+	padding: 0.2em 1em;
+	color: inherit;
+	font: inherit;
+	font-size: 12px;
+	line-height: normal;
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+.tournament .v-button.v-disabled {
+	cursor: default;
+}
+
+.tournament .v-button-wrap, .tournament .v-button-caption {
+	vertical-align: baseline;
+	white-space: nowrap;
+	font: inherit;
+	color: inherit;
+	line-height: normal;
+}
+
+.tournament .v-button .v-icon {
+	vertical-align: middle;
+	margin-right: 3px;
+	border: none;
+}
+
+.tournament .v-button .v-errorindicator {
+	display: inline-block;
+	zoom: 1;
+	vertical-align: middle;
+	float: none;
+}
+
+.tournament .v-button-link {
+	border: none;
+	text-align: left !important;
+	background: transparent;
+	padding: 0;
+	color: inherit;
+	-khtml-user-select: text;
+	-moz-user-select: text;
+	-ie-user-select: text;
+	user-select: text;
+}
+
+.v-sa .tournament .v-button-link:focus {
+	outline-offset: -3px;
+}
+
+.tournament .v-button-link .v-button-caption {
+	text-decoration: underline;
+	color: inherit;
+	text-align: left;
+}
+
+.tournament .v-nativebutton .v-icon {
+	vertical-align: middle;
+	margin-right: 3px;
+	border: none;
+}
+
+.tournament .v-nativebutton .v-errorindicator {
+	display: inline-block;
+	zoom: 1;
+	vertical-align: middle;
+	float: none;
+}
+
+.tournament .v-nativebutton-link {
+	border: none;
+	text-align: left !important;
+	background: transparent;
+	padding: 0;
+	color: inherit;
+	-khtml-user-select: text;
+	-moz-user-select: text;
+	-ie-user-select: text;
+	user-select: text;
+}
+
+.tournament .v-nativebutton-link .v-nativebutton-caption {
+	text-decoration: underline;
+	color: inherit;
+	text-align: left;
+}
+
+.tournament .v-nativebutton {
+	text-align: center !important;
+	cursor: pointer;
+	white-space: nowrap;
+	margin: 0;
+	color: inherit;
+	font: inherit;
+	line-height: normal;
+}
+
+.tournament .v-nativebutton .v-nativebutton-caption {
+	vertical-align: middle;
+	white-space: nowrap;
+	font: inherit;
+	color: inherit;
+}
+
+.tournament .v-nativebutton .v-icon {
+	vertical-align: middle;
+	margin-right: 3px;
+}
+
+.tournament .v-nativebutton .v-errorindicator {
+	display: inline-block;
+	zoom: 1;
+	float: none;
+}
+
+.v-ie .tournament .v-nativebutton {
+	overflow: visible;
+	padding-left: 1em;
+	padding-right: 1em;
+}
+
+.v-ie .tournament .v-nativebutton-link {
+	padding: 0;
+}
+
+.tournament .v-checkbox {
+	display: block;
+}
+
+.tournament .v-checkbox, .tournament .v-checkbox label, .tournament .v-checkbox input, .tournament .v-checkbox .v-icon {
+	vertical-align: middle;
+	white-space: nowrap;
+}
+
+.tournament .v-checkbox .v-icon {
+	margin: 0 2px;
+}
+
+.tournament .v-checkbox .v-errorindicator {
+	float: none;
+	display: inline;
+	display: inline-block;
+	zoom: 1;
+}
+
+.tournament .v-captionwrapper {
+	text-align: left;
+}
+
+.tournament .v-caption {
+	overflow: hidden;
+	white-space: nowrap;
+	font-size: 12px;
+}
+
+.tournament .v-errorindicator {
+	display: inline-block;
+}
+
+.tournament .v-caption .v-icon {
+	display: inline-block;
+	padding-right: 2px;
+	vertical-align: middle;
+}
+
+.tournament .v-caption .v-captiontext {
+	display: inline-block;
+	overflow: hidden;
+	vertical-align: middle;
+}
+
+.tournament .v-caption .v-required-field-indicator {
+	display: inline-block;
+}
+
+.tournament .v-colorpicker {
+	text-align: center;
+}
+
+.tournament .v-colorpicker-button-color {
+	border: 1px solid silver;
+	float: left;
+	width: 10px;
+	height: 10px;
+	margin-top: 2px;
+	margin-right: 5px;
+}
+
+.tournament .v-colorpicker-area {
+	border: 1px solid silver;
+	margin: 1px auto;
+}
+
+.tournament .v-colorpicker-history {
+	margin: 5px;
+}
+
+.tournament .v-colorpicker-history td {
+	border: 1px solid silver !important;
+}
+
+.tournament .v-colorpicker-history td {
+	line-height: 15px;
+}
+
+.tournament .v-colorpicker-popup {
+	width: 244px;
+}
+
+.tournament .v-colorpicker-popup .v-scrollable {
+	background-color: #dddddd;
+}
+
+.tournament .v-colorpicker-popup .v-tabsheet-content .v-scrollable {
+	background-color: #eaeaea;
+}
+
+.tournament .v-colorpicker-popup .v-tabsheet-content .v-tabsheet-tabsheetpanel {
+	background: transparent;
+}
+
+.tournament .v-colorpicker-popup .resize-button {
+	border: 0px solid silver;
+	background: url(../base/colorpicker/images/resizebg.png);
+	margin-top: 5px;
+}
+
+.tournament .v-colorpicker-popup .resize-button-caption {
+	display: none;
+}
+
+.tournament .v-colorpicker-popup .resize-button:hover {
+	background: url(../base/colorpicker/images/resizebg-selected.png);
+}
+
+.tournament .v-colorpicker-popup .resize-button:focus {
+	outline: none;
+}
+
+.tournament .v-colorpicker-gradient {
+	width: 220px;
+	height: 220px;
+	padding-left: 10px;
+	margin-top: 0px;
+}
+
+.tournament .v-colorpicker-gradient .v-colorpicker-gradient-clicklayer {
+	background-color: white;
+	filter: alpha(opacity = 0);
+	opacity: 0;
+}
+
+.tournament .v-colorpicker-popup .rgb-gradient .v-colorpicker-gradient-background {
+	width: 220px;
+	height: 220px;
+	background: url(../base/colorpicker/images/gradient2.png);
+}
+
+.tournament .v-colorpicker-popup .hsv-gradient .v-colorpicker-gradient-foreground {
+	background: url(../base/colorpicker/images/gradient.png);
+}
+
+.tournament .v-colorpicker-popup .v-colorpicker-gradient-lowerbox {
+	border-right: 1px solid white;
+	border-top: 1px solid white;
+}
+
+.tournament .v-colorpicker-popup .v-colorpicker-gradient-higherbox {
+	border-left: 1px solid white;
+	border-bottom: 1px solid white;
+}
+
+.tournament .v-colorpicker-popup .rgb-sliders {
+	width: 227px;
+	padding-left: 10px;
+	color: #444444;
+	text-shadow: 0 1px 0 #FFFFFF;
+}
+
+.tournament .v-colorpicker-popup .rgb-sliders .red .v-slider-base {
+	background-color: red;
+}
+
+.tournament .v-colorpicker-popup .rgb-sliders .green .v-slider-base {
+	background-color: green;
+}
+
+.tournament .v-colorpicker-popup .rgb-sliders .blue .v-slider-base {
+	background-color: blue;
+}
+
+.tournament .v-colorpicker-popup .hsv-sliders {
+	padding-left: 10px;
+	color: #444444;
+	text-shadow: 0 1px 0 #FFFFFF;
+}
+
+.tournament .v-colorpicker-popup .hue-slider {
+	height: 10px;
+	border: 0px solid silver;
+	background-image: url(../base/colorpicker/images/slider_hue_bg.png);
+	background-color: transparent;
+	background-repeat: no-repeat;
+	background-position: 0 3px;
+	margin-top: 0px;
+}
+
+.tournament .v-colorpicker-popup .hue-slider .v-slider-handle {
+	margin-top: -2px;
+}
+
+.tournament .v-colorpicker-popup .hue-slider .v-slider-base {
+	border: 0px none;
+	height: 0px;
+	background-color: transparent;
+}
+
+.tournament .v-colorpicker-popup .v-colorpicker-preview {
+	margin-top: 5px;
+	padding-left: 11px;
+	padding-right: 10px;
+	margin-bottom: 0px;
+}
+
+.tournament .v-colorpicker-popup .v-absolutelayout-wrapper {
+	width: 100%;
+	height: 100%;
+}
+
+.tournament .v-colorpicker-popup .v-colorpicker-preview-textfield {
+	background: none;
+	overflow: hidden;
+	overflow-y: hidden;
+	overflow-x: hidden;
+}
+
+.tournament .v-colorpicker-popup .v-textfield-dark {
+	color: #FFFFFF;
+}
+
+.tournament .v-colorpicker-popup .v-textfield-light {
+	color: #000000;
+}
+
+.tournament .v-colorpicker-popup .colorselect {
+	margin-top: 5px;
+	padding-left: 10px;
+	padding-right: 10px;
+}
+
+.tournament .v-colorpicker-popup .v-tabsheet .v-colorpicker-grid {
+	height: 319px;
+}
+
+.tournament .v-colorpicker-popup .colorselect td {
+	line-height: 15px;
+}
+
+.tournament .v-colorpicker-popup .v-filterselect {
+	padding-right: 16px;
+}
+
+.tournament .v-calendar-nresize DIV DIV {
+	cursor: n-resize !important;
+}
+
+.tournament .v-calendar-sresize DIV DIV {
+	cursor: s-resize !important;
+}
+
+.tournament .v-calendar {
+	background-color: #fff;
+}
+
+.tournament .v-calendar-header-month, .tournament .v-calendar-header-week {
+	border-bottom: 1px solid #c1c1c1;
+}
+
+.tournament .v-calendar-header-day {
+	text-align: center;
+	color: #666;
+	font-size: 12px;
+	line-height: normal;
+}
+
+.tournament .v-calendar-header-week .v-calendar-header-day:hover {
+	cursor: pointer;
+	color: #222;
+}
+
+.tournament .v-calendar-header-day-today {
+	font-weight: bold;
+	color: #444;
+}
+
+.tournament .v-calendar-header-month td:first-child {
+	padding-left: 19px;
+}
+
+.tournament .v-calendar-header-week .v-calendar-back, .tournament .v-calendar-header-week .v-calendar-next {
+	border: none;
+	padding: 0;
+	margin: 0;
+	height: 12px;
+	width: 12px;
+	overflow: hidden;
+	background: transparent url(../base/calendar/img/arrows.png) no-repeat 50% 0;
+	opacity: 0.3;
+	filter: alpha(opacity = 30);
+	cursor: default;
+}
+
+.tournament .v-calendar-header-week .v-calendar-back:hover, .tournament .v-calendar-header-week .v-calendar-next:hover {
+	opacity: 0.6;
+	filter: alpha(opacity = 60);
+}
+
+.tournament .v-calendar-header-week .v-calendar-back:active, .tournament .v-calendar-header-week .v-calendar-next:active {
+	opacity: 1;
+	filter: alpha(opacity = 100);
+}
+
+.tournament .v-calendar-header-week .v-calendar-next {
+	background-position: 50% -12px;
+}
+
+.tournament .v-calendar-month {
+	outline: none;
+}
+
+.tournament .v-calendar-week-numbers {
+	width: 20px;
+	border-right: 1px solid #ccc;
+}
+
+.tournament .v-calendar-week-number {
+	border: none;
+	background: transparent;
+	padding: 0;
+	margin: 0;
+	cursor: pointer;
+	opacity: 0.5;
+	width: 20px;
+	text-align: center;
+	border-bottom: 1px solid #ddd;
+}
+
+.tournament .v-calendar-week-number:hover {
+	opacity: 1;
+}
+
+.tournament .v-calendar-month-day {
+	border-bottom: 1px solid #ccc;
+	border-right: 1px solid #ccc;
+	outline: none;
+}
+
+.tournament .v-calendar-month-day-today {
+	background-color: #e7f0f5;
+}
+
+.tournament .v-calendar-month-day-selected {
+	background-color: #fffee7;
+}
+
+.tournament .v-calendar-month-day-dragemphasis {
+	background-color: #a8a8a8;
+}
+
+.tournament .v-calendar-month-day-scrollable {
+	overflow-y: scroll;
+}
+
+.tournament .v-calendar-day-number {
+	height: 18px;
+	line-height: 18px;
+	font-size: 12px;
+	text-align: right;
+	padding-right: 3px;
+	white-space: nowrap;
+}
+
+.tournament .v-calendar-day-number:hover {
+	cursor: pointer;
+	opacity: 0.6;
+	filter: alpha(opacity = 60);
+}
+
+.tournament .v-calendar-month .v-calendar-spacer, .tournament .v-calendar-month .v-calendar-bottom-spacer, .tournament .v-calendar-month .v-calendar-bottom-spacer-empty {
+	height: 15px;
+	font-size: 11px;
+}
+
+.tournament .v-calendar-month .v-calendar-bottom-spacer:hover {
+	cursor: pointer;
+	opacity: 0.6;
+	filter: alpha(opacity = 60);
+}
+
+.tournament .v-calendar-event {
+	line-height: 14px;
+	font-size: 11px;
+	padding: 0 0 0 4px;
+	cursor: pointer;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	outline: none;
+}
+
+.tournament .v-calendar-event-month {
+	margin-bottom: 1px;
+	white-space: nowrap;
+}
+
+.tournament .v-calendar-event-month:hover {
+	text-decoration: underline;
+}
+
+.tournament .v-calendar-event-all-day {
+	background: #999;
+	display: block;
+	margin-left: -2px;
+}
+
+.tournament div.v-calendar-event-all-day {
+	color: #fff;
+	height: 14px;
+}
+
+.tournament .v-calendar-event-continued-from {
+	margin-left: 0;
+}
+
+.tournament .v-calendar-event-start {
+	-webkit-border-top-left-radius: 6px;
+	-webkit-border-bottom-left-radius: 6px;
+	-moz-border-radius-topleft: 6px;
+	-moz-border-radius-bottomleft: 6px;
+	border-top-left-radius: 6px;
+	border-bottom-left-radius: 6px;
+	margin-left: 0;
+}
+
+.tournament .v-calendar-event-end {
+	-webkit-border-top-right-radius: 6px;
+	-webkit-border-bottom-right-radius: 6px;
+	-moz-border-radius-topright: 6px;
+	-moz-border-radius-bottomright: 6px;
+	border-top-right-radius: 6px;
+	border-bottom-right-radius: 6px;
+}
+
+.tournament .v-calendar-week-wrapper {
+	position: relative;
+}
+
+.tournament .v-calendar-times {
+	width: 51px;
+}
+
+.tournament .v-calendar-time {
+	padding: 0 8px 7px 0;
+	margin-top: -7px;
+	text-align: right;
+	font-size: 11px;
+	color: #666;
+	border-right: 1px solid #ccc;
+}
+
+.tournament .v-calendar-weekly-longevents {
+	border-left: 1px solid #ccc;
+	border-bottom: 2px solid #bbb;
+	margin-left: 50px;
+}
+
+.tournament .v-calendar-weekly-longevents .v-calendar-datecell {
+	border-right: 1px solid #ccc;
+	padding: 1px 0 0;
+}
+
+.tournament .v-calendar-weekly-longevents .v-calendar-event {
+	height: 14px;
+	margin-bottom: 1px;
+}
+
+.tournament .v-calendar-weekly-longevents .v-calendar-event:hover {
+	text-decoration: underline;
+}
+
+.tournament .v-calendar-day-times {
+	border-right: 1px solid #ccc;
+	outline: none;
+}
+
+.tournament .v-calendar-day-times .v-datecellslot, .tournament .v-calendar-day-times .v-datecellslot-even {
+	border-bottom: 1px solid #ccc;
+}
+
+.tournament .v-calendar-day-times .v-datecellslot-even {
+	border-bottom-color: #eee;
+}
+
+.tournament .v-calendar-day-times .v-daterange {
+	background-color: #a8a8a8;
+}
+
+.tournament .v-calendar-day-times .v-reserved {
+	background-color: #FF3333;
+}
+
+.tournament .v-calendar-day-times .dragemphasis {
+	background-color: #a8a8a8;
+}
+
+.tournament .v-calendar-week-wrapper .v-calendar-event {
+	padding: 0;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	border-radius: 4px;
+	margin-top: -1px;
+}
+
+.tournament .v-calendar-event-caption {
+	position: absolute;
+	z-index: 1;
+	top: 2px;
+	left: 4px;
+	width: 100%;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	line-height: normal;
+}
+
+.tournament .v-calendar-event-content {
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	border-radius: 4px;
+	border: 1px solid #777;
+	background: #eee;
+	opacity: 0.8;
+	filter: alpha(opacity = 80);
+	height: 14px;
+}
+
+.tournament .v-calendar-current-time {
+	position: absolute;
+	left: 0;
+	width: 100%;
+	height: 1px;
+	overflow: hidden;
+	background: #5a6c86;
+	opacity: 0.6;
+	filter: alpha(opacity = 60);
+	z-index: 2;
+}
+
+.tournament .v-calendar-event-resizetop {
+	position: absolute;
+	cursor: n-resize;
+	height: 5%;
+	min-height: 3px;
+	top: 0;
+	width: 100%;
+	z-index: 1;
+}
+
+.tournament .v-calendar-event-resizebottom {
+	position: absolute;
+	cursor: s-resize;
+	height: 5%;
+	min-height: 3px;
+	bottom: 0;
+	width: 100%;
+	z-index: 1;
+}
+
+.tournament .v-calendar-month-sizedheight .v-calendar-month-day {
+	height: 100px;
+}
+
+.tournament .v-calendar-month-sizedwidth .v-calendar-month-day {
+	width: 100px;
+}
+
+.tournament .v-calendar-header-month-Hsized .v-calendar-header-day {
+	width: 101px;
+}
+
+.tournament .v-calendar-header-month-Hsized td:first-child {
+	padding-left: 21px;
+}
+
+.tournament .v-calendar-header-day-Hsized {
+	width: 200px;
+}
+
+.tournament .v-calendar-week-numbers-Vsized .v-calendar-week-number {
+	height: 100px;
+	line-height: 100px;
+}
+
+.tournament .v-calendar-week-wrapper-Vsized {
+	height: 400px;
+	overflow-x: hidden !important;
+}
+
+.tournament .v-calendar-times-Vsized .v-calendar-time {
+	height: 38px;
+}
+
+.tournament .v-calendar-times-Hsized .v-calendar-time {
+	width: 42px;
+}
+
+.tournament .v-calendar-day-times-Vsized .v-datecellslot, .tournament .v-calendar-day-times-Vsized .v-datecellslot-even {
+	height: 18px;
+}
+
+.tournament .v-calendar-day-times-Hsized, .tournament .v-calendar-day-times-Hsized .v-datecellslot, .tournament .v-calendar-day-times-Hsized .v-datecellslot-even {
+	width: 200px;
+}
+
+.tournament.v-app {
+	height: 100%;
+}
+
+.tournament.v-app, .tournament .v-window, .tournament .v-popupview-popup, .tournament .v-label, .tournament .v-caption {
+	cursor: default;
+}
+
+body .tournament.v-app .v-app-loading {
+	background-image: url(../base/common/img/loading-indicator.gif);
+	background-repeat: no-repeat;
+	background-position: 50%;
+	width: 100%;
+	height: 100%;
+}
+
+.tournament .v-ui {
+	height: 100%;
+	width: 100%;
+	outline: none;
+	position: relative;
+}
+
+.tournament .v-ui.v-ui-embedded {
+	margin-top: -1px;
+	border-top: 1px solid transparent;
+}
+
+.tournament .v-ui:active, .tournament .v-ui:focus {
+	outline: none;
+}
+
+.tournament.v-app select, .tournament .v-window select {
+	margin: 0;
+}
+
+.tournament .v-disabled {
+	opacity: 0.3;
+	filter: alpha(opacity=30);
+	cursor: default;
+}
+
+.tournament .v-disabled * {
+	cursor: default;
+}
+
+* html .tournament .v-disabled {
+	zoom: 1;
+}
+
+* + html .tournament .v-disabled {
+	zoom: 1;
+}
+
+.tournament .v-disabled .v-disabled {
+	opacity: 1;
+}
+
+.tournament .v-required-field-indicator {
+	padding-left: 2px;
+	color: red;
+}
+
+.tournament .v-form fieldset {
+	border: none;
+	padding: 0;
+	margin: 0;
+	height: 100%;
+}
+
+.tournament .v-form-content {
+	height: 100%;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+.tournament .v-tooltip {
+	cursor: default;
+	background: #fff;
+}
+
+.tournament .v-tooltip-text {
+	overflow: auto;
+}
+
+.tournament .v-tooltip .v-errormessage {
+	overflow: auto;
+}
+
+.tournament .v-contextmenu {
+	background: #fff;
+}
+
+.tournament .v-contextmenu .gwt-MenuItem {
+	cursor: pointer;
+	vertical-align: middle;
+	padding: 0;
+	border: 0;
+	margin: 0;
+}
+
+.tournament .v-contextmenu .gwt-MenuItem div {
+	cursor: pointer;
+	vertical-align: middle;
+	white-space: nowrap;
+}
+
+.tournament .v-contextmenu .gwt-MenuItem-selected div {
+	background: #aaa;
+	color: #fff;
+}
+
+.tournament .v-contextmenu table {
+	border-collapse: collapse;
+	margin: 0;
+	padding: 0;
+}
+
+.tournament .v-contextmenu .gwt-MenuItem img {
+	margin-right: 1em;
+	vertical-align: middle;
+}
+
+.tournament .v-label pre {
+	margin: 0;
+}
+
+.tournament .v-label-undef-w {
+	white-space: nowrap;
+}
+
+.tournament .v-label h1, .tournament .v-label h2, .tournament .v-label h3, .tournament .v-label h4, .tournament .v-label h5, .tournament .v-label h6 {
+	line-height: normal;
+}
+
+.tournament .v-loading-indicator, .tournament .v-loading-indicator-delay, .tournament .v-loading-indicator-wait {
+	position: absolute;
+	top: 0;
+	right: 0;
+	z-index: 30000;
+	width: 31px;
+	height: 31px;
+	background: transparent url(../base/common/img/loading-indicator.gif);
+	margin-right: 5px;
+	margin-top: 5px;
+}
+
+.tournament .v-loading-indicator-delay {
+	background-image: url(../base/common/img/loading-indicator-delay.gif);
+}
+
+.tournament .v-loading-indicator-wait {
+	background-image: url(../base/common/img/loading-indicator-wait.gif);
+}
+
+.tournament.v-app input[type="text"], .tournament.v-app input[type="password"], .tournament.v-app input[type="reset"], .tournament.v-app select, .tournament.v-app textarea, .tournament .v-window input[type="text"], .tournament .v-window input[type="password"], .tournament .v-window input[type="reset"], .tournament .v-window select, .tournament .v-window textarea {
+	padding: 2px;
+}
+
+.tournament input::-ms-clear {
+	display: none;
+}
+
+.tournament .v-drag-element {
+	z-index: 60000;
+	position: absolute !important;
+	opacity: 0.5;
+	filter: alpha(opacity=50);
+	cursor: default;
+}
+
+.tournament .v-clip {
+	overflow: hidden;
+}
+
+.tournament .v-scrollable {
+	overflow: auto;
+	font-size: 0;
+	line-height: normal;
+}
+
+.v-ff .tournament .v-scrollable {
+	font-size: 12px;
+}
+
+.v-ios.v-webkit .tournament .v-scrollable {
+	-webkit-overflow-scrolling: touch;
+}
+
+.v-ios5.v-webkit .tournament .v-scrollable {
+	-webkit-overflow-scrolling: none;
+}
+
+.tournament.v-overlay-container {
+	width: 0;
+	height: 0;
+}
+
+.tournament .v-vertical.v-margin-top, .tournament .v-horizontal.v-margin-top {
+	padding-top: 12px;
+}
+
+.tournament .v-vertical.v-margin-right, .tournament .v-horizontal.v-margin-right {
+	padding-right: 12px;
+}
+
+.tournament .v-vertical.v-margin-bottom, .tournament .v-horizontal.v-margin-bottom {
+	padding-bottom: 12px;
+}
+
+.tournament .v-vertical.v-margin-left, .tournament .v-horizontal.v-margin-left {
+	padding-left: 12px;
+}
+
+.tournament .v-gridlayout.v-layout-margin-top {
+	padding-top: 24px;
+}
+
+.tournament .v-gridlayout, .tournament .v-verticallayout, .tournament .v-horizontallayout {
+	font-size: 0;
+	line-height: normal;
+}
+
+.tournament .v-gridlayout.v-layout-margin-bottom {
+	padding-bottom: 24px;
+}
+
+.tournament .v-gridlayout.v-layout-margin-left {
+	padding-left: 24px;
+}
+
+.tournament .v-gridlayout.v-layout-margin-right {
+	padding-right: 24px;
+}
+
+.tournament .v-gridlayout .v-layout-spacing-on {
+	padding-left: 12px;
+	padding-top: 12px;
+}
+
+.tournament .v-spacing {
+	width: 6px;
+	height: 6px;
+}
+
+.tournament .v-vertical, .tournament .v-horizontal {
+	display: inline-block;
+}
+
+.tournament div.v-layout.v-horizontal.v-widget {
+	white-space: nowrap;
+}
+
+.tournament .v-layout.v-vertical > .v-expand, .tournament .v-layout.v-horizontal > .v-expand {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	width: 100%;
+	height: 100%;
+}
+
+.tournament .v-slot, .tournament .v-spacing {
+	display: inline-block;
+	white-space: normal;
+	vertical-align: top;
+}
+
+.tournament .v-vertical > .v-slot:after {
+	display: inline-block;
+	clear: both;
+	width: 0;
+	height: 0;
+	overflow: hidden;
+	line-height: 0;
+}
+
+.tournament .v-vertical > .v-slot, .tournament .v-vertical > .v-expand > .v-slot {
+	display: block;
+	clear: both;
+}
+
+.tournament .v-horizontal > .v-slot, .tournament .v-horizontal > .v-expand > .v-slot {
+	height: 100%;
+}
+
+.tournament .v-horizontal > .v-expand > .v-slot {
+	position: relative;
+}
+
+.tournament .v-vertical > .v-spacing, .tournament .v-vertical > .v-expand > .v-spacing {
+	width: 0;
+	display: block;
+	clear: both;
+}
+
+.tournament .v-horizontal > .v-spacing, .tournament .v-horizontal > .v-expand > .v-spacing {
+	height: 0;
+}
+
+.tournament .v-align-middle:before, .tournament .v-align-bottom:before, .tournament .v-expand > .v-align-middle:before, .tournament .v-expand > .v-align-bottom:before {
+	content: "";
+	display: inline-block;
+	height: 100%;
+	vertical-align: middle;
+	width: 0;
+}
+
+.tournament .v-align-middle, .tournament .v-align-bottom {
+	white-space: nowrap;
+}
+
+.tournament .v-align-middle > .v-widget, .tournament .v-align-bottom > .v-widget {
+	display: inline-block;
+}
+
+.tournament .v-align-middle, .tournament .v-align-middle > .v-widget {
+	vertical-align: middle;
+}
+
+.tournament .v-align-bottom, .tournament .v-align-bottom > .v-widget {
+	vertical-align: bottom;
+}
+
+.tournament .v-align-center {
+	text-align: center;
+}
+
+.tournament .v-align-center > .v-widget {
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.tournament .v-align-right {
+	text-align: right;
+}
+
+.tournament .v-align-right > .v-widget {
+	margin-left: auto;
+}
+
+.tournament .v-has-caption, .tournament .v-has-caption > .v-caption {
+	display: inline-block;
+}
+
+.tournament .v-caption {
+	overflow: visible;
+	vertical-align: middle;
+}
+
+.tournament .v-caption-on-left, .tournament .v-caption-on-right {
+	white-space: nowrap;
+}
+
+.tournament .v-caption-on-top > .v-caption, .tournament .v-caption-on-bottom > .v-caption {
+	display: block;
+}
+
+.tournament .v-caption-on-left > .v-caption {
+	padding-right: 0.5em;
+}
+
+.tournament .v-caption-on-right > .v-caption {
+	vertical-align: top;
+}
+
+.tournament .v-caption-on-left > .v-widget, .tournament .v-caption-on-right > .v-widget {
+	display: inline-block;
+	vertical-align: middle;
+}
+
+.tournament .v-has-caption.v-has-width > .v-widget {
+	width: 100% !important;
+}
+
+.tournament .v-has-caption.v-has-height > .v-widget {
+	height: 100% !important;
+}
+
+.tournament .v-errorindicator {
+	vertical-align: middle;
+}
+
+.tournament .v-csslayout {
+	overflow: hidden;
+}
+
+.tournament div.v-csslayout {
+	display: block;
+}
+
+.tournament .v-csslayout-margin, .tournament .v-csslayout-container {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+.tournament .v-has-width > .v-csslayout-margin, .tournament .v-has-width > .v-csslayout-margin > .v-csslayout-container {
+	width: 100%;
+}
+
+.tournament .v-has-height > .v-csslayout-margin, .tournament .v-has-height > .v-csslayout-margin > .v-csslayout-container {
+	height: 100%;
+}
+
+.tournament .v-csslayout-margin-top {
+	padding-top: 12px;
+}
+
+.tournament .v-csslayout-margin-bottom {
+	padding-bottom: 12px;
+}
+
+.tournament .v-csslayout-margin-left {
+	padding-left: 12px;
+}
+
+.tournament .v-csslayout-margin-right {
+	padding-right: 12px;
+}
+
+.tournament .v-customlayout {
+	overflow: hidden;
+}
+
+.tournament .v-datefield {
+	white-space: nowrap;
+	display: inline-block;
+}
+
+.tournament .v-datefield-textfield {
+	vertical-align: top;
+}
+
+.v-ie .tournament .v-datefield-button:after {
+	content: "\200B";
+}
+
+.tournament .v-datefield-button {
+	cursor: pointer;
+	vertical-align: top;
+}
+
+.tournament .v-has-width > input.v-datefield-textfield {
+	width: 100%;
+}
+
+.tournament .v-datefield-prompt .v-datefield-textfield {
+	color: #999;
+	font-style: italic;
+}
+
+.tournament .v-datefield .v-datefield-button-readonly {
+	display: none;
+}
+
+.tournament .v-datefield-calendarpanel table {
+	width: 100%;
+}
+
+.tournament .v-datefield-calendarpanel td {
+	padding: 0;
+	margin: 0;
+}
+
+.tournament .v-datefield-calendarpanel:focus {
+	outline: none;
+}
+
+.tournament .v-datefield-calendarpanel-header td {
+	text-align: center;
+}
+
+.tournament .v-datefield-calendarpanel-month {
+	text-align: center;
+	white-space: nowrap;
+}
+
+.tournament .v-datefield-calendarpanel-weeknumber {
+	color: #999;
+	border-right: 1px solid #ddd;
+	font-size: 11.7px;
+}
+
+.tournament .v-datefield-calendarpanel-day, .tournament .v-datefield-calendarpanel-day-today {
+	cursor: pointer;
+}
+
+.tournament .v-datefield-calendarpanel-day-today {
+	border: 1px solid #ddd;
+}
+
+.tournament .v-disabled .v-datefield-calendarpanel-day, .tournament .v-disabled .v-datefield-calendarpanel-day-today, .tournament .v-disabled.v-datefield-popupcalendar .v-datefield-button {
+	cursor: default;
+}
+
+.tournament .v-datefield-calendarpanel-day-disabled, .tournament .v-datefield-calendarpanel-day-outside-range {
+	cursor: default;
+	opacity: 0.5;
+}
+
+.tournament .v-datefield-calendarpanel-prevyear button.outside-range, .tournament .v-datefield-calendarpanel-nextyear button.outside-range, .tournament .v-datefield-calendarpanel-prevmonth button.outside-range, .tournament .v-datefield-calendarpanel-nextmonth button.outside-range {
+	opacity: 0.5;
+}
+
+.tournament .v-datefield-calendarpanel-day-selected {
+	cursor: default;
+	background: #333;
+	color: #fff;
+}
+
+.tournament .v-datefield-calendarpanel-day-focused {
+	outline: 1px dotted black;
+}
+
+.tournament .v-datefield-calendarpanel-day-offmonth {
+	color: #666;
+}
+
+.tournament .v-datefield-time {
+	white-space: nowrap;
+}
+
+.tournament .v-datefield-time .v-label {
+	display: inline;
+}
+
+.tournament .v-datefield-popup {
+	background: #fff;
+}
+
+.tournament .v-datefield-popupcalendar input.v-datefield-textfield {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+.tournament .v-inline-datefield {
+	white-space: nowrap;
+	display: inline-block;
+}
+
+.tournament .v-inline-datefield-textfield {
+	vertical-align: top;
+}
+
+.v-ie .tournament .v-inline-datefield-button:after {
+	content: "\200B";
+}
+
+.tournament .v-inline-datefield-button {
+	cursor: pointer;
+	vertical-align: top;
+}
+
+.tournament .v-has-width > input.v-inline-datefield-textfield {
+	width: 100%;
+}
+
+.tournament .v-inline-datefield-prompt .v-inline-datefield-textfield {
+	color: #999;
+	font-style: italic;
+}
+
+.tournament .v-inline-datefield .v-inline-datefield-button-readonly {
+	display: none;
+}
+
+.tournament .v-inline-datefield-calendarpanel table {
+	width: 100%;
+}
+
+.tournament .v-inline-datefield-calendarpanel td {
+	padding: 0;
+	margin: 0;
+}
+
+.tournament .v-inline-datefield-calendarpanel:focus {
+	outline: none;
+}
+
+.tournament .v-inline-datefield-calendarpanel-header td {
+	text-align: center;
+}
+
+.tournament .v-inline-datefield-calendarpanel-month {
+	text-align: center;
+	white-space: nowrap;
+}
+
+.tournament .v-inline-datefield-calendarpanel-weeknumber {
+	color: #999;
+	border-right: 1px solid #ddd;
+	font-size: 11.7px;
+}
+
+.tournament .v-inline-datefield-calendarpanel-day, .tournament .v-inline-datefield-calendarpanel-day-today {
+	cursor: pointer;
+}
+
+.tournament .v-inline-datefield-calendarpanel-day-today {
+	border: 1px solid #ddd;
+}
+
+.tournament .v-disabled .v-inline-datefield-calendarpanel-day, .tournament .v-disabled .v-inline-datefield-calendarpanel-day-today, .tournament .v-disabled.v-inline-datefield-popupcalendar .v-inline-datefield-button {
+	cursor: default;
+}
+
+.tournament .v-inline-datefield-calendarpanel-day-disabled, .tournament .v-inline-datefield-calendarpanel-day-outside-range {
+	cursor: default;
+	opacity: 0.5;
+}
+
+.tournament .v-inline-datefield-calendarpanel-prevyear button.outside-range, .tournament .v-inline-datefield-calendarpanel-nextyear button.outside-range, .tournament .v-inline-datefield-calendarpanel-prevmonth button.outside-range, .tournament .v-inline-datefield-calendarpanel-nextmonth button.outside-range {
+	opacity: 0.5;
+}
+
+.tournament .v-inline-datefield-calendarpanel-day-selected {
+	cursor: default;
+	background: #333;
+	color: #fff;
+}
+
+.tournament .v-inline-datefield-calendarpanel-day-focused {
+	outline: 1px dotted black;
+}
+
+.tournament .v-inline-datefield-calendarpanel-day-offmonth {
+	color: #666;
+}
+
+.tournament .v-inline-datefield-time {
+	white-space: nowrap;
+}
+
+.tournament .v-inline-datefield-time .v-label {
+	display: inline;
+}
+
+.tournament .v-inline-datefield-popup {
+	background: #fff;
+}
+
+.tournament .v-inline-datefield-popupcalendar input.v-inline-datefield-textfield {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+.tournament .v-ddwrapper {
+	padding: 2px;
+	-moz-border-radius: 4px;
+	-webkit-border-radius: 4px;
+	border-radius: 4px;
+	position: relative;
+	-ms-touch-action: none;
+	touch-action: none;
+}
+
+.tournament [draggable=true] {
+	-khtml-user-drag: element;
+	-webkit-user-drag: element;
+	-khtml-user-select: none;
+	-webkit-user-select: none;
+}
+
+.v-ie .tournament .v-ddwrapper a.drag-start {
+	display: block;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	width: 100%;
+	height: 100%;
+	opacity: 0;
+	background-color: cyan;
+	filter: alpha(opacity=0);
+}
+
+.tournament .v-ddwrapper-over {
+	border: 2px solid #1d9dff;
+	background-color: #bcdcff;
+	padding: 0;
+}
+
+.tournament .v-ddwrapper-over {
+	background-color: rgba(169, 209, 255, 0.6);
+}
+
+.tournament .no-box-drag-hints .v-ddwrapper-over {
+	border: none;
+	background-color: transparent;
+	padding: 2px;
+}
+
+.tournament.v-app .v-ddwrapper-over-top, .tournament .v-window .v-ddwrapper-over-top, .tournament .v-popupview-popup .v-ddwrapper-over-top {
+	border: none;
+	border-top: 2px solid #1d9dff;
+	background-color: transparent;
+	padding: 2px;
+	padding-top: 0;
+	-moz-border-radius: 0;
+	-webkit-border-radius: 0;
+	border-radius: 0;
+}
+
+.tournament.v-app .v-ddwrapper-over-bottom, .tournament .v-window .v-ddwrapper-over-bottom, .tournament .v-popupview-popup .v-ddwrapper-over-bottom {
+	border: none;
+	border-bottom: 2px solid #1d9dff;
+	background-color: transparent;
+	padding: 2px;
+	padding-bottom: 0;
+	-moz-border-radius: 0;
+	-webkit-border-radius: 0;
+	border-radius: 0;
+}
+
+.tournament.v-app .v-ddwrapper-over-left, .tournament .v-window .v-ddwrapper-over-left, .tournament .v-popupview-popup .v-ddwrapper-over-left {
+	border: none;
+	border-left: 2px solid #1d9dff;
+	background-color: transparent;
+	padding: 2px;
+	padding-left: 0;
+	-moz-border-radius: 0;
+	-webkit-border-radius: 0;
+	border-radius: 0;
+}
+
+.tournament.v-app .v-ddwrapper-over-right, .tournament .v-window .v-ddwrapper-over-right, .tournament .v-popupview-popup .v-ddwrapper-over-right {
+	border: none;
+	border-right: 2px solid #1d9dff;
+	background-color: transparent;
+	padding: 2px;
+	padding-right: 0;
+	-moz-border-radius: 0;
+	-webkit-border-radius: 0;
+	border-radius: 0;
+}
+
+.tournament .v-ddwrapper, .tournament .v-ddwrapper-over, .tournament.v-app .v-ddwrapper-over-top, .tournament .v-window .v-ddwrapper-over-top, .tournament .v-popupview-popup .v-ddwrapper-over-top, .tournament.v-app .v-ddwrapper-over-bottom, .tournament .v-window .v-ddwrapper-over-bottom, .tournament .v-popupview-popup .v-ddwrapper-over-bottom, .tournament.v-app .v-ddwrapper-over-left, .tournament .v-window .v-ddwrapper-over-left, .tournament .v-popupview-popup .v-ddwrapper-over-left, .tournament.v-app .v-ddwrapper-over-right, .tournament .v-window .v-ddwrapper-over-right, .tournament .v-popupview-popup .v-ddwrapper-over-right {
+	border-color: rgba(0, 109, 232, 0.6);
+}
+
+.tournament .v-ddwrapper-over-top:before, .tournament .v-ddwrapper-over-bottom:after, .tournament .v-ddwrapper-over-left:before, .tournament .v-ddwrapper-over-right:before {
+	display: block;
+	position: absolute;
+	width: 6px;
+	height: 6px;
+	margin-top: -4px;
+	margin-left: -2px;
+	background: transparent url(../base/common/img/drag-slot-dot.png) no-repeat;
+}
+
+.tournament .v-ddwrapper-over-bottom:after {
+	margin-top: -2px;
+}
+
+.tournament .v-ddwrapper-over-left:before, .tournament .v-ddwrapper-over-right:before {
+	background-position: 0 -6px;
+	margin-top: -2px;
+	margin-left: -4px;
+}
+
+.tournament .v-ddwrapper-over-right:before {
+	position: relative;
+	margin-bottom: -4px;
+	margin-right: -4px;
+	margin-left: 0;
+	width: auto;
+	background-position: 100% -6px;
+}
+
+.tournament .no-horizontal-drag-hints .v-ddwrapper-over-left {
+	padding-left: 2px;
+	border-left: none;
+}
+
+.tournament .no-horizontal-drag-hints .v-ddwrapper-over-right {
+	padding-right: 2px;
+	border-right: none;
+}
+
+.tournament .no-vertical-drag-hints .v-ddwrapper-over-top {
+	padding-top: 2px;
+	border-top: none;
+}
+
+.tournament .no-vertical-drag-hints .v-ddwrapper-over-bottom {
+	padding-bottom: 2px;
+	border-bottom: none;
+}
+
+.tournament .no-horizontal-drag-hints .v-ddwrapper-over-left:before, .tournament .no-horizontal-drag-hints .v-ddwrapper-over-right:before, .tournament .no-vertical-drag-hints .v-ddwrapper-over-top:before, .tournament .no-vertical-drag-hints .v-ddwrapper-over-bottom:after {
+	display: none;
+}
+
+.tournament .v-table .v-embedded-image {
+	display: inline-block;
+}
+
+.tournament .v-formlayout.v-has-width > table {
+	width: 100%;
+}
+
+.tournament .v-formlayout.v-has-height > table {
+	height: 100%;
+}
+
+.tournament .v-formlayout-cell .v-errorindicator {
+	display: block;
+}
+
+.tournament .v-formlayout-error-indicator {
+	width: 12px;
+}
+
+.tournament .v-formlayout-captioncell {
+	text-align: right;
+	white-space: nowrap;
+}
+
+.tournament .v-formlayout-errorcell, .tournament .v-formlayout-captioncell {
+	width: 1px;
+}
+
+.tournament .v-formlayout-captioncell .v-caption {
+	overflow: visible;
+}
+
+.tournament .v-formlayout-spacing > tbody > .v-formlayout-row > .v-formlayout-captioncell, .tournament .v-formlayout-spacing > tbody > .v-formlayout-row > .v-formlayout-contentcell, .tournament .v-formlayout-spacing > tbody > .v-formlayout-row > .v-formlayout-errorcell {
+	padding-top: 6px;
+}
+
+.tournament .v-formlayout-spacing > tbody > .v-formlayout-firstrow > .v-formlayout-captioncell, .tournament .v-formlayout-spacing > tbody > .v-formlayout-firstrow > .v-formlayout-contentcell, .tournament .v-formlayout-spacing > tbody > .v-formlayout-firstrow > .v-formlayout-errorcell {
+	padding-top: 0;
+}
+
+.tournament .v-formlayout-margin-top > tbody > .v-formlayout-firstrow > .v-formlayout-captioncell, .tournament .v-formlayout-margin-top > tbody > .v-formlayout-firstrow > .v-formlayout-contentcell, .tournament .v-formlayout-margin-top > tbody > .v-formlayout-firstrow > .v-formlayout-errorcell {
+	padding-top: 12px;
+}
+
+.tournament .v-formlayout-margin-bottom > tbody > .v-formlayout-lastrow > .v-formlayout-captioncell, .tournament .v-formlayout-margin-bottom > tbody > .v-formlayout-lastrow > .v-formlayout-contentcell, .tournament .v-formlayout-margin-bottom > tbody > .v-formlayout-lastrow > .v-formlayout-errorcell {
+	padding-bottom: 12px;
+}
+
+.tournament .v-formlayout-margin-left > tbody > .v-formlayout-row > .v-formlayout-captioncell {
+	padding-left: 12px;
+}
+
+.tournament .v-formlayout-margin-right > tbody > .v-formlayout-row > .v-formlayout-contentcell {
+	padding-right: 12px;
+}
+
+.tournament .v-formlayout-captioncell .v-caption .v-required-field-indicator {
+	float: none;
+}
+
+.tournament .v-gridlayout {
+	position: relative;
+}
+
+.tournament .v-gridlayout-slot {
+	position: absolute;
+}
+
+.tournament .v-gridlayout-margin-top {
+	padding-top: 12px;
+}
+
+.tournament .v-gridlayout-margin-bottom {
+	padding-bottom: 12px;
+}
+
+.tournament .v-gridlayout-margin-left {
+	padding-left: 12px;
+}
+
+.tournament .v-gridlayout-margin-right {
+	padding-right: 12px;
+}
+
+.tournament .v-gridlayout-spacing-on {
+	padding-left: 6px;
+	padding-top: 6px;
+	overflow: hidden;
+}
+
+.tournament .v-gridlayout-spacing, .tournament .v-gridlayout-spacing-off {
+	padding-left: 0;
+	padding-top: 0;
+}
+
+.tournament .v-gridlayout-spacing-off {
+	overflow: hidden;
+}
+
+.tournament .v-label {
+	overflow: hidden;
+}
+
+.tournament .v-label.v-has-width {
+	white-space: normal;
+}
+
+.tournament .v-link {
+	white-space: nowrap;
+}
+
+.tournament .v-link a {
+	vertical-align: middle;
+	text-decoration: none;
+}
+
+.tournament .v-link span {
+	text-decoration: underline;
+	vertical-align: middle;
+}
+
+.tournament .v-disabled a {
+	cursor: default;
+}
+
+.tournament .v-link img {
+	vertical-align: middle;
+	border: none;
+}
+
+.tournament .v-loginform {
+	height: 140px;
+	width: 200px;
+}
+
+.tournament .v-app-loginpage .v-button, .tournament .v-app-loginpage .v-button {
+	float: left;
+}
+
+.tournament .v-menubar {
+	display: inline-block;
+	white-space: nowrap;
+	overflow: hidden;
+}
+
+.tournament .v-menubar .v-menubar-menuitem {
+	cursor: default;
+	vertical-align: middle;
+	white-space: nowrap;
+	display: inline;
+	display: inline-block;
+	zoom: 1;
+}
+
+.tournament .v-menubar .v-menubar-menuitem-caption .v-icon {
+	vertical-align: middle;
+	white-space: nowrap;
+}
+
+.tournament .v-menubar-submenu {
+	background: #fff;
+}
+
+.tournament .v-menubar-menuitem-selected {
+	background: #333;
+	color: #fff;
+}
+
+.tournament .v-menubar-submenu .v-menubar-menuitem {
+	cursor: default;
+	display: block;
+	position: relative;
+	padding-right: 1.5em;
+}
+
+.tournament .v-menubar-submenu .v-menubar-menuitem-caption {
+	display: block;
+}
+
+.tournament .v-menubar-submenu .v-menubar-menuitem *, .tournament .v-menubar-submenu .v-menubar-menuitem-caption * {
+	white-space: nowrap;
+}
+
+.tournament .v-menubar-submenu-indicator {
+	display: none;
+	font-family: arial, helvetica, sans-serif;
+}
+
+.tournament .v-menubar-submenu .v-menubar-submenu-indicator {
+	display: block;
+	position: absolute;
+	right: 0;
+	width: 1em;
+	height: 1em;
+	font-size: 11.7px;
+}
+
+.tournament .v-menubar-menuitem-disabled, .tournament .v-menubar span.v-menubar-menuitem-disabled:hover, .tournament .v-menubar span.v-menubar-menuitem-disabled:focus, .tournament .v-menubar span.v-menubar-menuitem-disabled:active {
+	color: #999;
+}
+
+.tournament .v-menubar-more-menuitem {
+	font-family: arial, helvetica, sans-serif;
+}
+
+.tournament .v-menubar-separator {
+	overflow: hidden;
+}
+
+.tournament .v-menubar-separator span {
+	display: block;
+	text-indent: -9999px;
+	font-size: 1px;
+	line-height: 1px;
+	border-top: 1px solid #ddd;
+	margin: 3px 0 2px;
+	overflow: hidden;
+}
+
+.tournament .v-menubar .v-icon, .tournament .v-menubar-submenu .v-icon {
+	margin-right: 3px;
+}
+
+.tournament .v-menubar:focus, .tournament .v-menubar-popup:focus, .tournament .v-menubar-popup .popupContent:focus, .tournament .v-menubar-popup .popupContent .v-menubar-submenu:focus {
+	outline: none;
+}
+
+.tournament .v-menubar-submenu-check-column .v-menubar-menuitem {
+	padding-left: 6px;
+}
+
+.tournament .v-menubar-submenu-check-column .v-menubar-menuitem-caption {
+	padding-left: 18px;
+}
+
+.tournament .v-menubar-submenu .v-menubar-menuitem-checked .v-menubar-menuitem-caption {
+	background: transparent url(../base/menubar/img/check.gif) no-repeat left;
+}
+
+.tournament .v-Notification {
+	background: #999;
+	color: #fff;
+	cursor: pointer;
+	overflow: hidden;
+	padding: 1em;
+	max-width: 85%;
+}
+
+.tournament .v-Notification h1, .tournament .v-Notification p, .tournament .v-Notification-error h1, .tournament .v-Notification-error p, .tournament .v-Notification-warning h1, .tournament .v-Notification-warning p {
+	display: inline;
+	margin: 0 0.5em 0 0;
+}
+
+.tournament .v-Notification-warning {
+	background: orange;
+}
+
+.tournament .v-Notification-error {
+	background: red;
+}
+
+.tournament .v-Notification-tray h1 {
+	display: block;
+}
+
+.tournament .v-Notification-tray p {
+	display: block;
+}
+
+.tournament .v-Notification-system {
+	background-color: red;
+	opacity: 0.7;
+	filter: alpha(opacity=70);
+}
+
+.tournament .v-Notification-system h1 {
+	display: block;
+	margin: 0;
+}
+
+.tournament .v-orderedlayout, .tournament .v-horizontallayout, .tournament .v-verticallayout {
+	position: relative;
+}
+
+.tournament .v-orderedlayout-margin-top, .tournament .v-horizontallayout-margin-top, .tournament .v-verticallayout-margin-top {
+	padding-top: 12px;
+}
+
+.tournament .v-orderedlayout-margin-right, .tournament .v-horizontallayout-margin-right, .tournament .v-verticallayout-margin-right {
+	padding-right: 12px;
+}
+
+.tournament .v-orderedlayout-margin-bottom, .tournament .v-horizontallayout-margin-bottom, .tournament .v-verticallayout-margin-bottom {
+	padding-bottom: 12px;
+}
+
+.tournament .v-orderedlayout-margin-left, .tournament .v-horizontallayout-margin-left, .tournament .v-verticallayout-margin-left {
+	padding-left: 12px;
+}
+
+.tournament .v-orderedlayout-spacing-on, .tournament .v-horizontallayout-spacing-on, .tournament .v-verticallayout-spacing-on {
+	padding-top: 6px;
+	padding-left: 6px;
+}
+
+.tournament .v-orderedlayout-spacing-off, .tournament .v-horizontallayout-spacing-off, .tournament .v-verticallayout-spacing-off {
+	padding-top: 0;
+	padding-left: 0;
+}
+
+.tournament .v-horizontallayout-slot, .tournament .v-verticallayout-slot {
+	position: absolute;
+}
+
+.tournament .v-panel, .tournament .v-panel-caption, .tournament .v-panel-content, .tournament .v-panel-deco, .tournament .v-panel-light, .tournament .v-panel-caption-light, .tournament .v-panel-content-light, .tournament .v-panel-deco-light {
+	outline: none;
+	text-align: left;
+}
+
+.tournament .v-panel-caption .v-errorindicator {
+	float: none;
+	display: inline;
+}
+
+.tournament .v-panel-caption .v-icon {
+	display: inline;
+	vertical-align: middle;
+}
+
+.tournament .v-panel-caption span {
+	vertical-align: middle;
+}
+
+.tournament .v-panel-caption {
+	white-space: nowrap;
+	overflow: hidden;
+	font-weight: bold;
+}
+
+.tournament .v-panel-nocaption {
+	overflow: hidden;
+}
+
+.tournament .v-panel-content {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+.tournament .v-panel.v-has-width > .v-panel-content {
+	width: 100%;
+}
+
+.tournament .v-panel.v-has-height > .v-panel-content {
+	height: 100%;
+}
+
+.tournament .v-popupview {
+	cursor: pointer;
+	text-decoration: underline;
+	white-space: nowrap;
+}
+
+.tournament .v-popupview-popup {
+	overflow: auto;
+}
+
+.tournament .v-popupview-loading {
+	width: 30px;
+	height: 30px;
+	background: transparent url(../base/common/img/ajax-loader-medium.gif) no-repeat 50%;
+}
+
+.tournament .v-progressbar {
+	width: 150px;
+}
+
+.tournament .v-progressbar-wrapper {
+	height: 7px;
+	border: 1px solid #ddd;
+}
+
+.tournament .v-progressbar-indicator {
+	height: 7px;
+	background: #ddd;
+}
+
+.tournament div.v-progressbar-indeterminate {
+	height: 20px;
+	width: 20px;
+	background: #fff url(../base/common/img/ajax-loader-medium.gif) no-repeat 50%;
+	border-radius: 4px;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+}
+
+.tournament .v-progressbar-indeterminate .v-progressbar-wrapper, .tournament .v-progressbar-indeterminate .v-progressbar-indicator, .tournament .v-progressbar-indeterminate-disabled .v-progressbar-wrapper, .tournament .v-progressbar-indeterminate-disabled .v-progressbar-indicator {
+	display: none;
+}
+
+.tournament div.v-progressbar-indeterminate-disabled {
+	height: 20px;
+	width: 20px;
+	background: transparent;
+}
+
+.tournament .v-progressindicator {
+	width: 150px;
+}
+
+.tournament .v-progressindicator-wrapper {
+	height: 7px;
+	border: 1px solid #ddd;
+}
+
+.tournament .v-progressindicator-indicator {
+	height: 7px;
+	background: #ddd;
+}
+
+.tournament div.v-progressindicator-indeterminate {
+	height: 20px;
+	width: 20px;
+	background: #fff url(../base/common/img/ajax-loader-medium.gif) no-repeat 50%;
+	border-radius: 4px;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+}
+
+.tournament .v-progressindicator-indeterminate .v-progressindicator-wrapper, .tournament .v-progressindicator-indeterminate .v-progressindicator-indicator, .tournament .v-progressindicator-indeterminate-disabled .v-progressindicator-wrapper, .tournament .v-progressindicator-indeterminate-disabled .v-progressindicator-indicator {
+	display: none;
+}
+
+.tournament div.v-progressindicator-indeterminate-disabled {
+	height: 20px;
+	width: 20px;
+	background: transparent;
+}
+
+.tournament .v-select {
+	text-align: left;
+}
+
+.tournament .v-select-optiongroup .v-select-option {
+	display: block;
+	white-space: nowrap;
+}
+
+.tournament .v-select-optiongroup .v-icon {
+	vertical-align: middle;
+	white-space: nowrap;
+	margin: 0 2px;
+}
+
+.v-ie .tournament .v-select-optiongroup .v-select-option {
+	zoom: 1;
+}
+
+.tournament .v-select-select {
+	display: block;
+}
+
+.tournament .v-select-twincol {
+	white-space: nowrap;
+}
+
+.tournament .v-select-twincol-options {
+	float: left;
+}
+
+.tournament .v-select-twincol-caption-left {
+	float: left;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+.tournament .v-select-twincol-selections {
+	font-weight: bold;
+}
+
+.tournament .v-select-twincol-caption-right {
+	float: right;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+.tournament .v-select-twincol-buttons {
+	float: left;
+	text-align: center;
+}
+
+.tournament .v-select-twincol-buttons .v-select-twincol-deco {
+	clear: both;
+}
+
+.tournament .v-select-twincol .v-textfield {
+	display: block;
+	float: left;
+	clear: left;
+}
+
+.tournament .v-select-twincol .v-button {
+	float: left;
+}
+
+.tournament .v-select-twincol-buttons .v-button {
+	float: none;
+}
+
+.tournament .v-filterselect {
+	white-space: nowrap;
+	text-align: left;
+	display: inline-block;
+	padding-right: 1em;
+}
+
+.tournament .v-filterselect .v-icon {
+	float: left;
+}
+
+.tournament.v-app .v-filterselect-input, .tournament .v-window .v-filterselect-input, .tournament .v-popupview-popup .v-filterselect-input {
+	margin: 0;
+	float: left;
+	-webkit-border-radius: 0px;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+.tournament .v-filterselect-prompt .v-filterselect-input {
+	color: #999;
+	font-style: italic;
+}
+
+.tournament .v-filterselect-button {
+	display: inline-block;
+	cursor: pointer;
+	width: 1em;
+	margin-right: -1em;
+	height: 1em;
+	background: transparent url(../base/common/img/sprites.png) no-repeat -5px -8px;
+}
+
+.tournament .v-filterselect.v-readonly .v-filterselect-button {
+	display: none;
+}
+
+.tournament .v-filterselect.v-readonly, .tournament .v-filterselect.v-readonly .v-filterselect-input {
+	background: transparent;
+}
+
+.tournament .v-filterselect-suggestpopup {
+	background: #fff;
+	border: 1px solid #eee;
+}
+
+.tournament .v-filterselect-suggestmenu table {
+	border-collapse: collapse;
+	border: none;
+	vertical-align: top;
+}
+
+.tournament .v-filterselect-suggestmenu .gwt-MenuItem {
+	white-space: nowrap;
+}
+
+.tournament .v-filterselect-suggestmenu .gwt-MenuItem .v-icon {
+	margin-right: 3px;
+	vertical-align: middle;
+}
+
+.tournament .v-filterselect-suggestmenu .gwt-MenuItem span {
+	vertical-align: middle;
+}
+
+.tournament .v-filterselect-suggestmenu .gwt-MenuItem-selected {
+	background: #333;
+	color: #fff;
+}
+
+.tournament .v-filterselect-nextpage, .tournament .v-filterselect-nextpage-off, .tournament .v-filterselect-prevpage-off, .tournament .v-filterselect-prevpage {
+	width: 100%;
+	background: #aaa;
+	text-align: center;
+	overflow: hidden;
+	cursor: pointer;
+}
+
+.tournament .v-filterselect-nextpage-off, .tournament .v-filterselect-prevpage-off {
+	color: #666;
+	opacity: 0.5;
+	filter: alpha(opacity=50);
+	cursor: default;
+}
+
+.tournament .v-filterselect-nextpage-off span, .tournament .v-filterselect-prevpage-off span {
+	cursor: default;
+}
+
+.tournament .v-filterselect-status {
+	white-space: nowrap;
+	text-align: center;
+}
+
+.tournament .v-filterselect-no-input .v-filterselect-input {
+	cursor: default;
+}
+
+.tournament .v-shadow {
+	position: absolute;
+}
+
+.tournament .v-shadow .top-left {
+	position: absolute;
+	overflow: hidden;
+	top: -3px;
+	left: -5px;
+	width: 10px;
+	height: 10px;
+	background: transparent url(../base/shadow/img/top-left.png);
+}
+
+.tournament .v-shadow .top {
+	position: absolute;
+	overflow: hidden;
+	top: -3px;
+	left: 5px;
+	height: 10px;
+	right: 5px;
+	background: transparent url(../base/shadow/img/top.png);
+}
+
+.tournament .v-shadow .top-right {
+	position: absolute;
+	overflow: hidden;
+	top: -3px;
+	right: -5px;
+	width: 10px;
+	height: 10px;
+	background: transparent url(../base/shadow/img/top-right.png);
+}
+
+.tournament .v-shadow .left {
+	position: absolute;
+	overflow: hidden;
+	top: 7px;
+	left: -5px;
+	width: 10px;
+	bottom: 3px;
+	background: transparent url(../base/shadow/img/left.png);
+}
+
+.tournament .v-shadow .center {
+	position: absolute;
+	overflow: hidden;
+	top: 7px;
+	left: 5px;
+	bottom: 3px;
+	right: 5px;
+	background: transparent url(../base/shadow/img/center.png);
+}
+
+.tournament .v-shadow .right {
+	position: absolute;
+	overflow: hidden;
+	top: 7px;
+	right: -5px;
+	width: 10px;
+	bottom: 3px;
+	background: transparent url(../base/shadow/img/right.png);
+}
+
+.tournament .v-shadow .bottom-left {
+	position: absolute;
+	overflow: hidden;
+	bottom: -7px;
+	left: -5px;
+	width: 10px;
+	height: 10px;
+	background: transparent url(../base/shadow/img/bottom-left.png);
+}
+
+.tournament .v-shadow .bottom {
+	position: absolute;
+	overflow: hidden;
+	bottom: -7px;
+	left: 5px;
+	right: 5px;
+	height: 10px;
+	background: transparent url(../base/shadow/img/bottom.png);
+}
+
+.tournament .v-shadow .bottom-right {
+	position: absolute;
+	overflow: hidden;
+	bottom: -7px;
+	right: -5px;
+	width: 10px;
+	height: 10px;
+	background: transparent url(../base/shadow/img/bottom-right.png);
+}
+
+.tournament .v-slider {
+	margin: 5px 0;
+}
+
+.tournament .v-slider-base {
+	height: 2px;
+	border-top: 1px solid #ddd;
+	background: #eee;
+	border-left: 1px solid #ddd;
+	border-right: 1px solid #eee;
+}
+
+.tournament .v-slider-handle {
+	background: #aaa;
+	width: 12px;
+	height: 12px;
+	margin-top: -5px;
+	font-size: 0;
+	-ms-touch-action: none;
+	touch-action: none;
+}
+
+.tournament .v-slider-vertical {
+	width: 2px;
+	height: auto;
+	margin: 0 5px;
+	border: none;
+	border-left: 1px solid #cccfd0;
+	border-right: 1px solid #cccfd0;
+}
+
+.tournament .v-slider-vertical .v-slider-base {
+	width: 2px;
+	border-bottom: 1px solid #eee;
+	border-right: none;
+}
+
+.tournament .v-slider-vertical .v-slider-handle {
+	width: 12px;
+	height: 12px;
+	font-size: 0;
+	margin-left: -5px;
+}
+
+.tournament .v-slider-feedback {
+	padding: 2px 5px;
+	background: #444;
+	color: #fff;
+	font-size: 11px;
+	line-height: 13px;
+	font-weight: bold;
+	font-family: Arial, Helvetica, sans-serif;
+	border-radius: 4px;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	margin: -2px 0 0 2px;
+	text-shadow: 0 1px 0 #000;
+}
+
+.tournament .v-splitpanel-horizontal, .tournament .v-splitpanel-vertical {
+	overflow: hidden;
+}
+
+.tournament .v-splitpanel-hsplitter {
+	width: 6px;
+}
+
+.tournament .v-splitpanel-hsplitter div {
+	width: 6px;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	background: #ddd;
+	cursor: e-resize;
+	cursor: col-resize;
+	-ms-touch-action: none;
+	touch-action: none;
+}
+
+.tournament .v-disabled .v-splitpanel-hsplitter div {
+	cursor: default;
+}
+
+.tournament .v-splitpanel-vsplitter {
+	height: 6px;
+}
+
+.tournament .v-splitpanel-vsplitter div {
+	height: 6px;
+	background: #ddd;
+	cursor: s-resize;
+	cursor: row-resize;
+	-ms-touch-action: none;
+	touch-action: none;
+}
+
+.tournament .v-disabled .v-splitpanel-vsplitter div {
+	cursor: default;
+}
+
+.tournament .v-table {
+	overflow: hidden;
+	text-align: left;
+}
+
+.tournament .v-table-header-wrap {
+	overflow: hidden;
+	border: 1px solid #aaa;
+	border-bottom: none;
+	background: #efefef;
+}
+
+.tournament .v-table-header table, .tournament .v-table-table {
+	border-spacing: 0;
+	border-collapse: separate;
+	margin: 0;
+	padding: 0;
+	border: 0;
+}
+
+.tournament .v-table-table {
+	font-size: 12px;
+}
+
+.tournament .v-table-header td {
+	padding: 0;
+}
+
+.tournament .v-table-header-cell, .tournament .v-table-header-cell-asc, .tournament .v-table-header-cell-desc {
+	cursor: pointer;
+}
+
+.tournament .v-table.v-disabled .v-table-header-cell, .tournament .v-table.v-disabled .v-table-header-cell-asc, .tournament .v-table.v-disabled .v-table-header-cell-desc {
+	cursor: default;
+}
+
+.tournament .v-table-footer-wrap {
+	overflow: hidden;
+	border: 1px solid #aaa;
+	border-top: none;
+	background: #efefef;
+}
+
+.tournament .v-table-footer table {
+	border-spacing: 0;
+	border-collapse: collapse;
+	margin: 0;
+	padding: 0;
+	border: 0;
+}
+
+.tournament .v-table-footer td {
+	padding: 0;
+	border-right: 1px solid #aaa;
+}
+
+.tournament .v-table-footer-cell {
+	cursor: pointer;
+}
+
+.tournament .v-table-footer-container {
+	float: right;
+	padding-right: 6px;
+	overflow: hidden;
+	white-space: nowrap;
+}
+
+.tournament .v-table-resizer {
+	display: block;
+	height: 1.2em;
+	float: right;
+	background: #aaa;
+	cursor: e-resize;
+	cursor: col-resize;
+	width: 1px;
+	overflow: hidden;
+}
+
+.tournament .v-table.v-disabled .v-table-resizer {
+	cursor: default;
+}
+
+.tournament .v-table-caption-container {
+	overflow: hidden;
+	white-space: nowrap;
+	margin-left: 6px;
+}
+
+.tournament .v-table-caption-container-align-right {
+	float: right;
+}
+
+.tournament .v-table-sort-indicator {
+	width: 0px;
+	height: 1.2em;
+	float: right;
+}
+
+.tournament .v-table-header-cell-asc .v-table-sort-indicator, .tournament .v-table-header-cell-desc .v-table-sort-indicator {
+	width: 16px;
+	height: 1.2em;
+	float: right;
+}
+
+.tournament .v-table-header-cell-asc .v-table-sort-indicator {
+	background: transparent url(../base/common/img/sprites.png) no-repeat right 6px;
+}
+
+.tournament .v-table-header-cell-desc .v-table-sort-indicator {
+	background: transparent url(../base/common/img/sprites.png) no-repeat right -10px;
+}
+
+.tournament .v-table-caption-container-align-center {
+	text-align: center;
+}
+
+.tournament .v-table-caption-container-align-right {
+	text-align: right;
+}
+
+.tournament .v-table-caption-container .v-icon, .tournament .v-table-header-drag .v-icon {
+	vertical-align: middle;
+}
+
+.tournament .v-table-body {
+	border: 1px solid #aaa;
+}
+
+.tournament .v-table-row-spacer {
+	height: 10px;
+	overflow: hidden;
+}
+
+.tournament .v-table-row, .tournament .v-table-row-odd {
+	background: #fff;
+	border: 0;
+	margin: 0;
+	padding: 0;
+	cursor: pointer;
+}
+
+.tournament .v-table-generated-row {
+	background: #efefef;
+}
+
+.tournament .v-table-body-noselection .v-table-row, .tournament .v-table-body-noselection .v-table-row-odd {
+	cursor: default;
+}
+
+.tournament .v-table .v-selected {
+	background: #999;
+	color: #fff;
+}
+
+.tournament .v-table-cell-content {
+	white-space: nowrap;
+	overflow: hidden;
+	padding: 0 6px;
+	border-right: 1px solid #aaa;
+}
+
+.tournament .v-table-cell-wrapper {
+	white-space: nowrap;
+	overflow: hidden;
+}
+
+.tournament .v-table-cell-wrapper-align-center {
+	text-align: center;
+}
+
+.tournament .v-table-cell-wrapper-align-right {
+	text-align: right;
+}
+
+.tournament .v-table-column-selector {
+	float: right;
+	background: transparent url(../base/common/img/sprites.png) no-repeat 4px -37px;
+	margin: -1.2em 0 0 0;
+	height: 1.2em;
+	width: 14px;
+	position: relative;
+	cursor: pointer;
+}
+
+.tournament .v-table.v-disabled .v-table-column-selector {
+	cursor: default;
+}
+
+.tournament .v-table-focus-slot-left {
+	border-left: 2px solid #999;
+	float: none;
+	margin-bottom: -1.2em;
+	width: auto;
+	background: transparent;
+	border-right: 1px solid #aaa;
+}
+
+.tournament .v-table-focus-slot-right {
+	border-right: 2px solid #999;
+	margin-left: -2px;
+}
+
+.tournament .v-table-header-drag {
+	position: absolute;
+	background: #efefef;
+	border: 1px solid #eee;
+	opacity: 0.9;
+	filter: alpha(opacity=90);
+	margin-top: 20px;
+	z-index: 30000;
+}
+
+.tournament .v-table-header-drag .v-icon {
+	vertical-align: middle;
+}
+
+.tournament .v-table-scrollposition {
+	width: 160px;
+	background: #eee;
+	border: 1px solid #aaa;
+}
+
+.tournament .v-table-scrollposition span {
+	display: block;
+	text-align: center;
+}
+
+.tournament .v-table-body:focus, .tournament .v-table-body-wrapper:focus {
+	outline: none;
+}
+
+.tournament .v-table-body.focused {
+	border-color: #388ddd;
+}
+
+.tournament .v-table-focus .v-table-cell-content {
+	border-top: 1px dotted #0066bd;
+	border-bottom: 1px dotted #0066bd;
+}
+
+.tournament .v-table-focus .v-table-cell-wrapper {
+	margin-top: -1px;
+	margin-bottom: -1px;
+}
+
+.tournament .v-off {
+	color: #ddd;
+}
+
+.tournament .v-table-drag .v-table-body {
+	border-color: #1d9dff;
+}
+
+.tournament .v-table-row-drag-middle .v-table-cell-content {
+	background-color: #bcdcff;
+}
+
+.tournament .v-table-row-drag-top .v-table-cell-content {
+	border-top: 2px solid #1d9dff;
+}
+
+.tournament .v-table-row-drag-top .v-table-cell-wrapper {
+	margin-top: -2px;
+}
+
+.tournament .v-table-row-drag-bottom .v-table-cell-content {
+	border-bottom: 2px solid #1d9dff;
+}
+
+.tournament .v-table-row-drag-bottom .v-table-cell-wrapper {
+	margin-bottom: -2px;
+}
+
+.tournament .v-table-row-drag-top .v-table-cell-content:first-child:before, .tournament .v-table-row-drag-bottom .v-table-cell-content:first-child:after {
+	display: block;
+	position: absolute;
+	width: 6px;
+	height: 6px;
+	margin-top: -4px;
+	margin-left: -6px;
+	background: transparent url(../base/common/img/drag-slot-dot.png);
+}
+
+.v-ff .tournament .v-table-row-drag-bottom .v-table-cell-content:first-child:after, .v-ie .tournament .v-table-row-drag-bottom .v-table-cell-content:first-child:after {
+	margin-top: -2px;
+}
+
+.tournament .v-tabsheet, .tournament .v-tabsheet-content, .tournament .v-tabsheet-deco {
+	outline: none;
+	text-align: left;
+}
+
+.tournament .v-tabsheet-tabs {
+	empty-cells: hide;
+	border-collapse: collapse;
+	margin: 0;
+	padding: 0;
+	border: 0;
+	width: 100%;
+	overflow: hidden;
+}
+
+.tournament .v-tabsheet-tabitemcell:focus {
+	outline: none;
+}
+
+.tournament .v-tabsheet-tabitemcell, .tournament .v-tabsheet-spacertd {
+	margin: 0;
+	padding: 0;
+	vertical-align: bottom;
+}
+
+.tournament .v-tabsheet-spacertd {
+	width: 100%;
+}
+
+.tournament .v-tabsheet-spacertd div {
+	border-left: 1px solid #aaa;
+	border-bottom: 1px solid #aaa;
+	height: 1em;
+	padding: 0.2em 0;
+}
+
+.tournament .v-tabsheet-hidetabs > .v-tabsheet-tabcontainer {
+	display: none;
+}
+
+.tournament .v-tabsheet-scroller {
+	white-space: nowrap;
+	text-align: right;
+	margin-top: -1em;
+}
+
+.tournament .v-disabled .v-tabsheet-scroller {
+	display: none;
+}
+
+.tournament .v-tabsheet-scrollerPrev, .tournament .v-tabsheet-scrollerNext, .tournament .v-tabsheet-scrollerPrev-disabled, .tournament .v-tabsheet-scrollerNext-disabled {
+	border: 1px solid #aaa;
+	background: #fff;
+	width: 12px;
+	height: 1em;
+	cursor: pointer;
+}
+
+.tournament .v-tabsheet-scrollerPrev-disabled, .tournament .v-tabsheet-scrollerNext-disabled {
+	opacity: 0.5;
+	cursor: default;
+}
+
+.tournament .v-tabsheet-tabs .v-caption, .tournament .v-tabsheet-tabs .v-caption span {
+	white-space: nowrap;
+}
+
+.tournament .v-tabsheet-caption-close {
+	display: inline;
+	display: inline-block;
+	zoom: 1;
+	width: 16px;
+	height: 16px;
+	text-align: center;
+	font-weight: bold;
+	cursor: pointer;
+	vertical-align: middle;
+	user-select: none;
+	-khtml-user-select: none;
+	-ms-user-select: none;
+	-moz-user-select: none;
+	-webkit-user-select: none;
+}
+
+.tournament .v-tabsheet .v-disabled .v-tabsheet-caption-close {
+	cursor: default;
+	visibility: hidden;
+}
+
+.tournament .v-tabsheet-tabitem:hover .v-tabsheet-caption-close {
+	visibility: visible;
+}
+
+.tournament .v-tabsheet-tabitem {
+	border: 1px solid #aaa;
+	border-right: none;
+	cursor: pointer;
+	padding: 0.2em 0.5em;
+}
+
+.tournament .v-tabsheet-tabitem .v-caption {
+	cursor: inherit;
+}
+
+.tournament .v-tabsheet.v-disabled .v-tabsheet-tabitem, .tournament .v-tabsheet-tabitemcell-disabled .v-tabsheet-tabitem {
+	cursor: default;
+}
+
+.tournament .v-tabsheet-tabitem-selected {
+	cursor: default;
+	border-bottom-color: #fff;
+}
+
+.tournament .v-tabsheet-tabitem-selected .v-caption {
+	cursor: default;
+}
+
+.tournament .v-tabsheet-tabitem-focus .v-captiontext {
+	text-decoration: underline;
+}
+
+.tournament .v-tabsheet-tabitem-selected.v-tabsheet-tabitem-focus .v-captiontext {
+	text-decoration: inherit;
+}
+
+.tournament .v-tabsheet-content {
+	border: 1px solid #aaa;
+	border-top: none;
+	border-bottom: none;
+	position: relative;
+}
+
+.tournament .v-tabsheet-deco {
+	height: 1px;
+	background: #aaa;
+	overflow: hidden;
+}
+
+.tournament .v-tabsheet-hidetabs .v-tabsheet-content {
+	border: none;
+}
+
+.tournament .v-tabsheet-hidetabs .v-tabsheet-deco {
+	height: 0;
+}
+
+.tournament .v-textfield {
+	text-align: left;
+}
+
+.tournament .v-textarea {
+	resize: none;
+	white-space: pre-wrap;
+}
+
+.tournament input.v-textfield-prompt, .tournament textarea.v-textarea-prompt {
+	color: #999;
+	font-style: italic;
+}
+
+.tournament input.v-textfield-readonly, .tournament textarea.v-textarea-readonly {
+	background: transparent;
+	border: none;
+	resize: none;
+}
+
+.tournament input.v-disabled, .tournament textarea.v-disabled {
+	resize: none;
+}
+
+.tournament input.v-textfield-readonly:focus, .tournament textarea.v-textarea-readonly:focus {
+	outline: none;
+}
+
+.v-sa .tournament input:focus, .v-sa .tournament textarea:focus {
+	outline-width: medium;
+}
+
+.tournament .v-richtextarea {
+	border: 1px solid #aaa;
+	overflow: hidden;
+}
+
+.tournament .v-richtextarea .gwt-RichTextArea {
+	background: #fff;
+	border: none;
+}
+
+.tournament .v-richtextarea .gwt-HTML {
+	height: 100%;
+	font-size: 12px;
+}
+
+.tournament .v-richtextarea .gwt-RichTextToolbar {
+	white-space: nowrap;
+	background: #959595 url(../base/textfield/img/richtext-toolbar-bg.png) repeat-x 0 -42px;
+	border-bottom: 1px solid #7d7d7d;
+	padding: 2px;
+	overflow: hidden;
+}
+
+.tournament .v-richtextarea .gwt-RichTextToolbar-top {
+	padding-bottom: 1px;
+	overflow: hidden;
+	white-space: normal;
+}
+
+.tournament .v-richtextarea .gwt-RichTextToolbar-bottom {
+	clear: left;
+	overflow: hidden;
+	white-space: nowrap;
+}
+
+.tournament .v-richtextarea .gwt-RichTextToolbar .gwt-ToggleButton, .tournament .v-richtextarea .gwt-RichTextToolbar .gwt-PushButton {
+	float: left;
+	display: inline;
+	width: 22px;
+	height: 21px;
+	overflow: hidden;
+	background: transparent url(../base/textfield/img/richtext-toolbar-bg.png) repeat-x;
+	cursor: pointer;
+	margin-right: 2px;
+	text-align: center;
+}
+
+.tournament .v-richtextarea .gwt-RichTextToolbar .gwt-ToggleButton-down, .tournament .v-richtextarea .gwt-RichTextToolbar .gwt-PushButton-down, .tournament .v-richtextarea .gwt-RichTextToolbar .gwt-ToggleButton-down-hovering, .tournament .v-richtextarea .gwt-RichTextToolbar .gwt-PushButton-down-hovering {
+	background-position: 0 -21px;
+}
+
+.tournament .v-richtextarea .gwt-RichTextToolbar .gwt-ListBox {
+	width: 24.5%;
+	margin-right: 2px;
+}
+
+.tournament .v-richtextarea-readonly {
+	border: none;
+}
+
+.tournament .v-tree {
+	text-align: left;
+	padding: 1px 0;
+	outline: none;
+}
+
+.tournament .v-tree-node {
+	background: transparent url(../base/common/img/sprites.png) no-repeat 5px -37px;
+	padding: 1px 0;
+}
+
+.tournament .v-tree-node-caption:focus {
+	outline: none;
+}
+
+.tournament div.v-tree-node-leaf {
+	background: transparent;
+}
+
+.tournament .v-tree-node-expanded {
+	background: transparent url(../base/common/img/sprites.png) no-repeat -5px -10px;
+}
+
+.tournament .v-tree-node-caption {
+	margin-left: 1em;
+}
+
+.tournament .v-tree-node span {
+	cursor: pointer;
+}
+
+.tournament .v-tree-node-caption div {
+	white-space: nowrap;
+}
+
+.tournament .v-tree-node-caption span, .tournament .v-tree-node-caption .v-icon {
+	vertical-align: middle;
+}
+
+.tournament .v-tree-node-selected span {
+	background: #999;
+	color: #fff;
+}
+
+.tournament .v-tree-node-children {
+	padding-left: 1em;
+}
+
+.tournament .v-tree .v-tree-node-drag-top {
+	border-top: 2px solid #1d9dff;
+	margin-top: -1px;
+	padding-top: 0;
+}
+
+.tournament .v-tree .v-tree-node-drag-bottom {
+	border-bottom: 2px solid #1d9dff;
+	margin-bottom: -1px;
+	padding-bottom: 0;
+}
+
+.tournament .v-tree .v-tree-node-drag-top:before, .tournament .v-tree .v-tree-node-drag-bottom:after, .tournament .v-tree .v-tree-node-caption-drag-center:after {
+	display: block;
+	position: absolute;
+	width: 6px;
+	height: 6px;
+	margin-top: -4px;
+	background: transparent url(../base/common/img/drag-slot-dot.png);
+}
+
+.tournament .v-tree .v-tree-node-drag-bottom:after {
+	margin-top: -2px;
+}
+
+.tournament .v-tree .v-tree-node-caption-drag-center:after {
+	margin-left: 14px;
+}
+
+.v-ff .tournament .v-tree .v-tree-node-caption-drag-center:after, .v-ie .tournament .v-tree .v-tree-node-caption-drag-center:after {
+	margin-top: -2px;
+}
+
+.tournament .v-tree .v-tree-node-drag-top {
+	background-position: 5px -38px;
+}
+
+.tournament .v-tree .v-tree-node-drag-top.v-tree-node-expanded {
+	background-position: -5px -11px;
+}
+
+.tournament .v-tree .v-tree-node-caption-drag-center div {
+	border: 2px solid #1d9dff;
+	-moz-border-radius: 4px;
+	-webkit-border-radius: 4px;
+	border-radius: 4px;
+	margin: -2px 2px -2px -2px;
+	background-color: #bcdcff;
+}
+
+.tournament .v-tree .v-tree-node-caption-drag-center div {
+	background-color: rgba(169, 209, 255, 0.6);
+}
+
+.tournament .v-tree .v-tree-node-caption-drag-center div, .tournament .v-tree .v-tree-node-drag-top, .tournament .v-tree .v-tree-node-drag-bottom {
+	border-color: rgba(0, 109, 232, 0.6);
+}
+
+.tournament .v-tree-connectors .v-tree-node-caption {
+	padding-top: 1px;
+}
+
+.tournament .v-tree-connectors .v-tree-node {
+	background: transparent url(../base/tree/img/connector-expand.png) no-repeat 2px -52px;
+}
+
+.tournament .v-tree-connectors .v-tree-node-expanded {
+	background: transparent url(../base/tree/img/connector-collapse.png) no-repeat 2px -52px;
+}
+
+.tournament .v-tree-connectors .v-tree-node-last {
+	background: transparent url(../base/tree/img/connector-expand-last.png) no-repeat 2px -52px;
+}
+
+.tournament .v-tree-connectors .v-tree-node-expanded.v-tree-node-last {
+	background: transparent url(../base/tree/img/connector-collapse-last.png) no-repeat 2px -52px;
+}
+
+.tournament .v-tree-connectors .v-tree-node-leaf {
+	background: transparent url(../base/tree/img/connector-leaf.png) repeat-y 2px 50%;
+}
+
+.tournament .v-tree-connectors .v-tree-node-leaf-last {
+	background: transparent url(../base/tree/img/connector-leaf-last.png) repeat-y 2px 50%;
+}
+
+.tournament .v-tree-connectors .v-tree-node-children {
+	background: transparent url(../base/tree/img/connector.png) repeat-y 2px 0;
+}
+
+.tournament .v-tree-connectors .v-tree-node-children-last {
+	background: transparent;
+}
+
+.tournament .v-tree-connectors .v-tree-node-drag-top, .tournament .v-tree-connectors .v-tree-node-expanded.v-tree-node-drag-top {
+	background-position: 2px -53px;
+}
+
+.tournament .v-tree-connectors .v-tree-node-drag-top.v-tree-node-leaf {
+	background-position: 2px 50%;
+}
+
+.tournament .v-treetable-treespacer {
+	display: inline-block;
+	background: transparent;
+	height: 10px;
+	width: 18px;
+	position: absolute;
+	left: 0;
+	top: 5px;
+}
+
+.tournament .v-treetable-node-closed {
+	background: url(../base/treetable/img/arrow-right.png) right top no-repeat;
+}
+
+.tournament .v-treetable-node-open {
+	background: url(../base/treetable/img/arrow-down.png) right top no-repeat;
+}
+
+.tournament .v-treetable .v-checkbox {
+	display: inline-block;
+	padding-bottom: 4px;
+}
+
+.tournament .v-treetable .v-table-row .v-table-cell-content, .tournament .v-treetable .v-table-row-odd .v-table-cell-content {
+	z-index: 10;
+}
+
+.tournament .v-treetable .v-table-cell-wrapper {
+	position: relative;
+}
+
+.tournament .v-treetable .v-table-body .v-table-table .v-table-row-animating {
+	zoom: 1;
+	z-index: 1;
+}
+
+.tournament .v-treetable .v-table-body .v-table-table .v-table-row-animating, .tournament .v-treetable .v-table-body .v-table-table .v-table-row-animating .v-table-cell-content {
+	background: transparent;
+}
+
+.tournament .v-treetable-animation-clone {
+	border-spacing: 0;
+	zoom: 1;
+}
+
+.tournament div.v-treetable-animation-clone-wrapper {
+	position: absolute;
+	z-index: 2;
+	background-color: #fff;
+}
+
+.tournament div.v-treetable-animation-clone-wrapper table.v-treetable-animation-clone {
+	background-color: #fff;
+}
+
+.tournament div table.v-treetable-animation-clone tr.v-table-row, .tournament div table.v-treetable-animation-clone tr.v-table-row-odd, .tournament div table.v-treetable-animation-clone tr.v-table-row td.v-table-cell-content, .tournament div table.v-treetable-animation-clone tr.v-table-row-odd td.v-table-cell-content {
+	visibility: visible;
+}
+
+.tournament .v-upload {
+	white-space: nowrap;
+}
+
+.tournament .v-upload-immediate {
+	position: relative;
+	margin: 0;
+	overflow: hidden;
+}
+
+.v-ff .tournament .v-upload-immediate, .v-op .tournament .v-upload-immediate {
+	display: inline-block;
+}
+
+.tournament .v-upload-immediate input {
+	opacity: 0;
+	filter: alpha(opacity=0);
+	z-index: 2;
+	position: absolute;
+	right: 0;
+	height: 21px;
+	text-align: right;
+	border: none;
+	background: transparent;
+}
+
+.tournament .v-upload-immediate button {
+	position: relative;
+	left: 0;
+	top: 0;
+	width: 100%;
+	text-align: left;
+}
+
+.tournament .v-window {
+	background: #fff;
+}
+
+.tournament .v-window-contents {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+.tournament .v-window.v-has-width > div.popupContent, .tournament .v-window.v-has-width .v-window-wrap, .tournament .v-window.v-has-width .v-window-contents, .tournament .v-window.v-has-width .v-window-contents > div {
+	width: 100%;
+}
+
+.tournament .v-window.v-has-height > div.popupContent, .tournament .v-window.v-has-height .v-window-wrap, .tournament .v-window.v-has-height .v-window-contents, .tournament .v-window.v-has-height .v-window-contents > div {
+	height: 100%;
+}
+
+.tournament .v-window-outerheader {
+	padding: 0.3em 1em;
+	height: 1.6em;
+	position: relative;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+.tournament .v-window-outerheader, .tournament .v-window-draggingCurtain {
+	cursor: move;
+}
+
+.tournament .v-window-header {
+	font-weight: bold;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ie-user-select: none;
+	user-select: none;
+}
+
+.tournament div.v-window-header {
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	-ms-text-overflow: ellipsis;
+	overflow: hidden;
+	padding: 0;
+}
+
+.tournament .v-window-header .v-icon {
+	vertical-align: middle;
+}
+
+.tournament .v-window-contents > div {
+	outline: none;
+}
+
+.tournament .v-window-footer {
+	overflow: hidden;
+	zoom: 1;
+	height: 10px;
+	position: relative;
+	cursor: move;
+}
+
+.tournament .v-window-resizebox {
+	width: 10px;
+	height: 10px;
+	background: #ddd;
+	overflow: hidden;
+	position: absolute;
+	right: 0;
+}
+
+.tournament .v-window-resizebox, .tournament .v-window-resizingCurtain {
+	cursor: se-resize;
+}
+
+.tournament .v-window div.v-window-footer-noresize {
+	height: 0;
+}
+
+.tournament .v-window-resizebox-disabled, .tournament .v-window-restorebox-disabled, .tournament .v-window-maximizebox-disabled {
+	cursor: default;
+	display: none;
+}
+
+.tournament .v-window-closebox, .tournament .v-window-restorebox, .tournament .v-window-maximizebox {
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 1em;
+	height: 1em;
+	cursor: pointer;
+	overflow: hidden;
+}
+
+.tournament .v-window-maximizebox, .tournament .v-window-restorebox {
+	right: 1.1em;
+}
+
+.tournament .v-window-closebox {
+	background: red;
+}
+
+.tournament .v-window-maximizebox {
+	background: blue;
+}
+
+.tournament .v-window-restorebox {
+	background: yellow;
+}
+
+.tournament .v-window-modalitycurtain {
+	top: 0;
+	left: 0;
+	background: #999;
+	opacity: 0.5;
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	filter: alpha(opacity=50);
+}
+
+.tournament .v-shadow-window {
+	position: absolute;
+}
+
+.tournament .v-shadow-window .top-left {
+	position: absolute;
+	overflow: hidden;
+	top: -10px;
+	left: -15px;
+	width: 28px;
+	height: 28px;
+	background: transparent url(../base/window/img/shadow/top-left.png);
+}
+
+.tournament .v-shadow-window .top {
+	position: absolute;
+	overflow: hidden;
+	top: -10px;
+	left: 13px;
+	height: 28px;
+	right: 13px;
+	background: transparent url(../base/window/img/shadow/top.png);
+}
+
+.tournament .v-shadow-window .top-right {
+	position: absolute;
+	overflow: hidden;
+	top: -10px;
+	right: -15px;
+	width: 28px;
+	height: 28px;
+	background: transparent url(../base/window/img/shadow/top-right.png);
+}
+
+.tournament .v-shadow-window .left {
+	position: absolute;
+	overflow: hidden;
+	top: 18px;
+	left: -15px;
+	width: 28px;
+	bottom: 10px;
+	background: transparent url(../base/window/img/shadow/left.png);
+}
+
+.tournament .v-shadow-window .center {
+	position: absolute;
+	overflow: hidden;
+	top: 18px;
+	left: 13px;
+	bottom: 10px;
+	right: 13px;
+	background: transparent url(../base/window/img/shadow/center.png);
+}
+
+.tournament .v-shadow-window .right {
+	position: absolute;
+	overflow: hidden;
+	top: 18px;
+	right: -15px;
+	width: 28px;
+	bottom: 10px;
+	background: transparent url(../base/window/img/shadow/right.png);
+}
+
+.tournament .v-shadow-window .bottom-left {
+	position: absolute;
+	overflow: hidden;
+	bottom: -18px;
+	left: -15px;
+	width: 28px;
+	height: 28px;
+	background: transparent url(../base/window/img/shadow/bottom-left.png);
+}
+
+.tournament .v-shadow-window .bottom {
+	position: absolute;
+	overflow: hidden;
+	bottom: -18px;
+	left: 13px;
+	right: 13px;
+	height: 28px;
+	background: transparent url(../base/window/img/shadow/bottom.png);
+}
+
+.tournament .v-shadow-window .bottom-right {
+	position: absolute;
+	overflow: hidden;
+	bottom: -18px;
+	right: -15px;
+	width: 28px;
+	height: 28px;
+	background: transparent url(../base/window/img/shadow/bottom-right.png);
+}
+
+.tournament .v-accordion {
+	border: 1px solid #bebebe;
+	border-radius: 2px;
+	-webkit-border-radius: 2px;
+	-moz-border-radius: 2px;
+}
+
+.tournament .v-accordion-item {
+	background-color: #fff;
+}
+
+.tournament .v-accordion-item-caption {
+	height: 19px;
+	background: #e4e4e4 repeat-x;
+	background-image: url(../reindeer/tabsheet/img/tabbar-bg.png);/** sprite-ref: verticals; sprite-alignment: repeat */
+	font-size: 11px;
+	line-height: normal;
+	border-top: 1px solid #bebebe;
+	text-shadow: #fff 0 1px 0;
+}
+
+.tournament .v-accordion-item-caption .v-caption {
+	font-size: 11px;
+}
+
+.tournament .v-accordion-item-caption .v-captiontext {
+	vertical-align: baseline;
+}
+
+.tournament .v-accordion-item-first .v-accordion-item-caption {
+	border-top: none;
+}
+
+.tournament .v-accordion-item-caption .v-caption {
+	padding: 3px 0 0 10px;
+}
+
+.tournament .v-accordion-item-open .v-accordion-item-caption {
+	background-image: url(../reindeer/tabsheet/img/tabbar-bg-sel.png);/** sprite-ref: verticals; sprite-alignment: repeat */
+	border-bottom: 1px solid #bbb;
+}
+
+.tournament .v-accordion-item-caption .v-icon {
+	margin-top: -3px;
+}
+
+.v-ie .tournament .v-accordion-item-caption .v-icon, .v-ff .tournament .v-accordion-item-caption .v-icon {
+	margin-top: -6px;
+}
+
+.tournament .v-accordion-borderless {
+	border: none;
+	border-radius: 0;
+	-webkit-border-radius: 0;
+	-moz-border-radius: 0;
+}
+
+.tournament .v-button:focus {
+	background-image: url(../reindeer/button/img/left-focus.png);/** sprite-ref: buttons */
+	outline: none;
+}
+
+.tournament .v-button:focus .v-button-wrap {
+	background-image: url(../reindeer/button/img/right-focus.png);/** sprite-ref: buttons; sprite-alignment: right */
+	outline: none;
+}
+
+.tournament .v-button:active, .tournament .v-button.v-pressed {
+	background-image: url(../reindeer/button/img/left-pressed.png);/** sprite-ref: buttons */
+	outline: none;
+}
+
+.tournament .v-button:active .v-button-wrap, .tournament .v-button.v-pressed .v-button-wrap {
+	background-image: url(../reindeer/button/img/right-pressed.png);/** sprite-ref: buttons; sprite-alignment: right */
+	outline: none;
+}
+
+.tournament .v-button, .tournament .v-disabled.v-button {
+	height: 26px;
+	padding: 0 0 0 6px;
+	background-color: transparent;
+	background-repeat: no-repeat;
+	background-image: url(../reindeer/button/img/left.png);/** sprite-ref: buttons */
+	border: none;
+	cursor: default;
+}
+
+.tournament .v-button-wrap, .tournament .v-disabled.v-button .v-button-wrap {
+	display: block;
+	height: 22px;
+	padding: 4px 15px 0 9px;
+	background-color: transparent;
+	background-repeat: no-repeat;
+	background-position: right top;
+	background-image: url(../reindeer/button/img/right.png);/** sprite-ref: buttons; sprite-alignment: right */
+}
+
+.tournament .v-button-caption {
+	color: #222;
+	text-shadow: #fff 0 1px 0;
+	font-weight: bold;
+	font-size: 11px;
+	line-height: 16px;
+}
+
+.tournament .black .v-button:focus {
+	background-image: url(../reindeer/button/img/black/left-focus.png);/** sprite-ref: black-buttons */
+}
+
+.tournament .black .v-button:focus .v-button-wrap {
+	background-image: url(../reindeer/button/img/black/right-focus.png);/** sprite-ref: black-buttons; sprite-alignment: right */
+}
+
+.tournament .black .v-button:active, .tournament .black .v-button.v-pressed {
+	background-image: url(../reindeer/button/img/black/left-pressed.png);/** sprite-ref: black-buttons */
+}
+
+.tournament .black .v-button:active .v-button-wrap, .tournament .black .v-button.v-pressed .v-button-wrap {
+	background-image: url(../reindeer/button/img/black/right-pressed.png);/** sprite-ref: black-buttons; sprite-alignment: right */
+}
+
+.tournament .black .v-button, .tournament .black .v-disabled.v-button {
+	background-image: url(../reindeer/button/img/black/left.png);/** sprite-ref: black-buttons */
+}
+
+.tournament .black .v-button-wrap, .tournament .black .v-disabled.v-button .v-button-wrap {
+	background-image: url(../reindeer/button/img/black/right.png);/** sprite-ref: black-buttons; sprite-alignment: right */
+}
+
+.tournament .black .v-button-caption {
+	color: #c9ccce;
+	text-shadow: #121314 0 -1px 0;
+}
+
+.tournament .v-button-primary:focus {
+	background-image: url(../reindeer/button/img/primary-left-focus.png);/** sprite-ref: buttons */
+}
+
+.tournament .v-button-primary:focus .v-button-wrap {
+	background-image: url(../reindeer/button/img/primary-right-focus.png);/** sprite-ref: buttons; sprite-alignment: right */
+}
+
+.tournament .v-button-primary:active, .tournament .v-button-primary.v-pressed {
+	background-image: url(../reindeer/button/img/primary-left-pressed.png);/** sprite-ref: buttons */
+}
+
+.tournament .v-button-primary:active .v-button-wrap, .tournament .v-button-primary.v-pressed .v-button-wrap {
+	background-image: url(../reindeer/button/img/primary-right-pressed.png);/** sprite-ref: buttons; sprite-alignment: right */
+}
+
+.tournament .v-button-primary, .tournament .v-disabled.v-button-primary {
+	background-image: url(../reindeer/button/img/primary-left.png);/** sprite-ref: buttons */
+}
+
+.tournament .v-button-primary .v-button-wrap, .tournament .v-disabled.v-button-primary .v-button-wrap {
+	background-image: url(../reindeer/button/img/primary-right.png);/** sprite-ref: buttons; sprite-alignment: right */
+}
+
+.tournament .black .v-button-primary:focus {
+	background-image: url(../reindeer/button/img/black/primary-left-focus.png);/** sprite-ref: black-buttons */
+}
+
+.tournament .black .v-button-primary:focus .v-button-wrap {
+	background-image: url(../reindeer/button/img/black/primary-right-focus.png);/** sprite-ref: black-buttons; sprite-alignment: right */
+	color: #eaf4fb;
+}
+
+.tournament .black .v-button-primary:active, .tournament .black .v-button-primary.v-pressed {
+	background-image: url(../reindeer/button/img/black/primary-left-pressed.png);/** sprite-ref: black-buttons */
+}
+
+.tournament .black .v-button-primary:active .v-button-wrap, .tournament .black .v-button-primary.v-pressed .v-button-wrap {
+	background-image: url(../reindeer/button/img/black/primary-right-pressed.png);/** sprite-ref: black-buttons; sprite-alignment: right */
+}
+
+.tournament .black .v-button-primary, .tournament .black .v-disabled.v-button-primary {
+	background-image: url(../reindeer/button/img/black/primary-left.png);/** sprite-ref: black-buttons */
+}
+
+.tournament .black .v-button-primary .v-button-wrap, .tournament .black .v-disabled.v-button-primary .v-button-wrap {
+	background-image: url(../reindeer/button/img/black/primary-right.png);/** sprite-ref: black-buttons; sprite-alignment: right */
+}
+
+.tournament .v-button-small:focus {
+	background-image: url(../reindeer/button/img/small-left-focus.png);/** sprite-ref: buttons */
+}
+
+.tournament .v-button-small:focus .v-button-wrap {
+	background-image: url(../reindeer/button/img/small-right-focus.png);/** sprite-ref: buttons; sprite-alignment: right */
+}
+
+.tournament .v-button-small:active, .tournament .v-button-small.v-pressed {
+	background-image: url(../reindeer/button/img/small-left-pressed.png);/** sprite-ref: buttons */
+}
+
+.tournament .v-button-small:active .v-button-wrap, .tournament .v-button-small.v-pressed .v-button-wrap {
+	background-image: url(../reindeer/button/img/small-right-pressed.png);/** sprite-ref: buttons; sprite-alignment: right */
+}
+
+.tournament .v-button-small, .tournament .v-disabled.v-button-small {
+	background-image: url(../reindeer/button/img/small-left.png);/** sprite-ref: buttons */
+	height: 20px;
+}
+
+.tournament .v-button-small .v-button-wrap, .tournament .v-disabled.v-button-small .v-button-wrap {
+	background-image: url(../reindeer/button/img/small-right.png);/** sprite-ref: buttons; sprite-alignment: right */
+	height: 19px;
+	padding: 1px 14px 0 8px;
+}
+
+.tournament .v-button-small .v-button-caption {
+	font-weight: normal;
+}
+
+.tournament .black .v-button-small:focus {
+	background-image: url(../reindeer/button/img/black/small-left-focus.png);/** sprite-ref: black-buttons */
+}
+
+.tournament .black .v-button-small:focus .v-button-wrap {
+	background-image: url(../reindeer/button/img/black/small-right-focus.png);/** sprite-ref: black-buttons; sprite-alignment: right */
+}
+
+.tournament .black .v-button-small:active, .tournament .black .v-button-small.v-pressed {
+	background-image: url(../reindeer/button/img/black/small-left-pressed.png);/** sprite-ref: black-buttons */
+}
+
+.tournament .black .v-button-small:active .v-button-wrap, .tournament .black .v-button-small.v-pressed .v-button-wrap {
+	background-image: url(../reindeer/button/img/black/small-right-pressed.png);/** sprite-ref: black-buttons; sprite-alignment: right */
+}
+
+.tournament .black .v-button-small, .tournament .black .v-disabled.v-button-small {
+	background-image: url(../reindeer/button/img/black/small-left.png);/** sprite-ref: black-buttons */
+}
+
+.tournament .black .v-button-small .v-button-wrap, .tournament .black .v-disabled.v-button-small .v-button-wrap {
+	background-image: url(../reindeer/button/img/black/small-right.png);/** sprite-ref: black-buttons; sprite-alignment: right */
+}
+
+.tournament .v-button.v-button-link, .tournament .v-button.v-button-link:focus, .tournament .v-button.v-button-link:active, .tournament .v-button-link.v-pressed, .tournament .v-disabled.v-button.v-button-link, .tournament .v-button.v-button-link .v-button-wrap, .tournament .v-button.v-button-link:focus .v-button-wrap, .tournament .v-button.v-button-link:active .v-button-wrap, .tournament .v-button-link.v-pressed .v-button-wrap, .tournament .v-disabled.v-button.v-button-link .v-button-wrap {
+	background: transparent;
+	height: auto;
+	padding: 0;
+	cursor: pointer;
+	line-height: inherit;
+}
+
+.tournament .v-button.v-button-link.v-disabled, .tournament .v-button.v-button-link.v-disabled .v-button-wrap {
+	cursor: default;
+}
+
+.tournament .v-button-link .v-button-caption {
+	line-height: inherit;
+	font-weight: normal;
+	color: #1b699f;
+	font-size: 12px;
+	text-shadow: none;
+}
+
+.tournament .v-button-link:focus .v-button-caption {
+	outline: 1px dotted #1b699f;
+}
+
+.tournament .v-nativebutton-link .v-nativebutton-caption {
+	line-height: inherit;
+	font-weight: normal;
+	color: #1b699f;
+	font-size: 12px;
+	text-shadow: none;
+}
+
+.tournament .v-nativebutton-link:focus .v-nativebutton-caption {
+	outline: 1px dotted #1b699f;
+}
+
+.v-ie8 .tournament .v-nativebutton-link {
+	padding: 0;
+	text-align: left;
+}
+
+.tournament .v-colorpicker-popup {
+	width: 246px;
+}
+
+.tournament .v-colorpicker-popup .v-tabsheet .v-colorpicker-grid {
+	height: 284px;
+}
+
+.tournament .v-colorpicker-popup .v-filterselect {
+	padding-right: 25px;
+}
+
+.tournament.v-app {
+	background: #f5f5f5;
+}
+
+.tournament.v-app, .tournament .v-window, .tournament .v-popupview-popup, .tournament .v-tooltip, .tournament.v-app input, .tournament.v-app select, .tournament.v-app button, .tournament.v-app textarea, .tournament .v-window input, .tournament .v-window select, .tournament .v-window button, .tournament .v-window textarea, .tournament .v-popupview-popup input, .tournament .v-popupview-popup select, .tournament .v-popupview-popup button, .tournament .v-popupview-popup textarea, .tournament .v-filterselect-suggestpopup, .tournament .v-datefield-popup, .tournament .v-contextmenu, .tournament .v-Notification, .tournament .v-menubar-submenu, .tournament .v-drag-element, .tournament .v-table-header-drag {
+	font-family: Arial, Helvetica, Tahoma, Verdana, sans-serif;
+	font-size: 12px;
+	line-height: normal;
+	color: #222;
+}
+
+.tournament.v-app .black, .tournament .v-window-black, .tournament .v-window .black, .tournament .v-popupview-popup .black {
+	color: #c9ccce;
+	text-shadow: #000 0 0 1px;
+}
+
+.tournament .v-errorindicator {
+	width: 13px;
+	height: 15px;
+	background: transparent url(../reindeer/common/icons/error.png) no-repeat 50%;
+}
+
+.tournament .v-tooltip {
+	background-color: #fffcdd;
+	border: 1px solid #b8b295;
+	font-size: 11px;
+	color: #222;
+}
+
+.tournament .v-tooltip-text {
+	padding: 2px 4px;
+}
+
+.tournament .v-tooltip .v-errormessage {
+	padding: 3px 4px;
+	background: #ffecc6;
+	color: #b74100;
+	border: none;
+	border-top: 1px solid #fff3dc;
+}
+
+.tournament .v-tooltip .v-errormessage h2 {
+	font-size: 16px;
+	font-weight: normal;
+	color: #ab3101;
+	margin: 2px 0 8px 0;
+}
+
+.tournament .v-tooltip .v-errormessage h3 {
+	font-size: 13px;
+	font-weight: bold;
+	margin: 1px 0 4px 0;
+}
+
+.tournament .v-contextmenu {
+	background: #f8f8f9;
+	border: none;
+	border-radius: 3px;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	-o-border-radius: 3px;
+	overflow: hidden;
+	padding: 4px 0;
+}
+
+.tournament .v-contextmenu .gwt-MenuItem {
+	padding: 1px 12px 1px 8px;
+	height: 16px;
+	user-select: none;
+	-moz-user-select: none;
+	-webkit-user-select: none;
+	cursor: default;
+}
+
+.tournament .v-contextmenu .gwt-MenuItem .v-icon {
+	margin-right: 3px;
+}
+
+.tournament .v-contextmenu .gwt-MenuItem-selected {
+	background: transparent repeat-x;
+	background-image: url(../reindeer/common/img/sel-bg.png);/** sprite-ref: verticals; sprite-alignment: repeat */
+	color: #fff;
+	text-shadow: #3b5a7a 0 1px 0;
+}
+
+.v-ie .tournament .v-contextmenu .gwt-MenuItem-selected {
+	background-image: url(../reindeer/common/img/sel-bg.png);
+	background-position: left top;
+}
+
+.tournament .v-contextmenu .gwt-MenuItem-selected div {
+	background: transparent;
+	cursor: default;
+}
+
+.portlet .tournament.v-app {
+	background: transparent;
+}
+
+.portlet .tournament.v-app .v-radiobutton input, .tournament .portlet .v-window .v-radiobutton input, .tournament .portlet .v-popupview-popup .v-radiobutton input, .portlet .tournament.v-app .v-checkbox input, .tournament .portlet .v-window .v-checkbox input, .tournament .portlet .v-popupview-popup .v-checkbox input {
+	margin-right: 3px;
+	background: transparent;
+}
+
+.tournament .v-datefield {
+	overflow: hidden;
+}
+
+.tournament input.v-textfield-readonly:focus {
+	background-color: transparent;
+}
+
+.tournament .v-datefield-calendarpanel {
+	border-collapse: collapse;
+	margin: 0;
+	padding: 0;
+	height: auto !important;
+}
+
+.tournament .v-datefield-year .v-datefield-calendarpanel-prevmonth, .tournament .v-datefield-year .v-datefield-calendarpanel-nextmonth {
+	display: none;
+}
+
+.tournament .v-datefield-calendarpanel td {
+	vertical-align: top;
+}
+
+.tournament td.v-datefield-calendarpanel-month {
+	height: 23px;
+	background-repeat: repeat-x;
+	background-image: url(../reindeer/datefield/img/header-bg.png);/** sprite-ref: verticals; sprite-alignment: repeat */
+}
+
+.tournament span.v-datefield-calendarpanel-month {
+	display: block;
+	text-align: center;
+	height: 16px;
+	padding: 3px 10px 0 10px;
+	border-left: 1px solid #efefef;
+	border-right: 1px solid #d8d8d8;
+	text-shadow: #fff 0 1px 0;
+	overflow: hidden;
+	margin-top: 1px;
+}
+
+.tournament .v-datefield-year .v-datefield-calendarpanel-month {
+	width: 35px;
+}
+
+.tournament .v-datefield-month .v-datefield-calendarpanel-month, .tournament .v-datefield-day .v-datefield-calendarpanel-month, .tournament .v-datefield-full .v-datefield-calendarpanel-month {
+	width: 124px;
+}
+
+.tournament .v-datefield-month, .tournament .v-datefield-day, .tournament .v-datefield-full {
+	min-width: 240px;
+}
+
+.tournament .v-datefield-popupcalendar {
+	min-width: 0;
+	padding-right: 24px;
+}
+
+.tournament .v-datefield-year .v-datefield-calendarpanel {
+	width: 100px;
+}
+
+.tournament td.v-datefield-calendarpanel-prevyear {
+	text-align: right;
+}
+
+.tournament td.v-datefield-calendarpanel-nextyear {
+	text-align: left;
+}
+
+.tournament .v-datefield-calendarpanel-prevyear button, .tournament .v-datefield-calendarpanel-nextyear button, .tournament .v-datefield-calendarpanel-prevmonth button, .tournament .v-datefield-calendarpanel-nextmonth button {
+	width: 24px;
+	height: 23px;
+	border: none;
+	background: transparent;
+	background-repeat: no-repeat;
+	background-image: url(../reindeer/datefield/img/year-prev.png);/** sprite-ref: verticals */
+	overflow: hidden;
+	padding: 0;
+	text-indent: -9999px;
+	outline: none;
+	-webkit-border-radius: 0;
+	-moz-border-radius: 0;
+	border-radius: 0;
+}
+
+.v-ie .tournament .v-datefield-calendarpanel-prevyear button, .v-ie .tournament .v-datefield-calendarpanel-nextyear button, .v-ie .tournament .v-datefield-calendarpanel-prevmonth button, .v-ie .tournament .v-datefield-calendarpanel-nextmonth button {
+	text-indent: 0;
+	font-size: 1px;
+}
+
+.tournament .v-datefield-calendarpanel-nextyear button {
+	background-position: left top;
+	background-image: url(../reindeer/datefield/img/year-next.png);/** sprite-ref: verticals */
+}
+
+.tournament .v-datefield-calendarpanel-prevyear button:active, .v-ie .tournament .v-datefield-calendarpanel-prevyear button.v-pressed {
+	background-image: url(../reindeer/datefield/img/year-prev-pressed.png);/** sprite-ref: verticals */
+}
+
+.tournament .v-datefield-calendarpanel-nextyear button:active, .v-ie .tournament .v-datefield-calendarpanel-nextyear button.v-pressed {
+	background-image: url(../reindeer/datefield/img/year-next-pressed.png);/** sprite-ref: verticals */
+}
+
+.tournament .v-datefield-calendarpanel-prevmonth, .tournament .v-datefield-calendarpanel-nextmonth {
+	width: 24px;
+	background-repeat: repeat-x;
+	background-image: url(../reindeer/datefield/img/header-bg.png);/** sprite-ref: verticals; sprite-alignment: repeat */
+}
+
+.tournament .v-datefield-calendarpanel-prevmonth button, .tournament .v-datefield-calendarpanel-nextmonth button {
+	width: 100%;
+	height: 21px;
+	border-left: 1px solid #efefef;
+	border-right: 1px solid #d8d8d8;
+	background: transparent;
+	background-position: center top;
+	background-image: url(../reindeer/datefield/img/month-prev.png);/** sprite-ref: verticals; sprite-alignment: center */
+	min-width: 24px;
+	margin-top: 1px;
+}
+
+.v-ie .tournament .v-datefield-calendarpanel-prevmonth button, .v-ie .tournament .v-datefield-calendarpanel-nextmonth button {
+	border: none;
+}
+
+.tournament .v-datefield-calendarpanel-nextmonth button {
+	background-image: url(../reindeer/datefield/img/month-next.png);/** sprite-ref: verticals; sprite-alignment: center */
+}
+
+.tournament .v-datefield-calendarpanel-prevmonth button:active, .v-ie .tournament .v-datefield-calendarpanel-prevmonth button.v-pressed {
+	background-position: center top;
+	background-image: url(../reindeer/datefield/img/month-prev-pressed.png);/** sprite-ref: verticals; sprite-alignment: center */
+}
+
+.tournament .v-datefield-calendarpanel-nextmonth button:active, .v-ie .tournament .v-datefield-calendarpanel-nextmonth button.v-pressed {
+	background-position: center top;
+	background-image: url(../reindeer/datefield/img/month-next-pressed.png);/** sprite-ref: verticals; sprite-alignment: center */
+}
+
+.tournament .v-datefield-calendarpanel-body, .tournament .v-datefield-calendarpanel-time {
+	text-align: center;
+	vertical-align: top;
+}
+
+.tournament .v-datefield-calendarpanel-body table {
+	border-collapse: collapse;
+	margin: 0;
+	padding: 0;
+	width: 220px;
+	margin: 0 auto;
+}
+
+.tournament .v-datefield-calendarpanel-weekdays td {
+	width: 14.2%;
+	overflow: hidden;
+	background-repeat: repeat-x;
+	background-image: url(../reindeer/datefield/img/weekday-bg.png);/** sprite-ref: verticals; sprite-alignment: repeat; sprite-margin-bottom: 3px */
+	font-size: 10px;
+	line-height: normal;
+	text-transform: uppercase;
+	color: #eaeff1;
+	text-shadow: #3b4651 0 -1px 0;
+	vertical-align: top;
+	padding: 0;
+}
+
+.tournament .v-datefield-calendarpanel-weeknumbers td {
+	width: 12.4%;
+}
+
+.tournament .v-datefield-calendarpanel-weekdays strong {
+	display: block;
+	text-align: right;
+	padding: 1px 5px 0 0;
+	height: 14px;
+	border-top: 1px solid #596775;
+}
+
+.tournament .v-datefield-calendarpanel-weekdays .v-first {
+	background-repeat: no-repeat;
+	background-image: url(../reindeer/datefield/img/weekday-first.png);/** sprite-ref: verticals; sprite-margin-bottom: 3px */
+}
+
+.tournament .v-datefield-calendarpanel-weekdays .v-last {
+	background-repeat: no-repeat;
+	background-position: right top;
+	background-image: url(../reindeer/datefield/img/weekday-last.png);/** sprite-ref: verticals; sprite-alignment: right; sprite-margin-bottom: 3px */
+}
+
+.v-ie .tournament .v-datefield-calendarpanel-weekdays td {
+	background: url(../reindeer/datefield/img/weekday-bg.png) repeat-x;
+	background-position: left top;
+}
+
+.v-ie .tournament .v-datefield-calendarpanel .v-first {
+	background: url(../reindeer/datefield/img/weekday-first.png) no-repeat;
+}
+
+.v-ie .tournament .v-datefield-calendarpanel .v-last {
+	background: url(../reindeer/datefield/img/weekday-last.png) no-repeat right top;
+}
+
+.tournament .v-datefield-calendarpanel-body td {
+	text-align: right;
+	height: 19px;
+}
+
+.tournament .v-datefield-calendarpanel-day, .tournament .v-datefield-calendarpanel-weeknumber, .tournament .v-datefield-calendarpanel-day-today {
+	padding: 2px 5px 2px 0;
+	display: block;
+	margin: 1px 0 0 5px;
+}
+
+.tournament .v-datefield-calendarpanel-weeknumber {
+	margin: 0;
+	padding-top: 4px;
+	padding-bottom: 3px;
+	font-size: 10.8px;
+}
+
+.tournament .v-datefield-calendarpanel-day-today {
+	color: #4095d1;
+	border: none;
+}
+
+.tournament .v-datefield-calendarpanel-day-selected {
+	background: #507ba3;
+	color: #fff;
+	text-shadow: #3b5b79 0 1px 0;
+	border-radius: 2px;
+	-webkit-border-radius: 2px;
+	-moz-border-radius: 2px;
+}
+
+.tournament .v-datefield-calendarpanel-time select {
+	padding: 0;
+	font-size: 11px;
+	margin: 2px;
+}
+
+.tournament .v-datefield-popup {
+	background: #f8f8f9;
+	padding: 8px 4px;
+	border-radius: 3px;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+}
+
+.v-sa .tournament .v-datefield-popup, .v-op .tournament .v-datefield-popup {
+	background: rgba(255, 255, 255, 0.95);
+}
+
+.tournament .v-datefield-year > .v-datefield-textfield {
+	width: 4.5em;
+}
+
+.tournament .v-datefield-month > .v-datefield-textfield {
+	width: 5.5em;
+}
+
+.tournament .v-datefield-day > .v-datefield-textfield {
+	width: 6em;
+}
+
+.tournament .v-datefield-full > .v-datefield-textfield {
+	width: 12.5em;
+}
+
+.tournament .v-datefield-popupcalendar input.v-datefield-textfield {
+	border-right-width: 0;
+	-moz-border-radius-topright: 0;
+	-moz-border-radius-bottomright: 0;
+	-webkit-border-top-right-radius: 0;
+	-webkit-border-bottom-right-radius: 0;
+	height: 23px;
+}
+
+.tournament .v-datefield.v-readonly input.v-datefield-textfield {
+	border-right-width: 1px;
+	border-radius: 3px;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+}
+
+.tournament .v-datefield-prompt .v-datefield-textfield {
+	color: #999;
+	font-style: normal;
+}
+
+.tournament .v-datefield-popupcalendar .v-datefield-button {
+	width: 24px;
+	margin-right: -24px;
+	height: 23px;
+	background: transparent;
+	border: none;
+	padding: 0;
+	background-image: url(../reindeer/datefield/img/popup-btn.png);/** sprite-ref: verticals */
+	cursor: pointer;
+	-webkit-border-radius: 0;
+	-moz-border-radius: 0;
+	border-radius: 0;
+}
+
+.tournament .v-datefield-popupcalendar .v-datefield-button:active {
+	background-image: url(../reindeer/datefield/img/popup-btn-pressed.png);/** sprite-ref: verticals */
+}
+
+.tournament .black .v-datefield-popupcalendar .v-datefield-button {
+	background-image: url(../reindeer/datefield/img/popup-btn-black.png);/** sprite-ref: black-verticals */
+}
+
+.tournament .black .v-datefield-popupcalendar .v-datefield-button:active {
+	background-image: url(../reindeer/datefield/img/popup-btn-black-pressed.png);/** sprite-ref: black-verticals */
+}
+
+.tournament .black td.v-datefield-calendarpanel-month {
+	background-image: url(../reindeer/datefield/img/header-bg-black.png);/** sprite-ref: black-verticals; sprite-alignment: repeat */
+	height: 21px;
+}
+
+.tournament .black span.v-datefield-calendarpanel-month {
+	border-left: 1px solid #333638;
+	border-right: 1px solid #232527;
+	color: #c9ccce;
+	text-shadow: #000 0 -1px 0;
+	padding: 4px 10px 1px 10px;
+	margin-top: 0;
+}
+
+.tournament .black .v-datefield-calendarpanel-prevyear button, .tournament .black .v-datefield-calendarpanel-nextyear button, .tournament .black .v-datefield-calendarpanel-prevmonth button, .tournament .black .v-datefield-calendarpanel-nextmonth button {
+	background-image: url(../reindeer/datefield/img/year-prev-black.png);/** sprite-ref: black-verticals */
+	height: 21px;
+}
+
+.tournament .black .v-datefield-calendarpanel-nextyear button {
+	background-image: url(../reindeer/datefield/img/year-next-black.png);/** sprite-ref: black-verticals */
+}
+
+.tournament .black .v-datefield-calendarpanel-prevyear button:active, .v-ie .tournament .black .v-datefield-calendarpanel-prevyear button.v-pressed {
+	background-image: url(../reindeer/datefield/img/year-prev-black-pressed.png);/** sprite-ref: black-verticals */
+}
+
+.tournament .black .v-datefield-calendarpanel-nextyear button:active, .v-ie .tournament .black .v-datefield-calendarpanel-nextyear button.v-pressed {
+	background-image: url(../reindeer/datefield/img/year-next-black-pressed.png);/** sprite-ref: black-verticals */
+}
+
+.tournament .black .v-datefield-calendarpanel-prevmonth, .tournament .black .v-datefield-calendarpanel-nextmonth {
+	background-image: url(../reindeer/datefield/img/header-bg-black.png);/** sprite-ref: black-verticals; sprite-alignment: repeat */
+}
+
+.tournament .black .v-datefield-calendarpanel-prevmonth button, .tournament .black .v-datefield-calendarpanel-nextmonth button {
+	border-left: 1px solid #333638;
+	border-right: 1px solid #232527;
+	background-image: url(../reindeer/datefield/img/month-prev-black.png);/** sprite-ref: black-verticals; sprite-alignment: center */
+	margin-top: 0;
+}
+
+.tournament .black .v-datefield-calendarpanel-nextmonth button {
+	background-image: url(../reindeer/datefield/img/month-next-black.png);/** sprite-ref: black-verticals; sprite-alignment: center */
+}
+
+.tournament .black .v-datefield-calendarpanel-prevmonth button:active, .v-ie .tournament .black .v-datefield-calendarpanel-prevmonth button.v-pressed {
+	background-image: url(../reindeer/datefield/img/month-prev-black-pressed.png);/** sprite-ref: black-verticals; sprite-alignment: center */
+}
+
+.tournament .black .v-datefield-calendarpanel-nextmonth button:active, .v-ie .tournament .black .v-datefield-calendarpanel-nextmonth button.v-pressed {
+	background-image: url(../reindeer/datefield/img/month-next-black-pressed.png);/** sprite-ref: black-verticals; sprite-alignment: center */
+}
+
+.v-ie .tournament .black .v-datefield-calendarpanel-prevmonth button, .v-ie .tournament .black .v-datefield-calendarpanel-nextmonth button {
+	border: none;
+}
+
+.tournament .black .v-datefield-calendarpanel-weekdays td {
+	background-image: url(../reindeer/datefield/img/weekday-bg-black.png);/** sprite-ref: black-verticals; sprite-alignment: repeat; sprite-margin-bottom: 3px */
+	color: #0a0b0b;
+	text-shadow: #5a5c5e 0 1px 0;
+}
+
+.tournament .black .v-datefield-calendarpanel-weekdays strong {
+	border-top-color: #1b1c1d;
+}
+
+.tournament .black .v-datefield-calendarpanel .v-first {
+	background-image: url(../reindeer/datefield/img/weekday-first-black.png);/** sprite-ref: black-verticals; sprite-margin-bottom: 3px */
+}
+
+.tournament .black .v-datefield-calendarpanel .v-last {
+	background-image: url(../reindeer/datefield/img/weekday-last-black.png);/** sprite-ref: black-verticals; sprite-alignment: right */
+}
+
+.tournament .black .v-datefield-prompt .v-datefield-textfield {
+	color: #5f6366;
+}
+
+.tournament .v-inline-datefield {
+	overflow: hidden;
+}
+
+.tournament input.v-textfield-readonly:focus {
+	background-color: transparent;
+}
+
+.tournament .v-inline-datefield-calendarpanel {
+	border-collapse: collapse;
+	margin: 0;
+	padding: 0;
+	height: auto !important;
+}
+
+.tournament .v-inline-datefield-year .v-inline-datefield-calendarpanel-prevmonth, .tournament .v-inline-datefield-year .v-inline-datefield-calendarpanel-nextmonth {
+	display: none;
+}
+
+.tournament .v-inline-datefield-calendarpanel td {
+	vertical-align: top;
+}
+
+.tournament td.v-inline-datefield-calendarpanel-month {
+	height: 23px;
+	background-repeat: repeat-x;
+	background-image: url(../reindeer/datefield/img/header-bg.png);/** sprite-ref: verticals; sprite-alignment: repeat */
+}
+
+.tournament span.v-inline-datefield-calendarpanel-month {
+	display: block;
+	text-align: center;
+	height: 16px;
+	padding: 3px 10px 0 10px;
+	border-left: 1px solid #efefef;
+	border-right: 1px solid #d8d8d8;
+	text-shadow: #fff 0 1px 0;
+	overflow: hidden;
+	margin-top: 1px;
+}
+
+.tournament .v-inline-datefield-year .v-inline-datefield-calendarpanel-month {
+	width: 35px;
+}
+
+.tournament .v-inline-datefield-month .v-inline-datefield-calendarpanel-month, .tournament .v-inline-datefield-day .v-inline-datefield-calendarpanel-month, .tournament .v-inline-datefield-full .v-inline-datefield-calendarpanel-month {
+	width: 124px;
+}
+
+.tournament .v-inline-datefield-month, .tournament .v-inline-datefield-day, .tournament .v-inline-datefield-full {
+	min-width: 240px;
+}
+
+.tournament .v-inline-datefield-popupcalendar {
+	min-width: 0;
+	padding-right: 24px;
+}
+
+.tournament .v-inline-datefield-year .v-inline-datefield-calendarpanel {
+	width: 100px;
+}
+
+.tournament td.v-inline-datefield-calendarpanel-prevyear {
+	text-align: right;
+}
+
+.tournament td.v-inline-datefield-calendarpanel-nextyear {
+	text-align: left;
+}
+
+.tournament .v-inline-datefield-calendarpanel-prevyear button, .tournament .v-inline-datefield-calendarpanel-nextyear button, .tournament .v-inline-datefield-calendarpanel-prevmonth button, .tournament .v-inline-datefield-calendarpanel-nextmonth button {
+	width: 24px;
+	height: 23px;
+	border: none;
+	background: transparent;
+	background-repeat: no-repeat;
+	background-image: url(../reindeer/datefield/img/year-prev.png);/** sprite-ref: verticals */
+	overflow: hidden;
+	padding: 0;
+	text-indent: -9999px;
+	outline: none;
+	-webkit-border-radius: 0;
+	-moz-border-radius: 0;
+	border-radius: 0;
+}
+
+.v-ie .tournament .v-inline-datefield-calendarpanel-prevyear button, .v-ie .tournament .v-inline-datefield-calendarpanel-nextyear button, .v-ie .tournament .v-inline-datefield-calendarpanel-prevmonth button, .v-ie .tournament .v-inline-datefield-calendarpanel-nextmonth button {
+	text-indent: 0;
+	font-size: 1px;
+}
+
+.tournament .v-inline-datefield-calendarpanel-nextyear button {
+	background-position: left top;
+	background-image: url(../reindeer/datefield/img/year-next.png);/** sprite-ref: verticals */
+}
+
+.tournament .v-inline-datefield-calendarpanel-prevyear button:active, .v-ie .tournament .v-inline-datefield-calendarpanel-prevyear button.v-pressed {
+	background-image: url(../reindeer/datefield/img/year-prev-pressed.png);/** sprite-ref: verticals */
+}
+
+.tournament .v-inline-datefield-calendarpanel-nextyear button:active, .v-ie .tournament .v-inline-datefield-calendarpanel-nextyear button.v-pressed {
+	background-image: url(../reindeer/datefield/img/year-next-pressed.png);/** sprite-ref: verticals */
+}
+
+.tournament .v-inline-datefield-calendarpanel-prevmonth, .tournament .v-inline-datefield-calendarpanel-nextmonth {
+	width: 24px;
+	background-repeat: repeat-x;
+	background-image: url(../reindeer/datefield/img/header-bg.png);/** sprite-ref: verticals; sprite-alignment: repeat */
+}
+
+.tournament .v-inline-datefield-calendarpanel-prevmonth button, .tournament .v-inline-datefield-calendarpanel-nextmonth button {
+	width: 100%;
+	height: 21px;
+	border-left: 1px solid #efefef;
+	border-right: 1px solid #d8d8d8;
+	background: transparent;
+	background-position: center top;
+	background-image: url(../reindeer/datefield/img/month-prev.png);/** sprite-ref: verticals; sprite-alignment: center */
+	min-width: 24px;
+	margin-top: 1px;
+}
+
+.v-ie .tournament .v-inline-datefield-calendarpanel-prevmonth button, .v-ie .tournament .v-inline-datefield-calendarpanel-nextmonth button {
+	border: none;
+}
+
+.tournament .v-inline-datefield-calendarpanel-nextmonth button {
+	background-image: url(../reindeer/datefield/img/month-next.png);/** sprite-ref: verticals; sprite-alignment: center */
+}
+
+.tournament .v-inline-datefield-calendarpanel-prevmonth button:active, .v-ie .tournament .v-inline-datefield-calendarpanel-prevmonth button.v-pressed {
+	background-position: center top;
+	background-image: url(../reindeer/datefield/img/month-prev-pressed.png);/** sprite-ref: verticals; sprite-alignment: center */
+}
+
+.tournament .v-inline-datefield-calendarpanel-nextmonth button:active, .v-ie .tournament .v-inline-datefield-calendarpanel-nextmonth button.v-pressed {
+	background-position: center top;
+	background-image: url(../reindeer/datefield/img/month-next-pressed.png);/** sprite-ref: verticals; sprite-alignment: center */
+}
+
+.tournament .v-inline-datefield-calendarpanel-body, .tournament .v-inline-datefield-calendarpanel-time {
+	text-align: center;
+	vertical-align: top;
+}
+
+.tournament .v-inline-datefield-calendarpanel-body table {
+	border-collapse: collapse;
+	margin: 0;
+	padding: 0;
+	width: 220px;
+	margin: 0 auto;
+}
+
+.tournament .v-inline-datefield-calendarpanel-weekdays td {
+	width: 14.2%;
+	overflow: hidden;
+	background-repeat: repeat-x;
+	background-image: url(../reindeer/datefield/img/weekday-bg.png);/** sprite-ref: verticals; sprite-alignment: repeat; sprite-margin-bottom: 3px */
+	font-size: 10px;
+	line-height: normal;
+	text-transform: uppercase;
+	color: #eaeff1;
+	text-shadow: #3b4651 0 -1px 0;
+	vertical-align: top;
+	padding: 0;
+}
+
+.tournament .v-inline-datefield-calendarpanel-weeknumbers td {
+	width: 12.4%;
+}
+
+.tournament .v-inline-datefield-calendarpanel-weekdays strong {
+	display: block;
+	text-align: right;
+	padding: 1px 5px 0 0;
+	height: 14px;
+	border-top: 1px solid #596775;
+}
+
+.tournament .v-inline-datefield-calendarpanel-weekdays .v-first {
+	background-repeat: no-repeat;
+	background-image: url(../reindeer/datefield/img/weekday-first.png);/** sprite-ref: verticals; sprite-margin-bottom: 3px */
+}
+
+.tournament .v-inline-datefield-calendarpanel-weekdays .v-last {
+	background-repeat: no-repeat;
+	background-position: right top;
+	background-image: url(../reindeer/datefield/img/weekday-last.png);/** sprite-ref: verticals; sprite-alignment: right; sprite-margin-bottom: 3px */
+}
+
+.v-ie .tournament .v-inline-datefield-calendarpanel-weekdays td {
+	background: url(../reindeer/datefield/img/weekday-bg.png) repeat-x;
+	background-position: left top;
+}
+
+.v-ie .tournament .v-inline-datefield-calendarpanel .v-first {
+	background: url(../reindeer/datefield/img/weekday-first.png) no-repeat;
+}
+
+.v-ie .tournament .v-inline-datefield-calendarpanel .v-last {
+	background: url(../reindeer/datefield/img/weekday-last.png) no-repeat right top;
+}
+
+.tournament .v-inline-datefield-calendarpanel-body td {
+	text-align: right;
+	height: 19px;
+}
+
+.tournament .v-inline-datefield-calendarpanel-day, .tournament .v-inline-datefield-calendarpanel-weeknumber, .tournament .v-inline-datefield-calendarpanel-day-today {
+	padding: 2px 5px 2px 0;
+	display: block;
+	margin: 1px 0 0 5px;
+}
+
+.tournament .v-inline-datefield-calendarpanel-weeknumber {
+	margin: 0;
+	padding-top: 4px;
+	padding-bottom: 3px;
+	font-size: 10.8px;
+}
+
+.tournament .v-inline-datefield-calendarpanel-day-today {
+	color: #4095d1;
+	border: none;
+}
+
+.tournament .v-inline-datefield-calendarpanel-day-selected {
+	background: #507ba3;
+	color: #fff;
+	text-shadow: #3b5b79 0 1px 0;
+	border-radius: 2px;
+	-webkit-border-radius: 2px;
+	-moz-border-radius: 2px;
+}
+
+.tournament .v-inline-datefield-calendarpanel-time select {
+	padding: 0;
+	font-size: 11px;
+	margin: 2px;
+}
+
+.tournament .v-inline-datefield-popup {
+	background: #f8f8f9;
+	padding: 8px 4px;
+	border-radius: 3px;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+}
+
+.v-sa .tournament .v-inline-datefield-popup, .v-op .tournament .v-inline-datefield-popup {
+	background: rgba(255, 255, 255, 0.95);
+}
+
+.tournament .v-inline-datefield-year > .v-inline-datefield-textfield {
+	width: 4.5em;
+}
+
+.tournament .v-inline-datefield-month > .v-inline-datefield-textfield {
+	width: 5.5em;
+}
+
+.tournament .v-inline-datefield-day > .v-inline-datefield-textfield {
+	width: 6em;
+}
+
+.tournament .v-inline-datefield-full > .v-inline-datefield-textfield {
+	width: 12.5em;
+}
+
+.tournament .v-inline-datefield-popupcalendar input.v-inline-datefield-textfield {
+	border-right-width: 0;
+	-moz-border-radius-topright: 0;
+	-moz-border-radius-bottomright: 0;
+	-webkit-border-top-right-radius: 0;
+	-webkit-border-bottom-right-radius: 0;
+	height: 23px;
+}
+
+.tournament .v-inline-datefield.v-readonly input.v-inline-datefield-textfield {
+	border-right-width: 1px;
+	border-radius: 3px;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+}
+
+.tournament .v-inline-datefield-prompt .v-inline-datefield-textfield {
+	color: #999;
+	font-style: normal;
+}
+
+.tournament .v-inline-datefield-popupcalendar .v-inline-datefield-button {
+	width: 24px;
+	margin-right: -24px;
+	height: 23px;
+	background: transparent;
+	border: none;
+	padding: 0;
+	background-image: url(../reindeer/datefield/img/popup-btn.png);/** sprite-ref: verticals */
+	cursor: pointer;
+	-webkit-border-radius: 0;
+	-moz-border-radius: 0;
+	border-radius: 0;
+}
+
+.tournament .v-inline-datefield-popupcalendar .v-inline-datefield-button:active {
+	background-image: url(../reindeer/datefield/img/popup-btn-pressed.png);/** sprite-ref: verticals */
+}
+
+.tournament .black .v-inline-datefield-popupcalendar .v-inline-datefield-button {
+	background-image: url(../reindeer/datefield/img/popup-btn-black.png);/** sprite-ref: black-verticals */
+}
+
+.tournament .black .v-inline-datefield-popupcalendar .v-inline-datefield-button:active {
+	background-image: url(../reindeer/datefield/img/popup-btn-black-pressed.png);/** sprite-ref: black-verticals */
+}
+
+.tournament .black td.v-inline-datefield-calendarpanel-month {
+	background-image: url(../reindeer/datefield/img/header-bg-black.png);/** sprite-ref: black-verticals; sprite-alignment: repeat */
+	height: 21px;
+}
+
+.tournament .black span.v-inline-datefield-calendarpanel-month {
+	border-left: 1px solid #333638;
+	border-right: 1px solid #232527;
+	color: #c9ccce;
+	text-shadow: #000 0 -1px 0;
+	padding: 4px 10px 1px 10px;
+	margin-top: 0;
+}
+
+.tournament .black .v-inline-datefield-calendarpanel-prevyear button, .tournament .black .v-inline-datefield-calendarpanel-nextyear button, .tournament .black .v-inline-datefield-calendarpanel-prevmonth button, .tournament .black .v-inline-datefield-calendarpanel-nextmonth button {
+	background-image: url(../reindeer/datefield/img/year-prev-black.png);/** sprite-ref: black-verticals */
+	height: 21px;
+}
+
+.tournament .black .v-inline-datefield-calendarpanel-nextyear button {
+	background-image: url(../reindeer/datefield/img/year-next-black.png);/** sprite-ref: black-verticals */
+}
+
+.tournament .black .v-inline-datefield-calendarpanel-prevyear button:active, .v-ie .tournament .black .v-inline-datefield-calendarpanel-prevyear button.v-pressed {
+	background-image: url(../reindeer/datefield/img/year-prev-black-pressed.png);/** sprite-ref: black-verticals */
+}
+
+.tournament .black .v-inline-datefield-calendarpanel-nextyear button:active, .v-ie .tournament .black .v-inline-datefield-calendarpanel-nextyear button.v-pressed {
+	background-image: url(../reindeer/datefield/img/year-next-black-pressed.png);/** sprite-ref: black-verticals */
+}
+
+.tournament .black .v-inline-datefield-calendarpanel-prevmonth, .tournament .black .v-inline-datefield-calendarpanel-nextmonth {
+	background-image: url(../reindeer/datefield/img/header-bg-black.png);/** sprite-ref: black-verticals; sprite-alignment: repeat */
+}
+
+.tournament .black .v-inline-datefield-calendarpanel-prevmonth button, .tournament .black .v-inline-datefield-calendarpanel-nextmonth button {
+	border-left: 1px solid #333638;
+	border-right: 1px solid #232527;
+	background-image: url(../reindeer/datefield/img/month-prev-black.png);/** sprite-ref: black-verticals; sprite-alignment: center */
+	margin-top: 0;
+}
+
+.tournament .black .v-inline-datefield-calendarpanel-nextmonth button {
+	background-image: url(../reindeer/datefield/img/month-next-black.png);/** sprite-ref: black-verticals; sprite-alignment: center */
+}
+
+.tournament .black .v-inline-datefield-calendarpanel-prevmonth button:active, .v-ie .tournament .black .v-inline-datefield-calendarpanel-prevmonth button.v-pressed {
+	background-image: url(../reindeer/datefield/img/month-prev-black-pressed.png);/** sprite-ref: black-verticals; sprite-alignment: center */
+}
+
+.tournament .black .v-inline-datefield-calendarpanel-nextmonth button:active, .v-ie .tournament .black .v-inline-datefield-calendarpanel-nextmonth button.v-pressed {
+	background-image: url(../reindeer/datefield/img/month-next-black-pressed.png);/** sprite-ref: black-verticals; sprite-alignment: center */
+}
+
+.v-ie .tournament .black .v-inline-datefield-calendarpanel-prevmonth button, .v-ie .tournament .black .v-inline-datefield-calendarpanel-nextmonth button {
+	border: none;
+}
+
+.tournament .black .v-inline-datefield-calendarpanel-weekdays td {
+	background-image: url(../reindeer/datefield/img/weekday-bg-black.png);/** sprite-ref: black-verticals; sprite-alignment: repeat; sprite-margin-bottom: 3px */
+	color: #0a0b0b;
+	text-shadow: #5a5c5e 0 1px 0;
+}
+
+.tournament .black .v-inline-datefield-calendarpanel-weekdays strong {
+	border-top-color: #1b1c1d;
+}
+
+.tournament .black .v-inline-datefield-calendarpanel .v-first {
+	background-image: url(../reindeer/datefield/img/weekday-first-black.png);/** sprite-ref: black-verticals; sprite-margin-bottom: 3px */
+}
+
+.tournament .black .v-inline-datefield-calendarpanel .v-last {
+	background-image: url(../reindeer/datefield/img/weekday-last-black.png);/** sprite-ref: black-verticals; sprite-alignment: right */
+}
+
+.tournament .black .v-inline-datefield-prompt .v-inline-datefield-textfield {
+	color: #5f6366;
+}
+
+.tournament .v-inline-datefield {
+	line-height: 14px;
+}
+
+.tournament .v-formlayout-errorcell {
+	width: 13px;
+}
+
+.tournament .v-formlayout-cell .v-errorindicator {
+	width: 13px;
+	height: 16px;
+	background: transparent url(../reindeer/common/icons/error.png) no-repeat 50%;
+}
+
+.tournament .v-formlayout-captioncell {
+	text-align: right;
+	white-space: nowrap;
+}
+
+.tournament .v-formlayout-spacing > tbody > .v-formlayout-row > .v-formlayout-captioncell, .tournament .v-formlayout-spacing > tbody > .v-formlayout-row > .v-formlayout-contentcell, .tournament .v-formlayout-spacing > tbody > .v-formlayout-row > .v-formlayout-errorcell {
+	padding-top: 8px;
+}
+
+.tournament .v-formlayout-margin-top > tbody > .v-formlayout-firstrow > .v-formlayout-captioncell, .tournament .v-formlayout-margin-top > tbody > .v-formlayout-firstrow > .v-formlayout-contentcell, .tournament .v-formlayout-margin-top > tbody > .v-formlayout-firstrow > .v-formlayout-errorcell {
+	padding-top: 15px;
+}
+
+.tournament .v-formlayout-margin-bottom > tbody > .v-formlayout-lastrow > .v-formlayout-captioncell, .tournament .v-formlayout-margin-bottom > tbody > .v-formlayout-lastrow > .v-formlayout-contentcell, .tournament .v-formlayout-margin-bottom > tbody > .v-formlayout-lastrow > .v-formlayout-errorcell {
+	padding-bottom: 15px;
+}
+
+.tournament .v-formlayout-margin-left > tbody > .v-formlayout-row > .v-formlayout-captioncell {
+	padding-left: 18px;
+}
+
+.tournament .v-formlayout-margin-right > tbody > .v-formlayout-row > .v-formlayout-contentcell {
+	padding-right: 18px;
+}
+
+.tournament .v-form-errormessage {
+	background: transparent url(../reindeer/common/icons/error.png) no-repeat 3px 2px;
+	padding-left: 20px;
+	margin-bottom: 5px;
+	margin-top: 5px;
+	min-height: 20px;
+}
+
+.tournament .v-form fieldset {
+	border: none;
+	border-top: 1px solid #babfc0;
+}
+
+.tournament .v-form-nocaption fieldset {
+	border: none;
+}
+
+.tournament .v-form-nocaption legend {
+	display: none;
+}
+
+.tournament .v-form legend {
+	margin: 0 0 0 20px;
+	padding: 0 5px;
+	font-weight: bold;
+	color: #222;
+}
+
+.tournament .black .v-form legend {
+	color: #e3e6e8;
+}
+
+.tournament .v-label {
+	line-height: 18px;
+}
+
+.tournament .white .black, .tournament .blue .black {
+	color: #C9CCCE;
+	text-shadow: 0 0 1px #000;
+}
+
+.tournament .black .v-label-h1, .tournament .black .v-label-h2, .tournament .black .v-caption-h1, .tournament .black .v-caption-h2, .tournament .white .black .v-label-h1, .tournament .white .black .v-label-h2, .tournament .white .black .v-caption-h1, .tournament .white .black .v-caption-h2, .tournament .blue .black .v-label-h1, .tournament .blue .black .v-label-h2, .tournament .blue .black .v-caption-h1, .tournament .blue .black .v-caption-h2 {
+	color: #fff;
+	text-shadow: rgba(0, 0, 0, 0.8) 0 2px 2px;
+}
+
+.tournament .black .v-label-light, .tournament .white .black .v-label-light {
+	color: #72787c;
+}
+
+.tournament .black .v-label hr, .tournament .white .black .v-label hr {
+	background: #0c0d0e;
+	color: #0c0d0e;
+	border-bottom-color: #292b2e;
+}
+
+.tournament.v-app .white, .tournament .v-window .white, .tournament.v-app .blue, .tournament .v-window .blue {
+	color: #222;
+	text-shadow: none;
+}
+
+.tournament .blue .v-label-h1, .tournament .blue .v-label-h2, .tournament .blue .v-caption-h1, .tournament .blue .v-caption-h2, .tournament .white .blue .v-label-h1, .tournament .white .blue .v-label-h2, .tournament .white .blue .v-caption-h1, .tournament .white .blue .v-caption-h2 {
+	color: #fff;
+	text-shadow: rgba(0, 0, 0, 0.3) 0 1px 1px;
+}
+
+.tournament .blue .v-label-light, .tournament .white .blue .v-label-light {
+	color: #6e7c83;
+}
+
+.tournament .blue .v-label hr, .tournament .white .blue .v-label hr {
+	background: #a3bcc9;
+	color: #a3bcc9;
+	border-bottom-color: #cfe2eb;
+}
+
+.tournament .v-label-h1, .tournament .v-label-h2, .tournament .v-caption-h1, .tournament .v-caption-h2, .tournament .white .v-label-h1, .tournament .white .v-label-h2, .tournament .white .v-caption-h1, .tournament .white .v-caption-h2 {
+	font-family: Helvetica, Arial, "Lucida Grande", Geneva, Tahoma, Verdana, sans-serif;
+	font-size: 24px;
+	line-height: 30px;
+	font-weight: bold;
+	color: #44698b;
+	letter-spacing: -0.02em;
+	text-shadow: #fff 0 -1px 1px;
+}
+
+.tournament .v-label-h2, .tournament .v-caption-h2, .tournament .white .v-label-h2, .tournament .white .v-caption-h2 {
+	font-size: 16px;
+	line-height: 22px;
+}
+
+.tournament .v-label-light, .tournament .white .v-label-light {
+	font-size: 11px;
+	line-height: 13px;
+	color: #707070;
+}
+
+.tournament .v-label hr, .tournament .white .v-label hr {
+	height: 2px;
+	overflow: hidden;
+	background: #dcdcdc;
+	color: #dcdcdc;
+	border: none;
+	border-bottom: 1px solid #fff;
+}
+
+.v-sa .tournament .v-label hr, .v-ie8 .tournament .v-label hr {
+	height: 1px;
+}
+
+.tournament .v-table .v-label {
+	line-height: normal;
+}
+
+.tournament .v-orderedlayout-margin-top, .tournament .v-horizontallayout-margin-top, .tournament .v-verticallayout-margin-top, .tournament .v-layout.v-margin-top {
+	padding-top: 18px;
+}
+
+.tournament .v-orderedlayout-margin-right, .tournament .v-horizontallayout-margin-right, .tournament .v-verticallayout-margin-right, .tournament .v-layout.v-margin-right {
+	padding-right: 18px;
+}
+
+.tournament .v-orderedlayout-margin-bottom, .tournament .v-horizontallayout-margin-bottom, .tournament .v-verticallayout-margin-bottom, .tournament .v-layout.v-margin-bottom {
+	padding-bottom: 18px;
+}
+
+.tournament .v-orderedlayout-margin-left, .tournament .v-horizontallayout-margin-left, .tournament .v-verticallayout-margin-left, .tournament .v-layout.v-margin-left {
+	padding-left: 18px;
+}
+
+.tournament .v-orderedlayout-spacing-on, .tournament .v-horizontallayout-spacing-on, .tournament .v-verticallayout-spacing-on {
+	padding-top: 7px;
+	padding-left: 6px;
+}
+
+.tournament .v-spacing {
+	height: 7px;
+	width: 6px;
+}
+
+.tournament .v-verticallayout-blue, .tournament .v-horizontallayout-blue, .tournament .v-orderedlayout-blue, .tournament .v-gridlayout-blue, .tournament .v-csslayout-blue, .tournament .v-formlayout-blue, .tournament .v-absolutelayout-blue, .tournament .v-splitpanel-vertical-blue, .tournament .v-splitpanel-horizontal-blue {
+	background-color: #bcd3de;
+}
+
+.tournament .v-panel-content > div.blue {
+	background-color: #bcd3de;
+}
+
+.tournament .v-verticallayout-white, .tournament .v-horizontallayout-white, .tournament .v-orderedlayout-white, .tournament .v-gridlayout-white, .tournament .v-csslayout-white, .tournament .v-formlayout-white, .tournament .v-absolutelayout-white, .tournament .v-splitpanel-vertical-white, .tournament .v-splitpanel-horizontal-white {
+	background-color: #fff;
+	color: #222;
+}
+
+.tournament .v-panel-content > div.white {
+	background-color: #fff;
+	color: #222;
+}
+
+.tournament .v-verticallayout-black, .tournament .v-horizontallayout-black, .tournament .v-orderedlayout-black, .tournament .v-gridlayout-black, .tournament .v-csslayout-black, .tournament .v-formlayout-black, .tournament .v-absolutelayout-black, .tournament .v-splitpanel-vertical-black, .tournament .v-splitpanel-horizontal-black {
+	background: #1e2022 url(../reindeer/layouts/img/black-bg.png) repeat-x;
+}
+
+.tournament .v-panel-content > div.black {
+	background: #1e2022 url(../reindeer/layouts/img/black-bg.png) repeat-x;
+}
+
+.tournament .v-link a:link span {
+	color: #1b699f;
+}
+
+.tournament .v-link a:visited span {
+	color: #5c7485;
+}
+
+.tournament .v-link a:hover span {
+	color: #2483c4;
+}
+
+.tournament .v-menubar {
+	height: 23px;
+	background: #323336 repeat-x;
+	background-image: url(../reindeer/menubar/img/bg.png);/** sprite-ref: verticals; sprite-alignment: repeat */
+	color: #d1d3d6;
+	text-shadow: rgba(0, 0, 0, 0.9) 0 1px 0;
+	padding: 0 8px;
+}
+
+.tournament .v-menubar .v-menubar-menuitem {
+	padding: 3px 8px;
+	height: 17px;
+	line-height: 16px;
+}
+
+.tournament .v-menubar .v-menubar-menuitem:hover {
+	color: #fff;
+}
+
+.tournament .v-menubar-submenu {
+	background: #f8f8f9;
+	border: none;
+	border-radius: 3px;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	-o-border-radius: 3px;
+	overflow: hidden;
+	padding: 4px 0;
+}
+
+.tournament .v-menubar-submenu .v-menubar-menuitem {
+	padding: 1px 26px 1px 10px;
+	line-height: 16px;
+}
+
+.tournament .v-menubar-submenu .v-menubar-menuitem-caption .v-icon {
+	vertical-align: middle;
+}
+
+.tournament .v-menubar .v-menubar-menuitem-selected, .tournament .v-menubar-submenu .v-menubar-menuitem-selected {
+	background: #4d749f repeat-x;
+	background-image: url(../reindeer/common/img/sel-bg.png);/** sprite-ref: verticals; sprite-alignment: repeat */
+	color: #fff;
+	text-shadow: 0 1px 0 #3b5a7a;
+}
+
+.tournament .v-menubar .v-menubar-menuitem-selected {
+	background-image: url(../reindeer/menubar/img/menu-sel-bg.png);/** sprite-ref: verticals; sprite-alignment: repeat; sprite-margin-bottom: 1px  */
+}
+
+.tournament .v-menubar-submenu .v-menubar-submenu-indicator {
+	background: transparent url(../reindeer/menubar/img/submenu-icon.png) no-repeat right 70%;
+	width: 26px;
+	height: 16px;
+	text-indent: -9999px;
+	font-size: 10.8px;
+}
+
+.tournament .v-menubar-submenu .v-menubar-menuitem-selected .v-menubar-submenu-indicator {
+	background-image: url(../reindeer/menubar/img/submenu-icon-hover.png);
+}
+
+.tournament .v-menubar-submenu-check-column .v-menubar-menuitem {
+	padding-left: 6px;
+}
+
+.tournament .v-menubar-submenu-check-column .v-menubar-menuitem-caption {
+	padding-left: 18px;
+}
+
+.tournament .v-menubar-submenu .v-menubar-menuitem-checked .v-menubar-menuitem-caption {
+	background: transparent url(../reindeer/menubar/img/checked.png) no-repeat left;
+}
+
+.tournament .v-menubar-submenu .v-menubar-menuitem-unchecked .v-menubar-menuitem-caption {
+	background: transparent url(../reindeer/menubar/img/unchecked.png) no-repeat left;
+}
+
+.tournament .v-menubar-submenu .v-menubar-menuitem-selected-checked .v-menubar-menuitem-caption {
+	background: transparent url(../reindeer/menubar/img/checked-selected.png) no-repeat left;
+}
+
+.tournament .v-menubar-submenu .v-menubar-menuitem-selected-unchecked .v-menubar-menuitem-caption {
+	background: transparent url(../reindeer/menubar/img/unchecked-selected.png) no-repeat left;
+}
+
+.tournament .v-Notification {
+	color: #fff;
+	border-radius: 4px;
+	-moz-border-radius: 4px;
+	-webkit-border-radius: 4px;
+	font-size: 16px;
+	background: #c8ccd0;
+	font-weight: bold;
+}
+
+.v-ie9 .tournament .v-Notification H1, .v-ie10 .tournament .v-Notification H1 {
+	font-weight: bold;
+}
+
+.tournament .v-Notification p {
+	line-height: 1.3;
+}
+
+.tournament .v-Notification-warning {
+	background: #fdf3b5;
+	color: #ca9a61;
+	border: 3px solid #fee3af;
+}
+
+.tournament .v-Notification-error {
+	background: #b40000 url(../reindeer/notification/img/error-close.png) no-repeat right top;
+	border: 3px solid #ca3030;
+}
+
+.tournament .v-Notification-tray {
+	margin: 0 5px 5px 0;
+	background: #3b3c3e;
+	border: 2px solid #585b5c;
+	padding: 0.8em 0.9em;
+}
+
+.tournament .v-Notification-tray h1 {
+	font-size: 14px;
+	line-height: 18px;
+}
+
+.tournament .v-Notification-tray p {
+	font-size: 12px;
+	font-weight: normal;
+}
+
+.tournament .v-Notification-system {
+	background-color: #b40000;
+}
+
+.tournament .blue .v-panel-caption, .tournament .blue .v-panel-nocaption, .tournament .blue .v-panel-content {
+	border-color: #a8bcc5;
+}
+
+.tournament .v-panel-caption, .tournament .v-panel-nocaption, .tournament .white .v-panel-caption, .tournament .white .v-panel-nocaption {
+	border-bottom: 1px solid #e5e5e5;
+	line-height: 16px;
+}
+
+.v-webkit .tournament .v-panel-caption, .v-webkit .tournament .v-panel-nocaption, .v-gecko .tournament .v-panel-caption, .v-gecko .tournament .v-panel-nocaption, .v-ie9 .tournament .v-panel-caption, .v-ie9 .tournament .v-panel-nocaption, .v-ie10 .tournament .v-panel-caption, .v-ie10 .tournament .v-panel-nocaption {
+	border-bottom-color: rgba(0, 0, 0, 0.08);
+}
+
+.v-webkit .tournament .v-panel-content, .v-gecko .tournament .v-panel-content, .v-ie9 .tournament .v-panel-content, .v-ie10 .tournament .v-panel-content {
+	border-top-color: rgba(0, 0, 0, 0.07);
+}
+
+.v-webkit .tournament .v-panel-deco, .v-gecko .tournament .v-panel-deco, .v-ie9 .tournament .v-panel-deco, .v-ie10 .tournament .v-panel-deco {
+	border-top-color: rgba(0, 0, 0, 0.1);
+	background: rgba(0, 0, 0, 0.08);
+}
+
+.tournament .v-panel-caption {
+	padding-bottom: 2px;
+}
+
+.tournament .v-panel-content, .tournament .white .v-panel-content {
+	background: #fff;
+	border: 1px solid #dcdcdc;
+	border-bottom: none;
+	border-top: none;
+}
+
+.tournament .blue .v-panel-deco {
+	border-color: #92a3ac;
+	background: #adc2cd;
+}
+
+.tournament .v-panel-deco, .tournament .white .v-panel-deco {
+	height: 1px;
+	border-top: 1px solid #bebebe;
+	background: #e2e2e2;
+	overflow: hidden;
+}
+
+.tournament .v-panel-caption .v-errorindicator {
+	height: 16px;
+	width: 13px;
+	background: url(../reindeer/common/icons/error.png) no-repeat 50%;
+	display: inline;
+	display: inline-block;
+	vertical-align: middle;
+}
+
+.tournament .v-panel-light .v-panel-caption-light, .tournament .v-panel-light .v-panel-nocaption-light {
+	border: none;
+}
+
+.tournament .v-panel-light .v-panel-content-light {
+	border: none;
+	background: transparent;
+}
+
+.tournament .v-panel-light .v-panel-deco-light {
+	height: 0;
+	border: none;
+}
+
+.tournament .v-popupview {
+	color: #1b699f;
+}
+
+.tournament .v-popupview:hover {
+	color: #2483c4;
+}
+
+.tournament .v-popupview-popup {
+	background: #fff;
+	padding: 3px;
+}
+
+.tournament .v-progressbar-wrapper {
+	background: #dfe2e4 url(../reindeer/progressindicator/img/base.gif) repeat-x;
+	border: 1px solid #bfbfbf;
+}
+
+.tournament .v-disabled .v-progressbar-wrapper {
+	background-image: url(../reindeer/progressindicator/img/disabled.gif);
+}
+
+.tournament .v-progressbar-indicator {
+	background: #f7f9f9 url(../reindeer/progressindicator/img/progress.png);
+}
+
+.tournament .v-progressindicator-wrapper {
+	background: #dfe2e4 url(../reindeer/progressindicator/img/base.gif) repeat-x;
+	border: 1px solid #bfbfbf;
+}
+
+.tournament .v-disabled .v-progressindicator-wrapper {
+	background-image: url(../reindeer/progressindicator/img/disabled.gif);
+}
+
+.tournament .v-progressindicator-indicator {
+	background: #f7f9f9 url(../reindeer/progressindicator/img/progress.png);
+}
+
+.tournament .v-filterselect {
+	height: 24px;
+	background-repeat: no-repeat;
+	background-image: url(../reindeer/select/img/left.png);/** sprite-ref: verticals; sprite-margin-bottom: 1px */
+	padding-left: 2px;
+	padding-right: 25px;
+}
+
+.tournament.v-app .v-filterselect-input, .tournament .v-window .v-filterselect-input, .tournament .v-popupview-popup .v-filterselect-input {
+	background: transparent repeat-x;
+	background-image: url(../reindeer/select/img/center.png);/** sprite-ref: verticals; sprite-alignment: repeat; sprite-margin-bottom: 1px */
+	border: none;
+	height: 24px;
+}
+
+.tournament.v-app input.v-filterselect-input, .tournament .v-window input.v-filterselect-input, .tournament .v-popupview-popup input.v-filterselect-input {
+	padding: 4px 0 4px 2px;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+.tournament .v-filterselect-prompt .v-filterselect-input {
+	font-style: normal;
+}
+
+.tournament .v-filterselect-input:focus {
+	outline: none;
+}
+
+.tournament .v-filterselect-focus {
+	background-image: url(../reindeer/select/img/left-focus.png);/** sprite-ref: verticals; sprite-margin-bottom: 1px */
+}
+
+.tournament .v-filterselect-focus .v-filterselect-input {
+	background-image: url(../reindeer/select/img/center-focus.png);/** sprite-ref: verticals; sprite-alignment: repeat */
+}
+
+.tournament .v-filterselect-button {
+	overflow: hidden;
+	width: 25px;
+	height: 24px;
+	background-position: 0 0;
+	background-image: url(../reindeer/select/img/right.png);/** sprite-ref: verticals ; sprite-margin-bottom: 1px */
+	cursor: default;
+	margin-right: -25px;
+}
+
+.tournament .v-filterselect-button:hover {
+	background-image: url(../reindeer/select/img/right-hover.png);/** sprite-ref: verticals */
+}
+
+.tournament .v-filterselect-button:active {
+	background-image: url(../reindeer/select/img/right-pressed.png);/** sprite-ref: verticals */
+}
+
+.tournament .v-filterselect-focus .v-filterselect-button {
+	background-image: url(../reindeer/select/img/right-focus.png);/** sprite-ref: verticals */
+}
+
+.tournament .v-filterselect-focus .v-filterselect-button:hover {
+	background-image: url(../reindeer/select/img/right-focus-hover.png);/** sprite-ref: verticals */
+}
+
+.tournament .v-filterselect-focus .v-filterselect-button:active {
+	background-image: url(../reindeer/select/img/right-focus-pressed.png);/** sprite-ref: verticals */
+}
+
+.tournament .v-disabled .v-filterselect-button:hover, .tournament .v-readonly .v-filterselect-button:hover {
+	background-image: url(../reindeer/select/img/right.png);/** sprite-ref: verticals */
+}
+
+.tournament .v-filterselect-suggestpopup {
+	background: #f8f8f9;
+	border: none;
+	border-radius: 3px;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	-o-border-radius: 3px;
+	overflow: hidden;
+}
+
+.tournament .v-filterselect-suggestmenu {
+	margin: 4px 0;
+}
+
+.tournament .v-filterselect-suggestmenu .gwt-MenuItem {
+	padding: 1px 8px;
+	height: 16px;
+	user-select: none;
+	-moz-user-select: none;
+	-webkit-user-select: none;
+	cursor: default;
+}
+
+.tournament .v-filterselect-suggestmenu .gwt-MenuItem .v-icon {
+	margin-right: 3px;
+}
+
+.tournament .v-filterselect-suggestmenu .gwt-MenuItem-selected {
+	background: transparent repeat-x;
+	background-image: url(../reindeer/common/img/sel-bg.png);/** sprite-ref: verticals; sprite-alignment: repeat */
+	color: #fff;
+	text-shadow: #3b5a7a 0 1px 0;
+}
+
+.tournament .v-filterselect-nextpage, .tournament .v-filterselect-nextpage-off, .tournament .v-filterselect-prevpage-off, .tournament .v-filterselect-prevpage {
+	height: 11px;
+	width: 100%;
+	background: transparent;
+	margin-bottom: -4px;
+}
+
+.tournament .v-filterselect-nextpage, .tournament .v-filterselect-nextpage-off {
+	margin: -4px 0 0;
+}
+
+.tournament .v-filterselect-nextpage:hover {
+	background-repeat: repeat-x;
+	background-image: url(../reindeer/select/img/page-down-hover.png);/** sprite-ref: verticals; sprite-alignment: repeat */
+}
+
+.tournament .v-filterselect-prevpage:hover {
+	background-repeat: repeat-x;
+	background-image: url(../reindeer/select/img/page-up-hover.png);/** sprite-ref: verticals; sprite-alignment: repeat */
+}
+
+.tournament .v-filterselect-nextpage:active {
+	background-repeat: repeat-x;
+	background-image: url(../reindeer/select/img/page-down-pressed.png);/** sprite-ref: verticals; sprite-alignment: repeat */
+}
+
+.tournament .v-filterselect-prevpage:active {
+	background-repeat: repeat-x;
+	background-image: url(../reindeer/select/img/page-up-pressed.png);/** sprite-ref: verticals; sprite-alignment: repeat */
+}
+
+.tournament .v-filterselect-nextpage-off span, .tournament .v-filterselect-prevpage-off span {
+	display: none;
+}
+
+.tournament .v-filterselect-nextpage span, .tournament .v-filterselect-prevpage span {
+	display: block;
+	height: 11px;
+	width: 100%;
+	overflow: hidden;
+	text-indent: -99999px;
+	background: transparent no-repeat center 3px;
+	background-image: url(../reindeer/select/img/arrow-down.png);/** sprite-ref: verticals; sprite-margin-top: 3px; sprite-margin-bottom: 3px; sprite-alignment: center */
+	user-select: none;
+	-moz-user-select: none;
+	-webkit-user-select: none;
+}
+
+.tournament .v-filterselect-prevpage span {
+	background-image: url(../reindeer/select/img/arrow-up.png);/** sprite-ref: verticals; sprite-margin-top: 3px; sprite-margin-bottom: 3px; sprite-alignment: center */
+}
+
+.tournament .v-filterselect-nextpage:hover span {
+	background-image: url(../reindeer/select/img/arrow-down-hover.png);/** sprite-ref: verticals; sprite-margin-top: 3px; sprite-margin-bottom: 3px; sprite-alignment: center */
+}
+
+.tournament .v-filterselect-prevpage:hover span {
+	background-image: url(../reindeer/select/img/arrow-up-hover.png);/** sprite-ref: verticals; sprite-margin-top: 3px; sprite-margin-bottom: 3px; sprite-alignment: center */
+}
+
+.tournament .v-filterselect-status {
+	text-shadow: #e9eaeb 0 1px 0;
+	font-size: 11px;
+	line-height: normal;
+	width: 100%;
+	padding: 3px 0;
+	height: 11px;
+	overflow: hidden;
+	background-repeat: repeat-x;
+	background-image: url(../reindeer/select/img/status-bg.png);/** sprite-ref: verticals; sprite-alignment: repeat */
+	-moz-border-radius-bottomleft: 3px;
+	-moz-border-radius-bottomright: 3px;
+	-webkit-border-bottom-left-radius: 3px;
+	-webkit-border-bottom-right-radius: 3px;
+	user-select: none;
+	-moz-user-select: none;
+	-webkit-user-select: none;
+}
+
+.v-ie .tournament .v-filterselect-suggestmenu .gwt-MenuItem-selected {
+	background: transparent url(../reindeer/common/img/sel-bg.png) repeat-x;
+}
+
+.v-ie .tournament .v-filterselect-nextpage:hover {
+	background: transparent url(../reindeer/select/img/page-down-hover.png) repeat-x;
+}
+
+.v-ie .tournament .v-filterselect-prevpage:hover {
+	background: transparent url(../reindeer/select/img/page-up-hover.png) repeat-x;
+}
+
+.v-ie .tournament .v-filterselect-prevpage span {
+	background: transparent url(../reindeer/select/img/arrow-up.png) no-repeat center 3px;
+}
+
+.v-ie .tournament .v-filterselect-nextpage span {
+	background: transparent url(../reindeer/select/img/arrow-down.png) no-repeat center 3px;
+}
+
+.v-ie .tournament .v-filterselect-prevpage:hover span {
+	background: transparent url(../reindeer/select/img/arrow-up-hover.png) no-repeat center 3px;
+}
+
+.v-ie .tournament .v-filterselect-nextpage:hover span {
+	background: transparent url(../reindeer/select/img/arrow-down-hover.png) no-repeat center 3px;
+}
+
+.v-ie .tournament .v-filterselect-status {
+	background: transparent url(../reindeer/select/img/status-bg.png) repeat-x;
+}
+
+.tournament .v-filterselect .v-icon {
+	width: 16px;
+	position: relative;
+}
+
+.tournament .v-filterselect .v-icon + .v-filterselect-input {
+	margin-left: -16px;
+	padding-left: 18px;
+}
+
+.tournament .black .v-filterselect {
+	background-image: url(../reindeer/select/img/black/left-black.png);/** sprite-ref: black-verticals; sprite-margin-bottom: 1px */
+}
+
+.tournament.v-app .black .v-filterselect-input, .tournament .v-window .black .v-filterselect-input, .tournament .v-window-black .v-filterselect-input, .tournament .v-popupview-popup .black .v-filterselect-input {
+	color: #c9ccce;
+	background-image: url(../reindeer/select/img/black/center-black.png);/** sprite-ref: black-verticals; sprite-alignment: repeat; sprite-margin-bottom: 1px */
+}
+
+.tournament .black .v-filterselect-focus {
+	background-image: url(../reindeer/select/img/black/left-black-focus.png);/** sprite-ref: black-verticals; sprite-margin-bottom: 1px */
+}
+
+.tournament .black .v-filterselect-focus .v-filterselect-input {
+	background-image: url(../reindeer/select/img/black/center-black-focus.png);/** sprite-ref: black-verticals; sprite-alignment: repeat; sprite-margin-bottom: 1px */
+}
+
+.tournament .black .v-filterselect-button {
+	background-image: url(../reindeer/select/img/black/right-black.png);/** sprite-ref: black-verticals; sprite-margin-bottom: 1px */
+}
+
+.tournament .black .v-filterselect-button:hover {
+	background-image: url(../reindeer/select/img/black/right-black-hover.png);/** sprite-ref: black-verticals; sprite-margin-bottom: 1px */
+}
+
+.tournament .black .v-filterselect-button:active {
+	background-image: url(../reindeer/select/img/black/right-black-pressed.png);/** sprite-ref: black-verticals; sprite-margin-bottom: 1px */
+}
+
+.tournament .black .v-filterselect-focus .v-filterselect-button {
+	background-image: url(../reindeer/select/img/black/right-black-focus.png);/** sprite-ref: black-verticals; sprite-margin-bottom: 1px */
+}
+
+.tournament .black .v-filterselect-focus .v-filterselect-button:hover {
+	background-image: url(../reindeer/select/img/black/right-black-focus-hover.png);/** sprite-ref: black-verticals; sprite-margin-bottom: 1px */
+}
+
+.tournament .black .v-filterselect-focus .v-filterselect-button:active {
+	background-image: url(../reindeer/select/img/black/right-black-focus-pressed.png);/** sprite-ref: black-verticals; sprite-margin-bottom: 1px */
+}
+
+.tournament .black .v-disabled .v-filterselect-button:hover, .tournament .black .v-readonly .v-filterselect-button:hover {
+	background-image: url(../reindeer/select/img/black/right-black.png);/** sprite-ref: black-verticals; sprite-margin-bottom: 1px */
+}
+
+.tournament .black .v-filterselect-prompt .v-filterselect-input {
+	color: #5f6366;
+}
+
+.tournament .black .v-select select, .tournament .black .v-select-twincol select {
+	border-color: #38393a;
+	border-top-color: #2c2d2e;
+	border-bottom-color: #3e3f3f;
+	background: #151717;
+	color: #c9ccce;
+}
+
+.tournament .v-slider {
+	border-top: 1px solid #9a9c9e;
+	border-bottom: 1px solid #bdbfc1;
+	margin: 4px 0;
+}
+
+.tournament .v-slider-base {
+	height: 1px;
+	background: #e0e2e2;
+	border-top: 1px solid #adb0b1;
+	border-left: 1px solid #a0a3a6;
+	border-right: 1px solid #a0a3a6;
+}
+
+.tournament .v-slider-handle {
+	background: transparent;
+	background-image: url(../reindeer/slider/img/knob.png);/** sprite-ref: verticals */
+	width: 10px;
+	height: 10px;
+	margin-top: -5px;
+}
+
+.tournament .v-slider-handle-active {
+	background-image: url(../reindeer/slider/img/knob-pressed.png);/** sprite-ref: verticals */
+}
+
+.tournament .v-slider-vertical {
+	width: 2px;
+	margin: 0 5px;
+	border: none;
+	border-left: 1px solid #9a9c9e;
+	border-right: 1px solid #bdbfc1;
+}
+
+.tournament .v-slider-vertical .v-slider-base {
+	width: 2px;
+	border-left: 1px solid #adb0b1;
+	border-right: none;
+	border-top: 1px solid #adb0b1;
+	border-bottom: 1px solid #adb0b1;
+}
+
+.tournament .v-slider-vertical .v-slider-handle {
+	width: 10px;
+	height: 10px;
+	margin-left: -5px;
+}
+
+.tournament .v-splitpanel-hsplitter, .tournament .v-splitpanel-hsplitter-locked {
+	width: 7px;
+	background-repeat: repeat-y;
+	background-image: url(../reindeer/splitpanel/img/hor-bg.png);/** sprite-ref: horizontals; sprite-alignment: repeat */
+}
+
+.tournament .v-splitpanel-hsplitter div {
+	width: 7px;
+	height: 100%;
+	background: transparent;
+	background-repeat: no-repeat;
+	background-position: 50%;
+	background-image: url(../reindeer/splitpanel/img/hor-handle.png);/** sprite-ref: horizontals; sprite-alignment: center */
+}
+
+.tournament .v-splitpanel-vsplitter, .tournament .v-splitpanel-vsplitter-locked {
+	height: 7px;
+	background-repeat: repeat-x;
+	background-image: url(../reindeer/splitpanel/img/ver-bg.png);/** sprite-ref: verticals; sprite-alignment: repeat */
+}
+
+.tournament .v-splitpanel-vsplitter div {
+	height: 7px;
+	background: transparent;
+	background-repeat: no-repeat;
+	background-position: 50%;
+	background-image: url(../reindeer/splitpanel/img/ver-handle.png);/** sprite-ref: verticals; sprite-alignment: center */
+}
+
+.tournament .blue .v-splitpanel-hsplitter-small, .tournament .blue .v-splitpanel-hsplitter-small-locked {
+	background: #7c8a91;
+}
+
+.tournament .black .v-splitpanel-hsplitter-small, .tournament .black .v-splitpanel-hsplitter-small-locked {
+	background: #4e5253;
+}
+
+.tournament .v-splitpanel-hsplitter-small, .tournament .v-splitpanel-hsplitter-small-locked, .tournament .white .v-splitpanel-hsplitter-small, .tournament .white .v-splitpanel-hsplitter-small-locked {
+	width: 1px;
+	background: #949698;
+}
+
+.tournament .v-splitpanel-vsplitter-small, .tournament .v-splitpanel-vsplitter-small-locked, .tournament .white .v-splitpanel-vsplitter-small, .tournament .white .v-splitpanel-vsplitter-small-locked {
+	height: 1px;
+	background: #949698;
+}
+
+.tournament .v-splitpanel-hsplitter-small div {
+	width: 5px;
+	margin-left: -2px;
+	background: transparent;
+}
+
+.tournament .v-splitpanel-vsplitter-small div {
+	height: 5px;
+	margin-top: -2px;
+	background: transparent;
+}
+
+.tournament .blue .v-table-header-wrap {
+	border-color: #92a2aa;
+}
+
+.tournament .blue .v-table-body {
+	border-color: #92a2aa;
+	border-top-color: #c2c3c4;
+}
+
+.tournament .v-table-header-wrap, .tournament .white .v-table-header-wrap, .tournament .v-table-footer-wrap, .tournament .white .v-table-footer-wrap, .tournament .v-table-header-drag {
+	border-color: #c2c3c4;
+	background: transparent repeat-x;
+	background-image: url(../reindeer/table/img/header-bg-light.png);/** sprite-ref: verticals; sprite-alignment: repeat */
+	height: 20px;
+	text-transform: uppercase;
+	font-size: 10px;
+	font-weight: bold;
+	color: #222;
+	text-shadow: #f3f5f8 0 1px 0;
+	line-height: normal;
+}
+
+.tournament .v-table-footer-wrap, .tournament .white .v-table-footer-wrap {
+	text-transform: none;
+	font-size: 12px;
+	font-weight: normal;
+}
+
+.tournament .v-table-footer td, .tournament .white .v-table-footer td {
+	border-color: #c2c3c4;
+}
+
+.tournament .v-table-footer-container {
+	padding-right: 7px;
+}
+
+.tournament .v-table-header, .tournament .v-table-footer, .tournament .v-table-footer table {
+	height: 20px;
+}
+
+.tournament .v-table-caption-container, .tournament .v-table-header-drag {
+	padding-top: 4px;
+	padding-right: 4px;
+}
+
+.tournament .v-table-caption-container .v-icon, .tournament .v-table-header-drag .v-icon {
+	height: 16px;
+	margin: -4px 3px 0 0;
+	vertical-align: middle;
+}
+
+.v-ie .tournament .v-table-caption-container .v-icon, .v-ie .tournament .v-table-header-drag .v-icon {
+	margin-top: -3px;
+}
+
+.tournament .v-table-resizer {
+	height: 20px;
+	width: 2px;
+	background: transparent;
+	border-right: 1px solid #c2c3c4;
+}
+
+.tournament .v-table-sort-indicator {
+	background: transparent;
+	width: 0px;
+	height: 20px;
+}
+
+.tournament .v-table-header-cell-asc .v-table-sort-indicator {
+	background: transparent no-repeat right 7px;
+	background-image: url(../reindeer/table/img/asc-light.png);/** sprite-ref: verticals; sprite-alignment: right; sprite-margin-top: 7px; sprite-margin-bottom: 6px; sprite-margin-right: 6px; */
+	width: 16px;
+}
+
+.tournament .v-table-header-cell-desc .v-table-sort-indicator {
+	background: transparent no-repeat right 7px;
+	background-image: url(../reindeer/table/img/desc-light.png);/** sprite-ref: verticals; sprite-alignment: right; sprite-margin-top: 7px; sprite-margin-bottom: 6px; sprite-margin-right: 6px; */
+	width: 16px;
+}
+
+.tournament .v-table-body, .tournament .white .v-table-body {
+	border-color: #c2c3c4;
+	background: #fff;
+}
+
+.tournament .v-table-cell-content {
+	padding-top: 0;
+	border-right-color: #d3d4d5;
+	vertical-align: top;
+}
+
+.tournament .v-table-cell-wrapper {
+	padding-top: 3px;
+	padding-bottom: 3px;
+}
+
+.tournament .v-table-row-odd {
+	background: #eff0f1;
+}
+
+.tournament .v-table-generated-row {
+	background: #dcdee0;
+	text-transform: uppercase;
+	font-size: 10px;
+	font-weight: bold;
+	color: #222;
+	text-shadow: #f3f5f8 0 1px 0;
+	line-height: normal;
+}
+
+.tournament .v-table-generated-row .v-table-cell-wrapper {
+	padding-top: 4px;
+	padding-bottom: 5px;
+}
+
+.tournament .v-table-cell-content:last-child {
+	border-right-color: transparent;
+}
+
+.tournament .v-table .v-selected, .tournament .black .v-table .v-selected {
+	background: #4d749f url(../reindeer/common/img/sel-bg.png) repeat-x;
+	color: #fff;
+	text-shadow: #3b5a7a 0 1px 0;
+}
+
+.tournament .v-table .v-selected .v-table-cell-content {
+	border-right-color: #466c90;
+}
+
+.tournament .v-table-column-selector {
+	width: 16px;
+	height: 20px;
+	margin-top: -20px;
+	background: transparent no-repeat;
+	background-image: url(../reindeer/table/img/col-sel-light.png);/** sprite-ref: verticals */
+}
+
+.tournament .v-table-column-selector:active {
+	background-image: url(../reindeer/table/img/col-sel-light-pressed.png);/** sprite-ref: verticals */
+}
+
+.tournament .v-table-focus-slot-left {
+	border-left: 1px solid #222;
+	margin-bottom: -20px;
+	width: auto;
+}
+
+.tournament .v-table-focus-slot-right {
+	border-right-color: #222;
+	margin-right: 0;
+}
+
+.tournament .v-table-header-drag {
+	padding-left: 6px;
+	height: 16px;
+}
+
+.tournament .v-table-header-drag img {
+	height: 16px;
+	margin: -3px 3px 0 0;
+}
+
+.tournament .v-table-scrollposition {
+	width: auto;
+	background: transparent;
+	border: none;
+}
+
+.tournament .v-table-scrollposition span {
+	background: transparent repeat-x;
+	background-image: url(../reindeer/table/img/scroll-indic-bg.png);/** sprite-ref: verticals; sprite-alignment: repeat */
+	border: 1px solid #939494;
+	border: none;
+	border-radius-bottomleft: 4px;
+	border-radius-bottomright: 4px;
+	-moz-border-radius-bottomleft: 4px;
+	-moz-border-radius-bottomright: 4px;
+	-webkit-border-bottom-left-radius: 4px;
+	-webkit-border-bottom-right-radius: 4px;
+	height: 13px;
+	padding: 4px 30px;
+	white-space: nowrap;
+	color: #222;
+	text-shadow: #fff 0 1px 0;
+	position: relative;
+	top: 1px;
+	-webkit-box-shadow: rgba(0, 0, 0, 0.5) 0 1px 2px;
+	-moz-box-shadow: rgba(0, 0, 0, 0.5) 0 1px 2px;
+}
+
+.tournament .v-table-borderless .v-table-scrollposition span {
+	top: 0;
+}
+
+.tournament .v-contextmenu .v-on, .tournament .v-contextmenu .v-off {
+	display: inline-block;
+	zoom: 1;
+	background: transparent no-repeat 0 4px;
+	background-image: url(../reindeer/common/icons/bullet.png);/** sprite-ref: verticals; sprite-margin-top: 4px; sprite-margin-bottom: 4px */
+	padding-left: 12px;
+	padding-right: 4px;
+}
+
+.tournament .v-contextmenu .v-off {
+	background-image: none;
+	color: #666;
+}
+
+.tournament .v-contextmenu .gwt-MenuItem-selected .v-on {
+	background-image: url(../reindeer/common/icons/bullet-white.png);/** sprite-ref: verticals; sprite-margin-top: 4px; sprite-margin-bottom: 5px */
+}
+
+.tournament .v-table-strong .v-table-header-wrap, .tournament .v-table-strong .v-table-header-drag {
+	border-color: #2b3033;
+	border-top-color: #2b3033;
+	background-image: url(../reindeer/table/img/header-bg.png);/** sprite-ref: verticals; sprite-alignment: repeat */
+	color: #e7e9ea;
+	text-shadow: #000 0 -1px 0;
+}
+
+.tournament .v-table-strong .v-table-body {
+	border-top-color: #2b3033;
+}
+
+.tournament .v-table-strong .v-table-resizer {
+	border-right-color: #1c1f21;
+}
+
+.tournament .v-table-strong .v-table-header-cell-asc .v-table-sort-indicator {
+	background-image: url(../reindeer/table/img/asc.png);/** sprite-ref: verticals; sprite-alignment: right; sprite-margin-top: 7px; sprite-margin-bottom: 6px; sprite-margin-right: 6px; */
+}
+
+.tournament .v-table-strong .v-table-header-cell-desc .v-table-sort-indicator {
+	background-image: url(../reindeer/table/img/desc.png);/** sprite-ref: verticals; sprite-alignment: right; sprite-margin-top: 7px; sprite-margin-bottom: 6px; sprite-margin-right: 6px; */
+}
+
+.tournament .v-table-strong .v-table-column-selector {
+	background-image: url(../reindeer/table/img/col-sel.png);/** sprite-ref: verticals */
+}
+
+.tournament .v-table-strong .v-table-column-selector:active {
+	background-image: url(../reindeer/table/img/col-sel-pressed.png);/** sprite-ref: verticals */
+}
+
+.tournament .v-table-strong .v-table-focus-slot-left, .tournament .v-table-strong .v-table-focus-slot-right {
+	border-color: #9ca1a5;
+}
+
+.tournament .black .v-table-header-wrap, .tournament .black .v-table-header-drag {
+	border-color: #252729;
+	background-image: url(../reindeer/table/img/header-bg-black.png);/** sprite-ref: black-verticals; sprite-alignment: repeat */
+	color: #e7eaee;
+	text-shadow: #000 0 -1px 0;
+}
+
+.tournament .black .v-table-resizer {
+	border-right-color: #252729;
+}
+
+.tournament .black .v-table-header-cell-asc .v-table-sort-indicator {
+	background-image: url(../reindeer/table/img/asc.png);/** sprite-ref: black-verticals; sprite-alignment: right; sprite-margin-top: 7px; sprite-margin-bottom: 6px; sprite-margin-right: 6px; */
+}
+
+.tournament .black .v-table-header-cell-desc .v-table-sort-indicator {
+	background-image: url(../reindeer/table/img/desc.png);/** sprite-ref: black-verticals; sprite-alignment: right; sprite-margin-top: 7px; sprite-margin-bottom: 6px; sprite-margin-right: 6px; */
+}
+
+.tournament .black .v-table-column-selector {
+	background-image: url(../reindeer/table/img/col-sel-black.png);/** sprite-ref: black-verticals */
+}
+
+.tournament .black .v-table-column-selector:active {
+	background-image: url(../reindeer/table/img/col-sel-black-pressed.png);/** sprite-ref: black-verticals */
+}
+
+.tournament .black .v-table-focus-slot-left, .tournament .black .v-table-focus-slot-right {
+	border-color: #9ca1a5;
+}
+
+.tournament .black .v-table-body {
+	border-color: #252729;
+	background: transparent;
+}
+
+.tournament .black .v-table-cell-content {
+	border-right-color: #252729;
+	border-bottom: 1px solid #252729;
+}
+
+.tournament .black .v-table-cell-wrapper {
+	padding-bottom: 2px;
+}
+
+.tournament .black .v-table-row-odd {
+	background: transparent;
+}
+
+.tournament .black .v-table .v-selected .v-table-cell-content {
+	border-bottom: 1px solid #4d749f;
+}
+
+.tournament .v-table-borderless .v-table-header-wrap, .tournament .v-table-borderless .v-table-body {
+	border: none;
+}
+
+.tournament .v-tabsheet-tabitemcell, .tournament .v-tabsheet-spacertd {
+	height: 32px;
+}
+
+.tournament .v-tabsheet-tabitemcell {
+	background: no-repeat;
+	background-image: url(../reindeer/tabsheet/img/framed/tab-left.png);/** sprite-ref: verticals */
+	padding-left: 3px;
+}
+
+.tournament .v-tabsheet-tabitemcell-first {
+	padding-left: 10px;
+	background-image: url(../reindeer/tabsheet/img/framed/tab-first-left.png);/** sprite-ref: verticals */
+}
+
+.tournament .v-tabsheet-tabitem, .tournament .v-tabsheet-spacertd div {
+	border: none;
+	height: 32px;
+	background: transparent repeat-x;
+	background-image: url(../reindeer/tabsheet/img/framed/tab-bg.png);/** sprite-ref: verticals; sprite-alignment: repeat */
+	padding: 0;
+	color: #222;
+	text-shadow: #fff 0 1px 0;
+}
+
+.tournament .v-tabsheet-tabitem .v-caption {
+	border: none;
+	height: 23px;
+	background: no-repeat right top;
+	background-image: url(../reindeer/tabsheet/img/framed/tab-right.png);/** sprite-ref: verticals; sprite-alignment: right */
+	padding: 9px 8px 0 6px;
+}
+
+.tournament .v-tabsheet-tabitem .v-caption-closable {
+	padding-right: 0;
+	padding-left: 17px;
+}
+
+.tournament .v-tabsheet-tabitem .v-captiontext {
+	height: 16px;
+	line-height: 16px;
+	vertical-align: baseline;
+}
+
+.tournament .v-tabsheet-caption-close {
+	float: right;
+	width: 19px;
+	height: 18px;
+	margin: -1px -1px 0;
+	padding-left: 2px;
+	background: transparent;
+	background-image: url(../reindeer/tabsheet/img/close-btn.png);/** sprite-ref: verticals */
+	cursor: default;
+	text-indent: -999px;
+	overflow: hidden;
+	font-size: 14px;
+	font-weight: normal;
+}
+
+.v-ff .tournament .v-tabsheet-caption-close {
+	margin-top: -17px;
+}
+
+.v-ff .tournament .v-tabsheet-caption-close:only-child {
+	margin-top: -1px;
+}
+
+.tournament .v-tabsheet-caption-close:hover {
+	background-image: url(../reindeer/tabsheet/img/close-btn-hover.png);/** sprite-ref: verticals */
+}
+
+.tournament .v-tabsheet-caption-close:active {
+	background-image: url(../reindeer/tabsheet/img/close-btn-pressed.png);/** sprite-ref: verticals */
+}
+
+.tournament .v-tabsheet-tabitem-selected .v-tabsheet-caption-close {
+	background-image: url(../reindeer/tabsheet/img/close-btn-sel.png);/** sprite-ref: verticals */
+}
+
+.tournament .v-tabsheet-tabitem-selected .v-tabsheet-caption-close:hover {
+	background-image: url(../reindeer/tabsheet/img/close-btn-sel-hover.png);/** sprite-ref: verticals */
+}
+
+.tournament .v-tabsheet-tabitem-selected .v-tabsheet-caption-close:active {
+	background-image: url(../reindeer/tabsheet/img/close-btn-sel-pressed.png);/** sprite-ref: verticals */
+}
+
+.tournament .v-tabsheet-tabitemcell-selected {
+	background-image: url(../reindeer/tabsheet/img/framed/tab-left-sel.png);/** sprite-ref: verticals */
+}
+
+.tournament .v-tabsheet-tabitemcell-selected-first {
+	background-image: url(../reindeer/tabsheet/img/framed/tab-first-left-sel.png);/** sprite-ref: verticals */
+}
+
+.tournament .v-tabsheet-tabitem-selected {
+	background-image: url(../reindeer/tabsheet/img/framed/tab-bg-sel.png);/** sprite-ref: verticals; sprite-alignment: repeat */
+	color: #232930;
+}
+
+.tournament .v-tabsheet-tabitem-selected .v-caption {
+	background-image: url(../reindeer/tabsheet/img/framed/tab-right-sel.png);/** sprite-ref: verticals; sprite-alignment: right */
+}
+
+.tournament .v-tabsheet-spacertd div {
+	margin-right: 4px;
+}
+
+.tournament .v-tabsheet-spacertd {
+	background: transparent no-repeat right top;
+	background-image: url(../reindeer/tabsheet/img/framed/tab-spacer-right.png);/** sprite-ref: verticals; sprite-alignment: right */
+}
+
+.tournament .blue .v-tabsheet-content {
+	border-color: #a8bcc5;
+}
+
+.tournament .v-tabsheet-content, .tournament .white .v-tabsheet-content {
+	border: 1px solid #dcdcdc;
+	border-bottom: none;
+	border-top: none;
+	color: #222;
+	text-shadow: none;
+}
+
+.tournament .v-tabsheet-tabsheetpanel {
+	background: #fff;
+}
+
+.v-sa .tournament .v-tabsheet-content {
+	border-color: rgba(0, 0, 0, 0.1);
+}
+
+.tournament .blue .v-tabsheet-deco {
+	border-color: #92a3ac;
+	background: #adc2cd;
+}
+
+.tournament .v-tabsheet-deco, .tournament .white .v-tabsheet-deco {
+	height: 1px;
+	border-top: 1px solid #bebebe;
+	background: #e2e2e2;
+	overflow: hidden;
+}
+
+.v-sa .tournament .v-tabsheet-deco {
+	border-top-color: rgba(0, 0, 0, 0.1);
+	background: rgba(0, 0, 0, 0.08);
+}
+
+.tournament .v-tabsheet-tabs .v-icon, .tournament .v-tabsheet-tabs .v-captiontext, .tournament .v-tabsheet-tabs .v-errorindicator {
+	display: inline;
+	float: none;
+}
+
+.v-sa .tournament .v-tabsheet-tabs .v-captiontext {
+	display: inline-block;
+}
+
+.v-sa .tournament .v-tabsheet-tabs .v-icon {
+	vertical-align: top;
+}
+
+.tournament .v-tabsheet-tabs .v-icon {
+	width: 16px !important;
+	height: 16px !important;
+}
+
+.tournament .v-tabsheet-tabs .v-errorindicator {
+	display: inline-block;
+	width: 13px;
+	height: 16px;
+	background: transparent url(../reindeer/common/icons/error.png) no-repeat 50%;
+}
+
+.v-ie .tournament .v-tabsheet-tabs .v-errorindicator {
+	zoom: 1;
+	display: inline-block;
+}
+
+.tournament .v-tabsheet-scroller {
+	height: 31px;
+	margin-top: -31px;
+	padding: 0 3px 0 4px;
+	border-right: 1px solid #c2c2c2;
+	border-left: 1px solid #cfcfcf;
+	position: relative;
+	float: right;
+	background: transparent url(../reindeer/tabsheet/img/framed/tab-bg.png) repeat-x left -1px;
+	width: 36px;
+}
+
+.tournament .v-tabsheet-scroller button {
+	margin-top: 7px;
+}
+
+.tournament .v-tabsheet-scrollerPrev, .tournament .v-tabsheet-scrollerNext, .tournament .v-tabsheet-scrollerPrev-disabled, .tournament .v-tabsheet-scrollerNext-disabled {
+	border: none;
+	background: transparent;
+	background-image: url(../reindeer/tabsheet/img/tab-prev.png);/** sprite-ref: verticals */
+	width: 18px;
+	height: 17px;
+	overflow: hidden;
+}
+
+.tournament .v-tabsheet-scroller button::-moz-focus-inner {
+	border: none;
+}
+
+.tournament .v-tabsheet-scrollerNext {
+	background-image: url(../reindeer/tabsheet/img/tab-next.png);/** sprite-ref: verticals */
+}
+
+.tournament .v-tabsheet-scrollerPrev:active {
+	background-image: url(../reindeer/tabsheet/img/tab-prev-pressed.png);/** sprite-ref: verticals */
+}
+
+.tournament .v-tabsheet-scrollerNext:active {
+	background-image: url(../reindeer/tabsheet/img/tab-next-pressed.png);/** sprite-ref: verticals */
+}
+
+.tournament .v-tabsheet-scrollerPrev-disabled, .tournament .v-tabsheet-scrollerPrev-disabled:active {
+	background-image: url(../reindeer/tabsheet/img/tab-prev-disabled.png);/** sprite-ref: verticals */
+	opacity: 1;
+	filter: none;
+}
+
+.tournament .v-tabsheet-scrollerNext-disabled, .tournament .v-tabsheet-scrollerNext-disabled:active {
+	background-image: url(../reindeer/tabsheet/img/tab-next-disabled.png);/** sprite-ref: verticals; sprite-margin-bottom: 1px */
+	opacity: 1;
+	filter: none;
+}
+
+.tournament .v-tabsheet-borderless .v-tabsheet-tabitemcell-first {
+	padding-left: 7px;
+	background: url(../reindeer/tabsheet/img/framed/tab-first-left.png) no-repeat -3px 0;
+}
+
+.tournament .v-tabsheet-borderless .v-tabsheet-tabitemcell-selected-first {
+	background: url(../reindeer/tabsheet/img/framed/tab-first-left-sel.png) no-repeat -3px 0;
+}
+
+.tournament .v-tabsheet-borderless .v-tabsheet-spacertd div {
+	margin-right: 0;
+}
+
+.tournament .v-tabsheet-borderless .v-tabsheet-spacertd {
+	background: transparent;
+}
+
+.tournament .v-tabsheet-borderless .v-tabsheet-content {
+	border: none;
+}
+
+.tournament .v-tabsheet-borderless .v-tabsheet-deco {
+	height: 0;
+	border-top: none;
+}
+
+.tournament .blue .v-tabsheet-tabs-minimal .v-tabsheet-spacertd div, .tournament .blue .v-tabsheet-tabs-minimal .v-tabsheet-tabitem, .tournament .blue .v-tabsheet-tabs-minimal .v-tabsheet-tabitem-selected {
+	border-color: #7c8a91;
+}
+
+.tournament .blue .v-tabsheet-tabs-minimal .v-tabsheet-caption-close {
+	color: #7c8a91;
+}
+
+.tournament .blue .v-tabsheet-tabs-minimal .v-tabsheet-caption-close:hover {
+	color: #BCD3DE;
+	background: #778d98;
+}
+
+.tournament .blue .v-tabsheet-tabs-minimal .v-tabsheet-caption-close:active {
+	background: #4f6874;
+}
+
+.tournament .v-tabsheet-tabs-minimal .v-tabsheet-spacertd div, .tournament .white .v-tabsheet-tabs-minimal .v-tabsheet-spacertd div {
+	border-bottom: 1px solid #bfbfbf;
+	height: auto;
+	background: transparent;
+}
+
+.tournament .v-tabsheet-tabs-minimal .v-tabsheet-tabitemcell, .tournament .v-tabsheet-tabs-minimal .v-tabsheet-spacertd {
+	height: auto;
+	background: transparent;
+	padding-left: 0;
+}
+
+.tournament .v-tabsheet-tabs-minimal .v-tabsheet-tabitem, .tournament .white .v-tabsheet-tabs-minimal .v-tabsheet-tabitem {
+	border: none;
+	border-bottom: 1px solid #bfbfbf;
+	color: #4d748f;
+	padding: 0;
+	height: auto;
+	background: transparent;
+	text-shadow: none;
+}
+
+.tournament .v-tabsheet-tabs-minimal .v-tabsheet-tabitem .v-caption {
+	padding: 5px 16px;
+	height: auto;
+	background: transparent;
+}
+
+.tournament .v-tabsheet-tabs-minimal .v-tabsheet-tabitemcell-selected {
+	background: transparent;
+}
+
+.tournament .v-tabsheet-tabs-minimal .v-tabsheet-tabitem-selected, .tournament .white .v-tabsheet-tabs-minimal .v-tabsheet-tabitem-selected {
+	background: transparent;
+	border: 1px solid #bfbfbf;
+	border-bottom: none;
+	color: #222;
+}
+
+.tournament .v-tabsheet-tabs-minimal .v-tabsheet-tabitem-selected .v-caption {
+	background: transparent;
+	padding: 4px 15px 6px 15px;
+}
+
+.tournament .v-tabsheet-tabs-minimal .v-tabsheet-tabitem .v-caption-closable, .tournament .v-tabsheet-tabs-minimal .v-tabsheet-tabitem-selected .v-caption-closable {
+	padding-right: 6px;
+}
+
+.tournament .v-tabsheet-content-minimal, .tournament .white .v-tabsheet-content-minimal {
+	border: none;
+}
+
+.tournament .v-tabsheet-content-minimal .v-tabsheet-tabsheetpanel {
+	background: transparent;
+}
+
+.tournament .v-tabsheet-deco-minimal, .tournament .white .v-tabsheet-deco-minimal {
+	height: 0;
+	border: none;
+}
+
+.tournament .v-tabsheet-tabcontainer-minimal .v-tabsheet-scroller {
+	margin-top: -20px;
+	height: 17px;
+	padding: 0;
+	border: none;
+	background: transparent;
+}
+
+.tournament .v-tabsheet-tabcontainer-minimal .v-tabsheet-scroller button {
+	margin-top: 0;
+}
+
+.tournament .v-tabsheet-tabs-minimal .v-tabsheet-caption-close, .tournament .v-tabsheet-tabs-minimal .v-tabsheet-caption-close:hover, .tournament .v-tabsheet-tabs-minimal .v-tabsheet-caption-close:active {
+	text-indent: 0;
+	background: transparent;
+	margin-left: 3px;
+	margin-right: -3px;
+	padding: 0;
+	color: #999;
+	width: 14px;
+	height: 14px;
+	line-height: 14px;
+	-webkit-border-radius: 7px;
+	-moz-border-radius: 7px;
+}
+
+.v-ie9 .tournament .v-tabsheet-tabs-minimal .v-tabsheet-tabitem .v-tabsheet-caption-close, .v-ie9 .tournament .v-tabsheet-tabs-minimal .v-tabsheet-tabitem .v-tabsheet-caption-close:hover, .v-ie9 .tournament .v-tabsheet-tabs-minimal .v-tabsheet-tabitem .v-tabsheet-caption-close:active, .v-ie10 .tournament .v-tabsheet-tabs-minimal .v-tabsheet-tabitem .v-tabsheet-caption-close, .v-ie10 .tournament .v-tabsheet-tabs-minimal .v-tabsheet-tabitem .v-tabsheet-caption-close:hover, .v-ie10 .tournament .v-tabsheet-tabs-minimal .v-tabsheet-tabitem .v-tabsheet-caption-close:active {
+	margin-left: 2.5px;
+	margin-top: 1px;
+}
+
+.tournament .v-tabsheet-tabs-minimal .v-tabsheet-caption-close:hover, .tournament .white .v-tabsheet-tabs-minimal .v-tabsheet-caption-close:hover {
+	color: #fff;
+	background: #aaa;
+}
+
+.tournament .v-tabsheet-tabs-minimal .v-tabsheet-caption-close:active, .tournament .white .v-tabsheet-tabs-minimal .v-tabsheet-caption-close:active {
+	background: #777;
+}
+
+.tournament .black .v-tabsheet-tabs-minimal .v-tabsheet-spacertd div, .tournament .black .v-tabsheet-tabs-minimal .v-tabsheet-tabitem, .tournament .black .v-tabsheet-tabs-minimal .v-tabsheet-tabitem-selected {
+	border-color: #3e4044;
+	color: #6a7f89;
+}
+
+.tournament .black .v-tabsheet-tabs-minimal .v-tabsheet-tabitem-selected {
+	color: #c9ccce;
+}
+
+.tournament .black .v-tabsheet-content-minimal, .tournament .black .v-tabsheet-content-bar {
+	color: #c9ccce;
+	text-shadow: #000 0 0 1px;
+}
+
+.tournament .black .v-tabsheet-tabs-minimal .v-tabsheet-caption-close {
+	color: #72787c;
+}
+
+.tournament .black .v-tabsheet-tabs-minimal .v-tabsheet-caption-close:hover {
+	color: #1d2021;
+	background: #4d5154;
+}
+
+.tournament .black .v-tabsheet-tabs-minimal .v-tabsheet-caption-close:active {
+	background: #626669;
+}
+
+.tournament .v-tabsheet-tabs-bar .v-tabsheet-tabitemcell, .tournament .v-tabsheet-tabs-bar .v-tabsheet-spacertd {
+	height: 20px;
+}
+
+.tournament .v-tabsheet-tabs-bar .v-tabsheet-spacertd {
+	background: transparent;
+}
+
+.tournament .v-tabsheet-tabs-bar .v-tabsheet-tabitemcell {
+	background-image: url(../reindeer/tabsheet/img/bar/tab-left.png);/** sprite-ref: verticals */
+}
+
+.tournament .v-tabsheet-tabs-bar .v-tabsheet-tabitemcell-first {
+	padding-left: 6px;
+	background-image: url(../reindeer/tabsheet/img/bar/tab-first-left.png);/** sprite-ref: verticals */
+}
+
+.tournament .v-tabsheet-tabs-bar .v-tabsheet-tabitem, .tournament .v-tabsheet-tabs-bar .v-tabsheet-spacertd div {
+	height: 20px;
+	background-image: url(../reindeer/tabsheet/img/bar/tab-bg.png);/** sprite-ref: verticals; sprite-alignment: repeat */
+	margin: 0;
+}
+
+.tournament .v-tabsheet-tabs-bar .v-tabsheet-tabitem .v-caption {
+	font-size: 11px;
+	height: 18px;
+	background-image: url(../reindeer/tabsheet/img/bar/tab-right.png);/** sprite-ref: verticals; sprite-alignment: right */
+	padding: 2px 12px 0 10px;
+}
+
+.tournament .v-tabsheet-tabs-bar .v-tabsheet-tabitem .v-caption-closable, .tournament .v-tabsheet-tabs-bar .v-tabsheet-tabitem-selected .v-caption-closable {
+	padding-right: 8px;
+	padding-left: 14px;
+}
+
+.tournament .v-tabsheet-tabs-bar .v-tabsheet-caption-close, .tournament .v-tabsheet-tabs-bar .v-tabsheet-caption-close:hover, .tournament .v-tabsheet-tabs-bar .v-tabsheet-caption-close:active {
+	text-indent: 0;
+	background: transparent;
+	margin-left: 3px;
+	margin-right: -3px;
+	padding: 1px 0 0 1px;
+	color: #3c3c3c;
+	width: 13px;
+	height: 13px;
+	line-height: 12px;
+	-webkit-border-radius: 7px;
+	-moz-border-radius: 7px;
+}
+
+.tournament .v-tabsheet-tabs-bar .v-tabsheet-caption-close {
+	margin-top: 1px;
+}
+
+.v-ff .tournament .v-tabsheet-tabs-bar .v-tabsheet-caption-close {
+	margin-top: -14px;
+}
+
+.v-ie9 .tournament .v-tabsheet-tabs-bar .v-tabsheet-caption-close:only-child, .v-ie9 .tournament .v-tabsheet-tabs-bar .v-captiontext:first-child + .v-tabsheet-caption-close, .v-ie10 .tournament .v-tabsheet-tabs-bar .v-tabsheet-caption-close:only-child, .v-ie10 .tournament .v-tabsheet-tabs-bar .v-captiontext:first-child + .v-tabsheet-caption-close {
+	margin-top: -14px;
+}
+
+.tournament .v-tabsheet-tabs-bar .v-tabsheet-caption-close:hover {
+	background: #bfbfbf;
+	-webkit-box-shadow: 0 1px 0 #fff;
+}
+
+.tournament .v-tabsheet-tabs-bar .v-tabsheet-caption-close:active {
+	background: #a9a9a9;
+}
+
+.tournament .v-tabsheet-tabs-bar .v-tabsheet-tabitem-selected .v-tabsheet-caption-close {
+	color: #404142;
+}
+
+.tournament .v-tabsheet-tabs-bar .v-tabsheet-tabitem-selected .v-tabsheet-caption-close:hover {
+	background: #5e666e;
+	color: #fff;
+	text-shadow: 0 -1px 0 #222;
+}
+
+.tournament .v-tabsheet-tabs-bar .v-tabsheet-tabitem-selected .v-tabsheet-caption-close:active {
+	background: #404142;
+}
+
+.tournament .v-tabsheet-tabs-bar .v-tabsheet-tabitemcell-selected {
+	background-image: url(../reindeer/tabsheet/img/bar/tab-left-sel.png);/** sprite-ref: verticals */
+}
+
+.tournament .v-tabsheet-tabs-bar .v-tabsheet-tabitemcell-selected-first {
+	background-image: url(../reindeer/tabsheet/img/bar/tab-first-left-sel.png);/** sprite-ref: verticals */
+}
+
+.tournament .v-tabsheet-tabs-bar .v-tabsheet-tabitem-selected {
+	background-image: url(../reindeer/tabsheet/img/bar/tab-bg-sel.png);/** sprite-ref: verticals; sprite-alignment: repeat */
+	color: #232930;
+}
+
+.tournament .v-tabsheet-tabs-bar .v-tabsheet-tabitem-selected .v-caption {
+	background-image: url(../reindeer/tabsheet/img/bar/tab-right-sel.png);/** sprite-ref: verticals; sprite-alignment: right */
+}
+
+.tournament .v-tabsheet-tabcontainer-bar .v-tabsheet-scroller {
+	margin-top: -20px;
+	height: 19px;
+	border-right: none;
+	background-image: url(../reindeer/tabsheet/img/bar/tab-bg.png);/** sprite-ref: verticals; sprite-alignment: repeat */
+}
+
+.tournament .v-tabsheet-tabcontainer-bar .v-tabsheet-scroller button {
+	margin-top: 1px;
+}
+
+.tournament .v-tabsheet-content-bar, .tournament .white .v-tabsheet-content-bar {
+	border: none;
+}
+
+.tournament .v-tabsheet-content-bar .v-tabsheet-tabsheetpanel {
+	background: transparent;
+}
+
+.tournament .v-tabsheet-deco-bar, .tournament .white .v-tabsheet-deco-bar {
+	height: 0;
+	border: none;
+}
+
+.tournament .v-tabsheet-tabs-selected-closable .v-tabsheet-tabitem .v-tabsheet-caption-close, .tournament .v-tabsheet-tabs-selected-closable .v-tabsheet-tabitem:hover .v-tabsheet-caption-close {
+	visibility: hidden;
+}
+
+.tournament .v-tabsheet-tabs-selected-closable .v-tabsheet-tabitem-selected .v-tabsheet-caption-close, .tournament .v-tabsheet-tabs-selected-closable .v-tabsheet-tabitem-selected:hover .v-tabsheet-caption-close {
+	visibility: visible;
+}
+
+.tournament .v-tabsheet-tabs-hover-closable .v-tabsheet-caption-close {
+	visibility: hidden;
+}
+
+.tournament .v-tabsheet-tabs-hover-closable .v-tabsheet-tabitem:hover .v-tabsheet-caption-close {
+	visibility: visible;
+}
+
+.tournament .blue .v-textfield, .tournament .blue .v-textarea {
+	border-color: #92a2aa;
+	border-top-color: #7c8a90;
+	border-bottom-color: #a1b3bc;
+}
+
+.tournament .v-textfield, .tournament .v-textarea, .tournament .white .v-textfield, .tournament .white .v-textarea {
+	border: 1px solid #bcbdbe;
+	border-top-color: #a2a3a4;
+	border-bottom-color: #d2d3d4;
+	background: #fff;
+	background-repeat: repeat-x;
+	background-image: url(../reindeer/textfield/img/bg.png);/** sprite-ref: verticals; sprite-alignment: repeat; sprite-margin-bottom: 22px */
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	border-radius: 3px;
+	margin: 0;
+	height: 23px;
+	line-height: normal;
+}
+
+.tournament .v-textarea, .tournament .white .v-textarea {
+	background-image: none;
+	height: auto;
+}
+
+.tournament.v-app input.v-textfield, .tournament .v-window input.v-textfield, .tournament.v-app textarea.v-textarea, .tournament .v-window textarea.v-textarea {
+	padding: 3px 3px 4px;
+}
+
+.tournament.v-app input.v-textfield.v-widget, .tournament .v-window input.v-textfield.v-widget {
+	height: 24px;
+}
+
+.tournament.v-app .v-textfield-focus, .tournament .v-window .v-textfield-focus, .tournament .v-popupview-popup .v-textfield-focus, .tournament.v-app .v-textarea-focus, .tournament .v-window .v-textarea-focus, .tournament .v-popupview-popup .v-textarea-focus {
+	border-color: #5b97d0;
+	border-top-color: #4f83b4;
+	border-bottom-color: #5ca0df;
+	outline: none;
+	background-color: #fff;
+}
+
+.tournament input.v-textfield-prompt, .tournament textarea.v-textarea-prompt {
+	font-style: normal;
+	color: #999;
+}
+
+.tournament.v-app input.v-textfield-small {
+	font-size: 11px;
+	line-height: normal;
+	height: auto;
+	padding: 2px;
+}
+
+.tournament.v-app textarea.v-textarea-small {
+	font-size: 11px;
+}
+
+.tournament.v-app .v-table input.v-textfield.v-widget, .tournament .v-window .v-table input.v-textfield.v-widget {
+	padding: 1px 2px;
+	height: auto;
+	line-height: normal;
+}
+
+.tournament .v-table-cell-wrapper > input.v-textfield {
+	margin-top: -2px;
+	margin-bottom: -2px;
+}
+
+.tournament .black .v-textfield, .tournament .black .v-textarea {
+	border-color: #38393a;
+	border-top-color: #2c2d2e;
+	border-bottom-color: #3e3f3f;
+	background: #151717;
+	background-image: url(../reindeer/textfield/img/bg-black.png);/** sprite-ref: black-verticals; sprite-alignment: repeat; sprite-margin-bottom: 22px */
+	color: #c9ccce;
+	text-shadow: #000 0 0 1px;
+}
+
+.tournament .black .v-textarea {
+	background-image: none;
+}
+
+.tournament.v-app .black .v-textfield-focus, .tournament .v-window-black .v-textfield-focus, .tournament .v-window .black .v-textfield-focus, .tournament .v-popupview-popup .black .v-textfield-focus, .tournament.v-app .black .v-textarea-focus, .tournament .v-window-black .v-textarea-focus, .tournament .v-window .black .v-textarea-focus, .tournament .v-popupview-popup .black .v-textarea-focus {
+	border-color: #4b7192;
+	border-top-color: #3b5a75;
+	border-bottom-color: #507596;
+	background-color: #151717;
+}
+
+.tournament .black input.v-textfield-prompt {
+	color: #5f6366;
+}
+
+.tournament input.v-textfield-readonly, .tournament .black input.v-textfield-readonly, .tournament textarea.v-textarea-readonly, .tournament .black textarea.v-textarea-readonly {
+	border: none;
+	background: transparent;
+}
+
+.tournament .v-tree-node {
+	background: transparent url(../reindeer/tree/img/arrows.png) no-repeat 6px -10px;
+}
+
+.tournament .v-tree-node-expanded {
+	background-position: -7px 5px;
+}
+
+.tournament .v-tree-node-caption {
+	margin-left: 16px;
+	padding-bottom: 1px;
+}
+
+.tournament .v-tree-node span {
+	padding: 1px 2px;
+	display: inline-block;
+}
+
+.tournament .v-tree-node-selected span {
+	background: #4d749f repeat-x;
+	background-image: url(../reindeer/common/img/sel-bg.png);
+	color: #fff;
+	padding: 1px 2px;
+	-webkit-border-radius: 2px;
+	-moz-border-radius: 2px;
+	text-shadow: #2b425a 0 1px 0;
+	display: inline-block;
+}
+
+.tournament .v-tree-node-children {
+	padding-left: 16px;
+}
+
+.tournament .v-tree-node-caption.v-tree-node-focused span {
+	padding-left: 1px;
+	padding-top: 0px;
+	padding-bottom: 0px;
+}
+
+.tournament .v-tree-node-focused span {
+	border: 1px dotted black;
+}
+
+.tournament .v-tree .v-tree-node-drag-top {
+	background-position: 6px -11px;
+}
+
+.tournament .v-tree .v-tree-node-drag-top.v-tree-node-expanded {
+	background-position: -7px 4px;
+}
+
+.tournament .v-tree-connectors .v-tree-node-drag-top, .tournament .v-tree-connectors .v-tree-node-expanded.v-tree-node-drag-top {
+	background-position: 2px -53px;
+}
+
+.tournament .v-tree-connectors .v-tree-node-drag-top.v-tree-node-leaf {
+	background-position: 2px 50%;
+}
+
+.tournament .v-window {
+	background: transparent;
+}
+
+.tournament .v-window-wrap {
+	border: 1px solid #808386;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+.v-sa .tournament .v-window-wrap, .v-op .tournament .v-window-wrap {
+	border-color: rgba(0, 0, 0, 0.2);
+}
+
+.tournament .v-window-outerheader {
+	padding: 12px 52px 0 14px;
+	height: 37px;
+	background: black repeat-x;
+	background-image: url(../reindeer/window/img/header-bg.png);/** sprite-ref: verticals; sprite-alignment: repeat */
+}
+
+.tournament .v-window-header {
+	font-weight: bold;
+	font-size: 12px;
+	line-height: normal;
+	color: #fff;
+	text-shadow: #000 0 -1px 0;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	-ms-text-overflow: ellipsis;
+}
+
+.tournament .v-window-error .v-window-header {
+	padding-left: 13px;
+	background: transparent url(../reindeer/common/icons/error.png) no-repeat 0 50%;
+}
+
+.tournament .v-window-resizebox {
+	width: 15px;
+	height: 15px;
+	cursor: se-resize;
+	background: transparent;
+	background-image: url(../reindeer/window/img/resize.png);/** sprite-ref: verticals */
+}
+
+.tournament .v-window-footer {
+	background-color: white;
+	background-repeat: repeat-x;
+	background-image: url(../reindeer/window/img/footer-bg.png);/** sprite-ref: verticals; sprite-alignment: repeat */
+	height: 15px;
+}
+
+.tournament .v-window-closebox {
+	top: 12px;
+	right: 10px;
+	width: 15px;
+	height: 16px;
+	background: transparent;
+	background-image: url(../reindeer/window/img/close.png);/** sprite-ref: verticals */
+}
+
+.tournament .v-window-closebox:hover {
+	background-image: url(../reindeer/window/img/close-hover.png);/** sprite-ref: verticals */
+}
+
+.tournament .v-window-closebox:active {
+	background-image: url(../reindeer/window/img/close-pressed.png);/** sprite-ref: verticals */
+}
+
+.tournament .v-window-maximizebox, .tournament .v-window-restorebox {
+	top: 12px;
+	right: 28px;
+	width: 15px;
+	height: 16px;
+	background: transparent;
+}
+
+.tournament .v-window-maximizebox, .tournament .v-window-maximizebox:hover, .tournament .v-window-maximizebox:active {
+	background-image: url(../reindeer/window/img/maximize.png);/** sprite-ref: verticals */
+}
+
+.tournament .v-window-restorebox, .tournament .v-window-restorebox:hover, .tournament .v-window-restorebox:active {
+	background-image: url(../reindeer/window/img/restore.png);/** sprite-ref: verticals */
+}
+
+.tournament .v-window-contents {
+	background: #fff;
+}
+
+.tournament .v-window-modalitycurtain {
+	background: #56595b;
+}
+
+.tournament .v-window-light .v-window-outerheader {
+	background: transparent;
+	padding: 15px 52px 0 18px;
+}
+
+.tournament .v-window-light .v-window-header {
+	font-size: 16px;
+	color: #292e34;
+	text-shadow: none;
+}
+
+.tournament .v-window-light .v-window-resizebox {
+	width: 12px;
+	height: 12px;
+	background-image: url(../reindeer/window/img/light/resize.png);/** sprite-ref: verticals */
+}
+
+.tournament .v-window-light .v-window-footer {
+	background: transparent;
+	height: 12px;
+}
+
+.tournament .v-window-light .v-window-closebox {
+	right: 1px;
+	top: 17px;
+	width: 19px;
+	height: 15px;
+	background-image: url(../reindeer/window/img/light/close.png);/** sprite-ref: verticals */
+}
+
+.tournament .v-window-light .v-window-closebox:hover {
+	background-image: url(../reindeer/window/img/light/close-hover.png);/** sprite-ref: verticals */
+}
+
+.tournament .v-window-light .v-window-closebox:active {
+	background-image: url(../reindeer/window/img/light/close-pressed.png);/** sprite-ref: verticals */
+}
+
+.tournament .v-window-light .v-window-maximizebox {
+	top: 17px;
+	background-image: url(../reindeer/window/img/light/maximize.png);/** sprite-ref: verticals */
+}
+
+.tournament .v-window-light .v-window-maximizebox:hover {
+	background-image: url(../reindeer/window/img/light/maximize-hover.png);/** sprite-ref: verticals */
+}
+
+.tournament .v-window-light .v-window-maximizebox:active {
+	background-image: url(../reindeer/window/img/light/maximize-active.png);/** sprite-ref: verticals */
+}
+
+.tournament .v-window-light .v-window-restorebox {
+	top: 17px;
+	background-image: url(../reindeer/window/img/light/restore.png);/** sprite-ref: verticals */
+}
+
+.tournament .v-window-light .v-window-restorebox:hover {
+	background-image: url(../reindeer/window/img/light/restore-hover.png);/** sprite-ref: verticals */
+}
+
+.tournament .v-window-light .v-window-restorebox:active {
+	background-image: url(../reindeer/window/img/light/restore-active.png);/** sprite-ref: verticals */
+}
+
+.tournament .v-window-light .v-window-contents {
+	background: transparent;
+}
+
+.tournament .v-window-light .v-window-wrap {
+	background: #f7f7f8 repeat-x;
+	background-image: url(../reindeer/window/img/light/content-bg.png);/** sprite-ref: verticals; sprite-alignment: repeat */
+}
+
+.tournament .v-window-black .v-window-wrap {
+	border-color: #2e3030;
+	border-radius: 8px;
+	-webkit-border-radius: 8px;
+	-moz-border-radius: 8px;
+	overflow: hidden;
+}
+
+.v-sa .tournament .v-window-black .v-window-wrap, .v-op .tournament .v-window-black .v-window-wrap {
+	border-color: rgba(0, 0, 0, 0.8);
+}
+
+.tournament .v-window-black .v-window-wrap {
+	background-color: #1d2021;
+	-moz-border-radius: 7px;
+	-webkit-border-radius: 7px;
+}
+
+.v-sa .tournament .v-window-black .v-window-wrap, .v-op .tournament .v-window-black .v-window-wrap {
+	background-color: rgba(29, 32, 33, 0.9);
+}
+
+.tournament .v-window-black .v-window-outerheader {
+	height: 29px;
+	padding: 7px 14px;
+	background: transparent repeat-x;
+	background-image: url(../reindeer/window/img/black/header-bg.png);/** sprite-ref: black-verticals; sprite-alignment: repeat */
+	text-align: center;
+	-moz-border-radius-topright: 7px;
+	-moz-border-radius-topleft: 7px;
+	-webkit-border-top-right-radius: 7px;
+	-webkit-border-top-left-radius: 7px;
+	overflow: hidden;
+	border: none;
+}
+
+.tournament .v-window-black .v-window-header {
+	font-size: 12px;
+	font-weight: normal;
+	color: #dddfe1;
+}
+
+.tournament .v-window-black .v-window-closebox {
+	top: 8px;
+	background-image: url(../reindeer/window/img/black/close.png);/** sprite-ref: black-verticals */
+}
+
+.tournament .v-window-black .v-window-closebox:hover {
+	background-image: url(../reindeer/window/img/black/close-hover.png);/** sprite-ref: black-verticals */
+}
+
+.tournament .v-window-black .v-window-closebox:active {
+	background-image: url(../reindeer/window/img/black/close-pressed.png);/** sprite-ref: black-verticals */
+}
+
+.tournament .v-window-black .v-window-footer {
+	background: transparent;
+	border: none;
+	height: 14px;
+}
+
+.tournament .v-window-black .v-window-resizebox {
+	background: transparent no-repeat;
+	background-image: url(../reindeer/window/img/black/resize.png);/** sprite-ref: black-verticals; sprite-margin-bottom: 4px */
+	width: 14px;
+	height: 14px;
+}
+
+.tournament .v-window-black .v-window-maximizebox {
+	top: 8px;
+	background-image: url(../reindeer/window/img/black/maximize.png);/** sprite-ref: black-verticals */
+}
+
+.tournament .v-window-black .v-window-maximizebox:hover {
+	background-image: url(../reindeer/window/img/black/maximize-hover.png);/** sprite-ref: black-verticals */
+}
+
+.tournament .v-window-black .v-window-maximizebox:active {
+	background-image: url(../reindeer/window/img/black/maximize-active.png);/** sprite-ref: black-verticals */
+}
+
+.tournament .v-window-black .v-window-restorebox {
+	top: 8px;
+	background-image: url(../reindeer/window/img/black/restore.png);/** sprite-ref: black-verticals */
+}
+
+.tournament .v-window-black .v-window-restorebox:hover {
+	background-image: url(../reindeer/window/img/black/restore-hover.png);/** sprite-ref: black-verticals */
+}
+
+.tournament .v-window-black .v-window-restorebox:active {
+	background-image: url(../reindeer/window/img/black/restore-active.png);/** sprite-ref: black-verticals */
+}
+
+.tournament .v-window-black .v-window-contents {
+	border: none;
+	background: transparent repeat-x;
+	background-image: url(../reindeer/window/img/black/content-bg.png);/** sprite-ref: black-verticals; sprite-alignment: repeat */
+}
