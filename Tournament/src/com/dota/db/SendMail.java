@@ -56,7 +56,7 @@ public class SendMail {
 	public String getMessageToSend(String URL,int userId){
 		String message ="<b>Welcome to Doteros San jacinto</b>"+
 						"<br>to activate your account please follow the next link in order to succesfuly log in. " + 
-						"<br><br> http://" + URL + "/Tournament/#!/activate?id="+userId;
+						"<br><br>" + URL + "Tournament/#!/activate?id="+userId;
 		return message;
 	}
 }

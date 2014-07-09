@@ -41,6 +41,7 @@ public class DBConnection {
 			} catch (ClassNotFoundException e) {
 				e.printStackTrace();
 			}
+
 			connect = DriverManager.getConnection("jdbc:mysql://"+host+":"+port+"/"+db,user, pass);
 	     
 	 }

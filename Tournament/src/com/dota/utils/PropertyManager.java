@@ -26,7 +26,7 @@ public class PropertyManager {
 	/**
 	 * Change this dependent on the environment you will run the application
 	 */
-	private final static String ENVIRONMENT = ENVIRONMENT_TEST; 
+	private final static String ENVIRONMENT = ENVIRONMENT_PROD; 
 	
 	
 	
@@ -51,13 +51,16 @@ public class PropertyManager {
 	
 	private String getPropertyFilePath(){
 //		TODO: change this to get the property file
-//		Test environment
+
 		if(ENVIRONMENT.equals(ENVIRONMENT_TEST)){
+//			Test environment
 			String dir = VaadinService.getCurrent().getBaseDirectory().getAbsolutePath();
 			return dir+"/WEB-INF/config.props";
+		}else{
+//			Production Environment
+			String dir = getProperty("OPENSHIFT_DATA_DIR", "")+"config.props";
+			return dir;
 		}
-//		Production Environment
-		return "";
 	}
 	
 	private String getProperty(String environmentVar, String property){
@@ -86,7 +89,7 @@ public class PropertyManager {
 		return getProperty("OPENSHIFT_MYSQL_DB_PORT", DB_PORT_PROP);
 	}
 	public String getCurrentpath(){
-		String dir = getProperty("", CURRENT_PATH_PROP);
+		String dir = getProperty("OPENSHIFT_DATA_DIR", CURRENT_PATH_PROP);
 		if(dir==null){
 			dir = VaadinService.getCurrent().getBaseDirectory().getAbsolutePath();
 		}

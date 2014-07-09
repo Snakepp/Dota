@@ -112,7 +112,7 @@ public class Login extends Window{
 				
 				exists=conn.isUserExistent(user.getValue(), pass);
 				if(!exists){
-					existsToken= conn.isTokenExistent(user.getValue(), pass);
+					existsToken= conn.isTokenExistent(user.getValue(), password.getValue());
 				}
 				if(exists || existsToken){
 					User logedUser = null;
