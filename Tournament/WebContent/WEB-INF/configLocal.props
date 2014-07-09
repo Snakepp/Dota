@@ -3,4 +3,4 @@ database_user=root
 database_pass=
 database_port=3306
 database_host=localhost
-url=
+url=http://localhost:8080/

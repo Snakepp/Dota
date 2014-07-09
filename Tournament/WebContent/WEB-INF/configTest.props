@@ -1,0 +1,6 @@
+database=ghost
+database_user=adminQT3aEtS
+database_pass=AMF84AreG5ZU
+database_port=3306
+database_host=127.0.0.1
+url=http://localhost:8080/

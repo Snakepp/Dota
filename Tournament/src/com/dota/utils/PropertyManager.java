@@ -20,6 +20,7 @@ public class PropertyManager {
 	private final static String URL_PROP = "url";
 	private final static String CURRENT_PATH_PROP = "currentPath";
 	private final static String ENVIRONMENT_TEST = "TEST";
+	private final static String ENVIRONMENT_LOCAL = "LOCAL";
 	private final static String ENVIRONMENT_PROD = "PROD";
 	
 	
@@ -55,7 +56,11 @@ public class PropertyManager {
 		if(ENVIRONMENT.equals(ENVIRONMENT_TEST)){
 //			Test environment
 			String dir = VaadinService.getCurrent().getBaseDirectory().getAbsolutePath();
-			return dir+"/WEB-INF/config.props";
+			return dir+"/WEB-INF/configTest.props";
+		}else if(ENVIRONMENT.equals(ENVIRONMENT_LOCAL)){
+//			Local environment
+			String dir = VaadinService.getCurrent().getBaseDirectory().getAbsolutePath();
+			return dir+"/WEB-INF/configLocal.props";
 		}else{
 //			Production Environment
 			String dir = getProperty("OPENSHIFT_DATA_DIR", "")+"config.props";
