@@ -13,7 +13,7 @@ public class Menu extends VerticalLayout {
 	 */
 	private static final long serialVersionUID = 1L;
 
-	private Button tournament,userProfile,stats,admin,activate;
+	private Button tournament,userProfile,stats,admin,activate,members;
 	private VerticalLayout bodylayout;
 	private DBConnection con;
 	private Navigator navigator;
@@ -28,6 +28,7 @@ public class Menu extends VerticalLayout {
 		admin = new Button("Administrate");
 		userProfile = new Button("User Profile");
 		activate = new Button();
+		members = new Button("Members");
 		
 		activate.setVisible(false);
 		
@@ -41,12 +42,16 @@ public class Menu extends VerticalLayout {
 		admin.setWidth("100%");
 //		userProfile.setSizeFull();
 		userProfile.setWidth("100%");
+		members.setWidth("100%");
+		
 		tournament.addClickListener(tournamentClick());
+		userProfile.addClickListener(userProfileClick());
 		
 		addComponent(tournament);
 		addComponent(stats);
 		addComponent(admin);
 		addComponent(userProfile);
+		addComponent(members);
 	}
 	
 	public Button.ClickListener tournamentClick(){
@@ -63,6 +68,23 @@ public class Menu extends VerticalLayout {
 					generateTournament();
 				}
 				navigator.navigateTo("/tournament");
+			}
+		};
+	}
+	public Button.ClickListener userProfileClick(){
+		return new Button.ClickListener() {
+			
+			private static final long serialVersionUID = 2L;
+
+			@Override
+			public void buttonClick(com.vaadin.ui.Button.ClickEvent event) {
+				if(bodylayout.getComponentCount()!=0){
+					bodylayout.removeAllComponents();
+					generateUserProfile();
+				}else{
+					generateUserProfile();
+				}
+				navigator.navigateTo("/userProfile");
 			}
 		};
 	}
@@ -86,26 +108,17 @@ public class Menu extends VerticalLayout {
 		};
 	}
 	
+	public void generateUserProfile(){
+		UserProfile userProfile = new UserProfile();
+		bodylayout.addComponent(userProfile);
+	}
+	
 	public void generateTournament(){
+		
 		Tournament tournament = new Tournament(con);
 		for(VersusLayout versus : tournament.teams){
 			bodylayout.setCaption("Tournament");
 			bodylayout.addComponent(versus);
 		}
 	}
-
-//	@Override
-//	public void enter(ViewChangeEvent event) {
-//		if (event.getParameters() == null
-//                || event.getParameters().isEmpty()) {
-//                bodylayout.addComponent(
-//                    new Label("Nothing to see here, " +
-//                              "just pass along."));
-//                return;
-//        }
-//		if(event.getParameters().equals("tournament")){
-//			bodylayout.removeAllComponents();
-//			generateTournament();
-//		}
-//	}
 }
