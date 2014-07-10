@@ -84,6 +84,8 @@ public class DBConnection {
 				 user.setAvatarName(querRslt.getString(5));
 				 user.setActive(querRslt.getInt(6) == 0 ? false : true);
 				 user.setToken(querRslt.getString(7));
+				 user.setAdmin(querRslt.getInt(8) == 0 ? false : true);
+				 
 			}
 					
 		} catch (SQLException e) {
@@ -107,6 +109,7 @@ public class DBConnection {
 				 user.setAvatarName(querRslt.getString(5));
 				 user.setActive(querRslt.getInt(6) == 0 ? false : true);
 				 user.setToken(querRslt.getString(7));
+				 user.setAdmin(querRslt.getInt(8) == 0 ? false : true);
 			}
 					
 		} catch (SQLException e) {
@@ -129,6 +132,7 @@ public class DBConnection {
 				 user.setAvatarName(querRslt.getString(5));
 				 user.setActive(querRslt.getInt(6) == 0 ? false : true);
 				 user.setToken(querRslt.getString(7));
+				 user.setAdmin(querRslt.getInt(8) == 0 ? false : true);
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -151,6 +155,7 @@ public class DBConnection {
 				 user.setAvatarName(querRslt.getString(5));
 				 user.setActive(querRslt.getInt(6) == 0 ? false : true);
 				 user.setToken(querRslt.getString(7));
+				 user.setAdmin(querRslt.getInt(8) == 0 ? false : true);
 				 count++;
 			}
 			if(count==0){
@@ -177,6 +182,7 @@ public class DBConnection {
 				user.setAvatarName(querRslt.getString(5));
 				user.setActive(querRslt.getInt(6) == 0 ? false : true);
 				user.setToken(querRslt.getString(7));
+				user.setAdmin(querRslt.getInt(8) == 0 ? false : true);
 				users.add(user);
 			}
 		} catch (SQLException e) {

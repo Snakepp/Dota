@@ -27,7 +27,7 @@ public class PropertyManager {
 	/**
 	 * Change this dependent on the environment you will run the application
 	 */
-	private final static String ENVIRONMENT = ENVIRONMENT_TEST; 
+	private final static String ENVIRONMENT = ENVIRONMENT_PROD; 
 	
 	
 	
@@ -105,6 +105,8 @@ public class PropertyManager {
 		String heroesPath = null;
 		if(ENVIRONMENT.equals(ENVIRONMENT_TEST)){
 			heroesPath = getCurrentpath()+"/VAADIN/themes/my-chameleon/images/Heroes/";
+		}else if(ENVIRONMENT.equals(ENVIRONMENT_LOCAL)){
+			heroesPath = getCurrentpath()+"/VAADIN/themes/my-chameleon/images/Heroes/";
 		}else{
 			heroesPath = getCurrentpath()+"/images/images/Heroes/";
 		}
@@ -113,6 +115,8 @@ public class PropertyManager {
 	public String getLogoPath(){
 		String heroesPath = null;
 		if(ENVIRONMENT.equals(ENVIRONMENT_TEST)){
+			heroesPath = getCurrentpath()+"/VAADIN/themes/my-chameleon/images/logo/";
+		}else if(ENVIRONMENT.equals(ENVIRONMENT_LOCAL)){
 			heroesPath = getCurrentpath()+"/VAADIN/themes/my-chameleon/images/logo/";
 		}else{
 			heroesPath = getCurrentpath()+"/images/images/logo/";

@@ -46,6 +46,7 @@ public class Menu extends VerticalLayout {
 		
 		tournament.addClickListener(tournamentClick());
 		userProfile.addClickListener(userProfileClick());
+		members.addClickListener(memebersClick());
 		
 		addComponent(tournament);
 		addComponent(stats);
@@ -90,6 +91,24 @@ public class Menu extends VerticalLayout {
 	}
 	
 	
+	public Button.ClickListener memebersClick(){
+		return new Button.ClickListener() {
+			
+			private static final long serialVersionUID = 2L;
+			@Override
+			public void buttonClick(com.vaadin.ui.Button.ClickEvent event) {
+				if(bodylayout.getComponentCount()!=0){
+					bodylayout.removeAllComponents();
+					generateMembers();
+				}else{
+					generateMembers();
+				}
+				navigator.navigateTo("/members");
+			}
+		};
+	}
+	
+	
 	public Button.ClickListener activateClick(){
 		return new Button.ClickListener() {
 			
@@ -111,6 +130,10 @@ public class Menu extends VerticalLayout {
 	public void generateUserProfile(){
 		UserProfile userProfile = new UserProfile();
 		bodylayout.addComponent(userProfile);
+	}
+	public void generateMembers(){
+		Members mem = new Members(con);
+		bodylayout.addComponent(mem);
 	}
 	
 	public void generateTournament(){

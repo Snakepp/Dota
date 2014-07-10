@@ -21,6 +21,7 @@ public class User {
 	private long id;
 	private boolean active;
 	private String token;
+	private boolean isAdmin;
 	
 	public String getName(){
 		return name;
@@ -33,6 +34,9 @@ public class User {
 	}
 	public boolean activated(){
 		return active;
+	}
+	public boolean isAdmin(){
+		return isAdmin;
 	}
 	public String getToken(){
 		return token;
@@ -49,6 +53,9 @@ public class User {
 	}
 	public void setActive(boolean active){
 		this.active = active;
+	}
+	public void setAdmin(boolean admin){
+		this.isAdmin = admin;
 	}
 	public void setToken(String token){
 		this.token = token;
