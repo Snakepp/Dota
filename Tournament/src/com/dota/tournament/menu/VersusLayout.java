@@ -1,5 +1,6 @@
-package com.dota.tournament;
+package com.dota.tournament.menu;
 
+import com.dota.tournament.User;
 import com.vaadin.ui.Alignment;
 import com.vaadin.ui.HorizontalLayout;
 import com.vaadin.ui.Label;

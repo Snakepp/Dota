@@ -1,9 +1,10 @@
-package com.dota.tournament;
+package com.dota.tournament.menu;
 
 import java.util.Arrays;
 import java.util.List;
 
 import com.dota.db.DBConnection;
+import com.dota.tournament.User;
 import com.vaadin.server.ThemeResource;
 import com.vaadin.ui.Button;
 import com.vaadin.ui.DateField;

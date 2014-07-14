@@ -1,10 +1,11 @@
-package com.dota.tournament;
+package com.dota.tournament.menu;
 
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
 import com.dota.db.DBConnection;
+import com.dota.tournament.User;
 import com.vaadin.ui.VerticalLayout;
 
 public class Tournament  extends VerticalLayout{

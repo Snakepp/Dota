@@ -1,10 +1,7 @@
 package com.dota.tournament.menu;
 
 import com.dota.db.DBConnection;
-import com.dota.tournament.Tournament;
 import com.dota.tournament.User;
-import com.dota.tournament.UserProfile;
-import com.dota.tournament.VersusLayout;
 import com.vaadin.navigator.Navigator;
 import com.vaadin.ui.Button;
 import com.vaadin.ui.HorizontalLayout;
