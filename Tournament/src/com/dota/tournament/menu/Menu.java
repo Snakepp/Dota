@@ -2,6 +2,7 @@ package com.dota.tournament.menu;
 
 import com.dota.db.DBConnection;
 import com.dota.tournament.User;
+import com.dota.utils.PropertyManager;
 import com.vaadin.navigator.Navigator;
 import com.vaadin.ui.Button;
 import com.vaadin.ui.HorizontalLayout;
@@ -21,13 +22,14 @@ public class Menu extends HorizontalLayout {
 	private DBConnection con;
 	private Navigator navigator;
 	private User userloged;
-	
-	public Menu(VerticalLayout bodyLayout, DBConnection con, Navigator navigator/*, boolean isUserAdmin*/,User userLogged){
+	private PropertyManager pm;
+	public Menu(VerticalLayout bodyLayout, DBConnection con, Navigator navigator/*, boolean isUserAdmin*/,User userLogged, PropertyManager pm){
 		userloged = userLogged;
 //		userAdmin = isUserAdmin;
 		this.bodylayout = bodyLayout;
 		this.con = con;
 		this.navigator = navigator;
+		this.pm=pm;
 		
 		tournament = new Button("Tournament");
 		stats = new Button("Dota Stats");
@@ -138,7 +140,7 @@ public class Menu extends HorizontalLayout {
 	}
 	
 	public void generateUserProfile(){
-		UserProfile userProfile = new UserProfile(userloged, con);
+		UserProfile userProfile = new UserProfile(userloged, con, pm);
 		bodylayout.addComponent(userProfile);
 	}
 	public void generateMembers(){

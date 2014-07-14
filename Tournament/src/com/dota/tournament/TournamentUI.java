@@ -123,7 +123,7 @@ public class TournamentUI extends UI {
 			Image img = new Image();
 			img.setSource(resource);
 			head.addComponent(img);
-			Menu menu = new Menu(mainBody,connection,navigator,userLoged);
+			Menu menu = new Menu(mainBody,connection,navigator,userLoged,properties);
 			menu.setWidth("90%");
 			menu.setHeight("20%");
 			menu.setSpacing(false);

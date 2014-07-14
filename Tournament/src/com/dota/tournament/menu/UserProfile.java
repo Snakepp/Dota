@@ -5,8 +5,10 @@ import java.util.List;
 
 import com.dota.db.DBConnection;
 import com.dota.tournament.User;
+import com.dota.utils.PropertyManager;
 import com.vaadin.server.ThemeResource;
 import com.vaadin.ui.Button;
+import com.vaadin.ui.ComboBox;
 import com.vaadin.ui.DateField;
 import com.vaadin.ui.FormLayout;
 import com.vaadin.ui.Label;
@@ -29,12 +31,15 @@ public class UserProfile extends FormLayout{
 	private TextField email;
 	private OptionGroup sex;
 	private TextArea editor;
+	private ComboBox heroes;
+	private PropertyManager pm;
 	@SuppressWarnings("deprecation")
-	public UserProfile(User user, DBConnection connection){
+	public UserProfile(User user, DBConnection connection,PropertyManager pm){
 
 		
 		this.user=user;
 		this.connection=connection;
+		this.pm=pm;
 		
 		
 		addComponent(new Label("              Edit your profile                  "));
@@ -87,6 +92,14 @@ public class UserProfile extends FormLayout{
         
         addComponent(new Label("                       "));
         
+        Heroes heroesC=new Heroes(pm);
+        heroes=heroesC.getHeroesComboBox();
+        heroes.setValue(user.getAvatar());
+        heroes.setCaption("Avatar ");
+        addComponent(heroes);
+        
+        addComponent(new Label("                       "));
+        
         String message = "Phrase or message.";        
         setSpacing(true);
         setWidth("100%");
@@ -103,6 +116,7 @@ public class UserProfile extends FormLayout{
           
         Button button = new Button("Save Changes");
         button.setIcon(new ThemeResource("../runo/icons/16/ok.png"));
+        button.addClickListener(SaveClick());
   		addComponent(button);
         
   		addComponent(new Label("                       "));
@@ -121,12 +135,16 @@ public class UserProfile extends FormLayout{
 			public void buttonClick(com.vaadin.ui.Button.ClickEvent event) {
 				user.setName(name.getValue());
 				user.setEmail(email.getValue());
-			    java.sql.Date sqlDate = new java.sql.Date(birthday.getValue().getTime());			    
-				user.setBirthday(sqlDate);
-				user.setPhone(phone.getValue());
-				user.setSex((String)sex.getValue());
+				if(birthday.getValue()!=null){
+					java.sql.Date sqlDate = new java.sql.Date(birthday.getValue().getTime());			    
+					user.setBirthday(sqlDate);
+				}
+				if(phone.getValue()!=null){
+					user.setPhone(phone.getValue());
+				}
+				user.setSex((((String)sex.getValue()).equals("Man"))?"M":"W");
 				user.setMessage(editor.getValue());
-				
+				user.setAvatarName((String)heroes.getValue());
 				
 				connection.modificateUser(user);
 				
