@@ -24,7 +24,6 @@ public class Heroes {
 		comboHeroes.setInputPrompt("select a hero");
 		comboHeroes.addItems(getHeroes());
 		comboHeroes.setNullSelectionAllowed(false);
-		comboHeroes.setRequired(true);
 		comboHeroes.setPageLength(3);
 		comboHeroes.setFilteringMode(FilteringMode.CONTAINS);
 		setIcons(comboHeroes);

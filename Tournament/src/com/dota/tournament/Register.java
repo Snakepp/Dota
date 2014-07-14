@@ -1,28 +1,20 @@
 package com.dota.tournament;
 
 
-import java.io.File;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Map;
-import java.util.Set;
-
 import com.dota.db.DBConnection;
 import com.dota.db.SendMail;
+import com.dota.tournament.menu.Heroes;
 import com.dota.utils.Encripter;
 import com.dota.utils.PropertyManager;
 import com.vaadin.data.validator.EmailValidator;
 import com.vaadin.event.FieldEvents.TextChangeEvent;
 import com.vaadin.event.FieldEvents.TextChangeListener;
-import com.vaadin.server.FileResource;
 import com.vaadin.server.UserError;
 import com.vaadin.shared.ui.MarginInfo;
-import com.vaadin.shared.ui.combobox.FilteringMode;
 import com.vaadin.ui.Button;
 import com.vaadin.ui.ComboBox;
 import com.vaadin.ui.FormLayout;
 import com.vaadin.ui.HorizontalLayout;
-import com.vaadin.ui.Image;
 import com.vaadin.ui.Notification;
 import com.vaadin.ui.PasswordField;
 import com.vaadin.ui.TextField;
@@ -72,14 +64,9 @@ public class Register extends Window{
 		password.setInvalidAllowed(false);
 		password.setWidth("300px");
 		verifyPassword = new PasswordField("Verify Password");
-		comboHeroes = new ComboBox();
-		comboHeroes.setInputPrompt("select a hero");
-		comboHeroes.addItems(getHeroes());
-		comboHeroes.setNullSelectionAllowed(false);
+		Heroes heroesC = new Heroes(props);
+		comboHeroes = heroesC.getHeroesComboBox();
 		comboHeroes.setRequired(true);
-		comboHeroes.setPageLength(3);
-		comboHeroes.setFilteringMode(FilteringMode.CONTAINS);
-		setIcons(comboHeroes);
 		setCaption("register new member");
 		mainlayout.setSpacing(true);
 		mainlayout.setMargin(new MarginInfo(true,true,true,false));
@@ -184,37 +171,6 @@ public class Register extends Window{
 			error = "passwords don't match.";
 		}
 		return error;
-	}
-	
-	public Set<String> getHeroes(){
-		Set<String> heroes = new HashSet<String>();
-		String filePath = props.getHeroesPath();
-		
-		File heroesDir = new File(filePath);
-		for(File image : heroesDir.listFiles()){
-			if(image.getName().contains(".jpg") || image.getName().contains(".gif")){
-				String heroName = image.getName();
-				heroName=heroName.substring(0,heroName.indexOf("."));
-				heroes.add(heroName);
-			}
-		}
-		
-		return heroes;
-	}
-	
-	public void setIcons(ComboBox heroes){
-		String filePath =props.getIconHeroesPath();
-		String extencion=".jpg";
-		Map<String,FileResource> heroesMap = new HashMap<String, FileResource>();
-		for(String hero : getHeroes()){
-			heroesMap.put(hero, new FileResource(new File(filePath+hero+extencion)));
-		}
-		for(String hero : heroesMap.keySet()){
-//			Image image = new Image();
-//			image.setSource(heroesMap.get(hero));
-//			FileResource fileRes = heroesMap.get(hero);
-			heroes.setItemIcon(hero,heroesMap.get(hero));
-		}
 	}
 	
 }
