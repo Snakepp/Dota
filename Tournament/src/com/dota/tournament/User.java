@@ -1,6 +1,7 @@
 package com.dota.tournament;
 
 import java.io.File;
+import java.sql.Date;
 
 import com.dota.utils.PropertyManager;
 import com.vaadin.server.FileResource;
@@ -18,6 +19,12 @@ public class User {
 	private String email;
 	private Image avatarGif;
 	private Image avatarJpg;
+	private String avatar;
+	private String phone;
+	private String sex;
+	private Date birthday;
+	private String message;
+	
 	private long id;
 	private boolean active;
 	private String token;
@@ -41,6 +48,19 @@ public class User {
 	public String getToken(){
 		return token;
 	}
+	public String getPhone(){
+		return phone;
+	}
+	public String getSex(){
+		return sex;
+	}
+	public Date getBirthday(){
+		return birthday;
+	}
+	public String getMessage(){
+		return message;
+	}
+	
 	
 	public void setName(String name){
 		this.name = name;
@@ -60,8 +80,23 @@ public class User {
 	public void setToken(String token){
 		this.token = token;
 	}
+	public void setPhone(String phone){
+		this.phone = phone;
+	}
+	public void setSex(String sex){
+		this.sex = sex;
+	}
+	public void setBirthday(Date birthday){
+		this.birthday = birthday;
+	}
+	public void setMessage(String message){
+		this.message = message;
+	}
 	
 	
+	public String getAvatar(){
+		return avatar;
+	}
 	public Image getAvatarGif(){
 		return avatarGif;
 	}
@@ -70,6 +105,7 @@ public class User {
 	}
 	
 	public void setAvatarName(String avatarName){
+		avatar= avatarName;
 		avatarGif = new Image();
 		avatarJpg = new Image();
 		String filePath = props.getHeroesPath()+avatarName;

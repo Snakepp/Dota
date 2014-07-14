@@ -141,7 +141,7 @@ public class Menu extends HorizontalLayout {
 	}
 	
 	public void generateUserProfile(){
-		UserProfile userProfile = new UserProfile(userloged);
+		UserProfile userProfile = new UserProfile(userloged, con);
 		bodylayout.addComponent(userProfile);
 	}
 	public void generateMembers(){

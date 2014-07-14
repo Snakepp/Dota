@@ -2,6 +2,7 @@ package com.dota.db;
 
 
 import java.sql.Connection;
+import java.sql.Date;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -261,6 +262,27 @@ public class DBConnection {
 			preparedStatement.setString(3, email);
 			preparedStatement.setString(4, heroName);
 			preparedStatement.setString(5, uniqueToken.toString());
+			preparedStatement.executeUpdate();
+					
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+	}
+	
+	public void modificateUser(User user){
+		PreparedStatement preparedStatement;
+		UUID uniqueToken = UUID.randomUUID();
+		try {
+			preparedStatement = connect.prepareStatement("UPDATE users SET name=?,email=?,avatar=?,"
+					+ "phone=?,sex=?,birthday=?,message=? WHERE id=?");
+			preparedStatement.setString(1, user.getName());
+			preparedStatement.setString(2, user.getEmail());
+			preparedStatement.setString(3, user.getAvatar());
+			preparedStatement.setString(4, user.getPhone());
+			preparedStatement.setString(5, user.getSex());
+			preparedStatement.setDate(6, user.getBirthday());
+			preparedStatement.setString(7, user.getMessage());
+			preparedStatement.setLong(8, user.getId());
 			preparedStatement.executeUpdate();
 					
 		} catch (SQLException e) {

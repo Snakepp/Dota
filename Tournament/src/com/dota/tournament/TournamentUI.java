@@ -59,7 +59,7 @@ public class TournamentUI extends UI {
 			body = new VerticalLayout();
 			main = new VerticalLayout();
 			mainBody = new VerticalLayout();
-			printMainUI();
+			//printMainUI();
 //			head.setWidth("100%");
 //			head.setHeight("20%");
 //			body.setWidth("100%");
@@ -68,14 +68,14 @@ public class TournamentUI extends UI {
 //			setSizeFull();
 //			mainLayout.addStyleName("outlined");
 //			mainLayout.setSizeFull();
-//			try{
-//				connection = new DBConnection(properties);
-//				
-//			}catch(SQLException e){
-//				//if there is an exception then that means that we could not connect to database
-//				Notification.show("Database issue!","Could not connect to database",
-//		                  Notification.Type.ERROR_MESSAGE);
-//			}
+			try{
+				connection = new DBConnection(properties);
+				
+			}catch(SQLException e){
+				//if there is an exception then that means that we could not connect to database
+				Notification.show("Database issue!","Could not connect to database",
+		                  Notification.Type.ERROR_MESSAGE);
+			}
 //			// Find the application directory
 //
 //			//TODO: verify this is obtained for both Test and Production environment
@@ -99,7 +99,7 @@ public class TournamentUI extends UI {
 		}
 		
 		public void printMainUI(){
-			
+//			removeAllComponents();
 			head.setWidth("100%");
 			head.setHeight("20%");
 			body.setWidth("100%");
@@ -108,14 +108,14 @@ public class TournamentUI extends UI {
 			setSizeFull();
 			mainLayout.addStyleName("outlined");
 			mainLayout.setSizeFull();
-			try{
-				connection = new DBConnection(properties);
-				
-			}catch(SQLException e){
-				//if there is an exception then that means that we could not connect to database
-				Notification.show("Database issue!","Could not connect to database",
-		                  Notification.Type.ERROR_MESSAGE);
-			}
+//			try{
+//				connection = new DBConnection(properties);
+//				
+//			}catch(SQLException e){
+//				//if there is an exception then that means that we could not connect to database
+//				Notification.show("Database issue!","Could not connect to database",
+//		                  Notification.Type.ERROR_MESSAGE);
+//			}
 			// Find the application directory
 
 			//TODO: verify this is obtained for both Test and Production environment
@@ -136,6 +136,11 @@ public class TournamentUI extends UI {
 			
 			
 			addComponent(main);
+			
+			UserPresentation loggedUserPresentation = new UserPresentation(userLoged);
+			head.addComponent(loggedUserPresentation);
+			head.setComponentAlignment(loggedUserPresentation, Alignment.MIDDLE_RIGHT);
+			
 		}
 		
 		
@@ -155,11 +160,12 @@ public class TournamentUI extends UI {
 					long loggedUserId = (Long) UI.getCurrent().getSession().getAttribute("usernameId");
 					User userLogged = connection.getUser(loggedUserId);
 					userLoged=userLogged;
-					UserPresentation loggedUserPresentation = new UserPresentation(userLogged);
-					head.addComponent(loggedUserPresentation);
-					head.setComponentAlignment(loggedUserPresentation, Alignment.MIDDLE_RIGHT);
+//					UserPresentation loggedUserPresentation = new UserPresentation(userLogged);
+//					head.addComponent(loggedUserPresentation);
+//					head.setComponentAlignment(loggedUserPresentation, Alignment.MIDDLE_RIGHT);
 					loggedUser = true;
 					activatedUser = userLogged.activated();
+					printMainUI();
 				}
 				if(!activatedUser){
 					Notification.show("Your account has NOT been activated, please follow the email instructions to activate it!");
