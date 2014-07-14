@@ -6,6 +6,8 @@
 	overflow: hidden;
 }
 
+
+
 .v-vaadin-version:after {
 	content: "7.2.2";
 }
@@ -409,6 +411,12 @@
 
 .my-chameleon .v-browserframe > span {
 	font-size: 13px;
+}
+
+.v-filterselect-mybold .v-filterselect-input .v-icon{
+    font-weight: bold;
+    width: 16px;
+    height: 16px;
 }
 
 .my-chameleon .v-button {

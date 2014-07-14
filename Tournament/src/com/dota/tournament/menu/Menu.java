@@ -1,12 +1,17 @@
-package com.dota.tournament;
+package com.dota.tournament.menu;
 
 import com.dota.db.DBConnection;
+import com.dota.tournament.Tournament;
+import com.dota.tournament.User;
+import com.dota.tournament.UserProfile;
+import com.dota.tournament.VersusLayout;
 import com.vaadin.navigator.Navigator;
 import com.vaadin.ui.Button;
+import com.vaadin.ui.HorizontalLayout;
 import com.vaadin.ui.VerticalLayout;
 
 
-public class Menu extends VerticalLayout {
+public class Menu extends HorizontalLayout {
 
 	/**
 	 * 
@@ -15,10 +20,14 @@ public class Menu extends VerticalLayout {
 
 	private Button tournament,userProfile,stats,admin,activate,members;
 	private VerticalLayout bodylayout;
+	private  boolean userAdmin = false;
 	private DBConnection con;
 	private Navigator navigator;
+	private User userloged;
 	
-	public Menu(VerticalLayout bodyLayout, DBConnection con, Navigator navigator){
+	public Menu(VerticalLayout bodyLayout, DBConnection con, Navigator navigator/*, boolean isUserAdmin*/,User userLogged){
+		userloged = userLogged;
+//		userAdmin = isUserAdmin;
 		this.bodylayout = bodyLayout;
 		this.con = con;
 		this.navigator = navigator;
@@ -36,6 +45,7 @@ public class Menu extends VerticalLayout {
 		
 //		tournament.setSizeFull();
 		tournament.setWidth("100%");
+		tournament.setHeight("100%");
 //		stats.setSizeFull();
 		stats.setWidth("100%");
 //		admin.setSizeFull();
@@ -43,6 +53,9 @@ public class Menu extends VerticalLayout {
 //		userProfile.setSizeFull();
 		userProfile.setWidth("100%");
 		members.setWidth("100%");
+		
+		
+//		admin.setVisible(!isUserAdmin);
 		
 		tournament.addClickListener(tournamentClick());
 		userProfile.addClickListener(userProfileClick());
@@ -128,7 +141,7 @@ public class Menu extends VerticalLayout {
 	}
 	
 	public void generateUserProfile(){
-		UserProfile userProfile = new UserProfile();
+		UserProfile userProfile = new UserProfile(userloged);
 		bodylayout.addComponent(userProfile);
 	}
 	public void generateMembers(){

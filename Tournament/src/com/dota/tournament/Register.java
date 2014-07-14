@@ -22,6 +22,7 @@ import com.vaadin.ui.Button;
 import com.vaadin.ui.ComboBox;
 import com.vaadin.ui.FormLayout;
 import com.vaadin.ui.HorizontalLayout;
+import com.vaadin.ui.Image;
 import com.vaadin.ui.Notification;
 import com.vaadin.ui.PasswordField;
 import com.vaadin.ui.TextField;
@@ -202,14 +203,17 @@ public class Register extends Window{
 	}
 	
 	public void setIcons(ComboBox heroes){
-		String filePath =props.getHeroesPath();
+		String filePath =props.getIconHeroesPath();
 		String extencion=".jpg";
 		Map<String,FileResource> heroesMap = new HashMap<String, FileResource>();
 		for(String hero : getHeroes()){
 			heroesMap.put(hero, new FileResource(new File(filePath+hero+extencion)));
 		}
 		for(String hero : heroesMap.keySet()){
-			heroes.setItemIcon(hero, heroesMap.get(hero));
+//			Image image = new Image();
+//			image.setSource(heroesMap.get(hero));
+//			FileResource fileRes = heroesMap.get(hero);
+			heroes.setItemIcon(hero,heroesMap.get(hero));
 		}
 	}
 	

@@ -27,8 +27,10 @@ public class VersusLayout extends HorizontalLayout{
 	}
 	
 	public void setUser(VerticalLayout layout, User user){
-		layout.setSpacing(true);
-		layout.addComponent(user.getAvatarJpg());
-		layout.addComponent(new Label(user.getName()));
+		if(user!=null){
+			layout.setSpacing(true);
+			layout.addComponent(user.getAvatarJpg());
+			layout.addComponent(new Label(user.getName()));
+		}
 	}
 }

@@ -34,6 +34,7 @@ public class Login extends Window{
 	private CheckBox rememberMe;
 	private Button login;
 	private Button register;
+	private Button forgotPass;
 	private DBConnection conn;
 	private PropertyManager props;
 	

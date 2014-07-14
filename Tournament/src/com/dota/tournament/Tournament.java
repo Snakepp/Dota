@@ -30,6 +30,15 @@ public class Tournament  extends VerticalLayout{
 			}
 		}else{
 			//impar
+			while(counter != users.size()){
+				teams.add(new VersusLayout(users.get(counter), users.get(counter+1)));
+				counter+=2;
+				int impar = counter+1;
+				if(impar == users.size()){
+					teams.add(new VersusLayout(users.get(counter), null));
+					counter = impar;
+				}
+			}
 		}
 	}
 }

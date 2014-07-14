@@ -1,9 +1,10 @@
-package com.dota.tournament;
+package com.dota.tournament.menu;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import com.dota.db.DBConnection;
+import com.dota.tournament.User;
 import com.vaadin.data.Item;
 import com.vaadin.ui.Image;
 import com.vaadin.ui.Table;
@@ -43,6 +44,10 @@ public class Members extends VerticalLayout{
 		for(Item a : items){
 			System.out.println(a.toString());
 		}
+		
+		table.setFooterVisible(true);
+		table.setColumnFooter("Name", "Total Members");
+		table.setColumnFooter("Avatar", count+++"");
 		addComponent(table);
 		
 	}
