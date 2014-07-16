@@ -64,12 +64,14 @@ public class UserProfile extends FormLayout{
         
         birthday = new DateField("Date of birth  ");
 		birthday.setIcon(new ThemeResource("../runo/icons/16/calendar.png"));
+		//TODO: add default value pls!
         addComponent(birthday);
         
         addComponent(new Label("                       "));
         
         phone = new TextField("Cell Phone");
         phone.setIcon(new ThemeResource("../runo/icons/16/globe.png"));
+		//TODO: add default value pls!
         addComponent(phone);      
         
         addComponent(new Label("                       "));
@@ -86,6 +88,7 @@ public class UserProfile extends FormLayout{
         sex = new OptionGroup("Select your sex", sexo);
         
         sex.setNullSelectionAllowed(false); // user can not 'unselect'
+		//TODO: add default value pls!
         sex.select("Man"); // select this by default
         sex.setImmediate(true); // send the change to the server at once
         addComponent(sex); 

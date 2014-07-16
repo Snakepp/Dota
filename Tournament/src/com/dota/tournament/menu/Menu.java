@@ -62,7 +62,9 @@ public class Menu extends HorizontalLayout {
 		
 		addComponent(tournament);
 		addComponent(stats);
-		addComponent(admin);
+		if(userLogged.isAdmin()){
+			addComponent(admin);
+		}
 		addComponent(userProfile);
 		addComponent(members);
 	}
@@ -144,7 +146,7 @@ public class Menu extends HorizontalLayout {
 		bodylayout.addComponent(userProfile);
 	}
 	public void generateMembers(){
-		Members mem = new Members(con);
+		Members mem = new Members(con,userloged);
 		bodylayout.addComponent(mem);
 	}
 	
@@ -152,7 +154,6 @@ public class Menu extends HorizontalLayout {
 		
 		Tournament tournament = new Tournament(con);
 		for(VersusLayout versus : tournament.teams){
-			bodylayout.setCaption("Tournament");
 			bodylayout.addComponent(versus);
 		}
 	}

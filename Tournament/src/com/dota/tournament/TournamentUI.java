@@ -43,7 +43,12 @@ public class TournamentUI extends UI {
 	VerticalLayout main;
 	HorizontalLayout head;
 	VerticalLayout body;
-	VerticalLayout mainBody;
+	HorizontalLayout mainBody;
+	VerticalLayout mainCorps;
+	VerticalLayout mainCorps1;
+	VerticalLayout mainCorps2, mainCorps3;
+//	VerticalLayout 
+//	VerticalLayout mainBody;
 	PropertyManager properties;
 	private User userLoged;
 	
@@ -58,7 +63,11 @@ public class TournamentUI extends UI {
 			head = new HorizontalLayout();
 			body = new VerticalLayout();
 			main = new VerticalLayout();
-			mainBody = new VerticalLayout();
+			mainBody = new HorizontalLayout();
+			mainCorps = new VerticalLayout();
+			mainCorps1 = new VerticalLayout();
+			mainCorps2 = new VerticalLayout();
+			mainCorps3 = new VerticalLayout();
 			//printMainUI();
 //			head.setWidth("100%");
 //			head.setHeight("20%");
@@ -102,7 +111,12 @@ public class TournamentUI extends UI {
 //			removeAllComponents();
 			head.setWidth("100%");
 			head.setHeight("20%");
-			body.setWidth("100%");
+//			body.setWidth("100%");
+			mainBody.setWidth("100%");
+			mainCorps.setWidth("100%");
+			mainCorps2.setWidth("100%");
+			mainCorps3.setWidth("100%");
+			mainCorps1.setWidth("100%");
 //			main.setSizeFull();
 			
 			setSizeFull();
@@ -123,17 +137,37 @@ public class TournamentUI extends UI {
 			Image img = new Image();
 			img.setSource(resource);
 			head.addComponent(img);
-			Menu menu = new Menu(mainBody,connection,navigator,userLoged,properties);
-			menu.setWidth("90%");
-			menu.setHeight("20%");
-			menu.setSpacing(false);
-			body.addComponent(menu);
-			main.addComponent(head);
-			body.addComponent(mainBody);
-			body.setExpandRatio(menu, 1.0f);
-			body.setExpandRatio(mainBody, 4.0f);
-			main.addComponent(body);
+			Menu menu = new Menu(mainCorps1,connection,navigator,userLoged,properties);
 			
+			
+			mainCorps.addComponent(menu);
+			mainCorps.addComponent(mainCorps1);
+//			body.addComponent(mainBody);
+			mainCorps.setExpandRatio(menu, 1.0f);
+			mainCorps.setSpacing(true);
+			
+			menu.setSizeFull();
+			menu.setSpacing(false);
+			
+			
+			body.addComponent(mainBody);
+			
+			
+			mainBody.addComponent(mainCorps2);
+			mainBody.addComponent(mainCorps);
+			mainBody.addComponent(mainCorps3);
+			
+			
+			mainBody.setExpandRatio(mainCorps2, 0.5f);
+			mainBody.setExpandRatio(mainCorps3, 0.5f);
+			mainBody.setExpandRatio(mainCorps, 4.0f);
+			
+			
+//			mainBody.setExpandRatio(mainBody, 4.0f);
+			
+			
+			main.addComponent(head);
+			main.addComponent(body);
 			
 			addComponent(main);
 			
