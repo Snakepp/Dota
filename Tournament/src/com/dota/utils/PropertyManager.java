@@ -21,7 +21,7 @@ public class PropertyManager {
 	private final static String CURRENT_PATH_PROP = "currentPath";
 	private final static String ENVIRONMENT_TEST = "TEST";
 	private final static String ENVIRONMENT_LOCAL = "LOCAL";
-	private final static String ENVIRONMENT_PROD = "PROD";
+//	private final static String ENVIRONMENT_PROD = "PROD";
 	
 	
 	/**
@@ -53,19 +53,20 @@ public class PropertyManager {
 	private String getPropertyFilePath(){
 //		TODO: change this to get the property file
 
+		String dir = null;
 		if(ENVIRONMENT.equals(ENVIRONMENT_TEST)){
 //			Test environment
-			String dir = VaadinService.getCurrent().getBaseDirectory().getAbsolutePath();
-			return dir+"/WEB-INF/configTest.props";
+			dir = VaadinService.getCurrent().getBaseDirectory().getAbsolutePath()+"/WEB-INF/configTest.props";
 		}else if(ENVIRONMENT.equals(ENVIRONMENT_LOCAL)){
 //			Local environment
-			String dir = VaadinService.getCurrent().getBaseDirectory().getAbsolutePath();
-			return dir+"/WEB-INF/configLocal.props";
-		}else{
-//			Production Environment
-			String dir = getProperty("OPENSHIFT_DATA_DIR", "")+"config.props";
-			return dir;
+			dir = VaadinService.getCurrent().getBaseDirectory().getAbsolutePath()+"/WEB-INF/configLocal.props";
 		}
+		String dataDir = getProperty("OPENSHIFT_DATA_DIR", "");
+		if(!dataDir.isEmpty()) {
+//			Production Environment
+			dir = dataDir+"config.props";
+		}
+		return dir;
 	}
 	
 	private String getProperty(String environmentVar, String property){
