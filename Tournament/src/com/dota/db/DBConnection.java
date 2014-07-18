@@ -139,6 +139,37 @@ public class DBConnection {
 		}
 		return user;
 	}
+	
+	
+	public User getUserByEmail(String email){
+		User user = new User(prop);
+		PreparedStatement preparedStatement;
+		ResultSet querRslt = null;
+		try {
+			preparedStatement = connect.prepareStatement("select * from users where email =?");
+			preparedStatement.setString(1, email);
+			querRslt = preparedStatement.executeQuery();
+			int count=0;
+			while(querRslt.next()) {
+				user.setId(querRslt.getLong(1));
+				user.setName(querRslt.getString(2));
+				user.setEmail(querRslt.getString(4));
+				user.setAvatarName(querRslt.getString(5));
+				user.setActive(querRslt.getInt(6) == 0 ? false : true);
+				user.setToken(querRslt.getString(7));
+				user.setAdmin(querRslt.getInt(8) == 0 ? false : true);
+				count++;
+			}
+			if(count==0){
+				return null;
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return user;
+	}
+	
+	
 	public User getUser(String token){
 		User user = new User(prop);
 		PreparedStatement preparedStatement;
@@ -261,6 +292,20 @@ public class DBConnection {
 			preparedStatement.setString(3, email);
 			preparedStatement.setString(4, heroName);
 			preparedStatement.setString(5, uniqueToken.toString());
+			preparedStatement.executeUpdate();
+					
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+	}
+	
+	
+	public void modificateUserPass(long id,String pass){
+		PreparedStatement preparedStatement;
+		try {
+			preparedStatement = connect.prepareStatement("UPDATE users SET pass=? WHERE id=?");
+			preparedStatement.setString(1, pass);
+			preparedStatement.setLong(2, id);
 			preparedStatement.executeUpdate();
 					
 		} catch (SQLException e) {

@@ -16,7 +16,7 @@ public class Menu extends HorizontalLayout {
 	 */
 	private static final long serialVersionUID = 1L;
 
-	private Button tournament,userProfile,stats,admin,activate,members;
+	private Button home,tournament,userProfile,stats,admin,activate,members;
 	private VerticalLayout bodylayout;
 	private  boolean userAdmin = false;
 	private DBConnection con;
@@ -31,6 +31,7 @@ public class Menu extends HorizontalLayout {
 		this.navigator = navigator;
 		this.pm=pm;
 		
+		home = new Button("Home");
 		tournament = new Button("Tournament");
 		stats = new Button("Dota Stats");
 		admin = new Button("Administrate");
@@ -40,10 +41,10 @@ public class Menu extends HorizontalLayout {
 		
 		activate.setVisible(false);
 		
-		
-		
 //		tournament.setSizeFull();
 		tournament.setWidth("100%");
+		home.setWidth("100%");
+		
 		tournament.setHeight("100%");
 //		stats.setSizeFull();
 		stats.setWidth("100%");
@@ -122,6 +123,23 @@ public class Menu extends HorizontalLayout {
 		};
 	}
 	
+	public Button.ClickListener administratorClick(){
+		return new Button.ClickListener() {
+			
+			private static final long serialVersionUID = 2L;
+			@Override
+			public void buttonClick(com.vaadin.ui.Button.ClickEvent event) {
+				if(bodylayout.getComponentCount()!=0){
+					bodylayout.removeAllComponents();
+					generateMembers();
+				}else{
+					generateMembers();
+				}
+				navigator.navigateTo("/members");
+			}
+		};
+	}
+	
 	
 	public Button.ClickListener activateClick(){
 		return new Button.ClickListener() {
@@ -148,6 +166,10 @@ public class Menu extends HorizontalLayout {
 	public void generateMembers(){
 		Members mem = new Members(con,userloged);
 		bodylayout.addComponent(mem);
+	}
+	public void generateAdminPage(){
+		Administrator admin = new Administrator();
+		bodylayout.addComponent(admin);
 	}
 	
 	public void generateTournament(){

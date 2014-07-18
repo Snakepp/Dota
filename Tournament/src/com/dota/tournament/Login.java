@@ -45,10 +45,12 @@ public class Login extends Window{
 		setModal(true);
 		setDraggable(false);
 		setResizable(false);
+		setClosable(false);
+		
 		conn=connection;
 		mainlayout = new VerticalLayout();
 		submitlayout = new HorizontalLayout();
-		setClosable(false);
+		
 		form = new FormLayout();
 		user = new TextField("User", "");
 		user.setRequired(true);
@@ -64,8 +66,12 @@ public class Login extends Window{
 		setSizeUndefined();
 		
 		register = new Button("Register");
-		register.setStyleName(BaseTheme.BUTTON_LINK);
 		register.addClickListener(RegisterListener());
+		
+		forgotPass = new Button("Forgot your pass Idiot?");
+		forgotPass.setStyleName(BaseTheme.BUTTON_LINK);
+		forgotPass.addClickListener(ForgotListener());
+		
 		login = new Button("Login");
 		login.addClickListener(LoginListener());
 		
@@ -75,6 +81,7 @@ public class Login extends Window{
 		submitlayout.setSpacing(true);
 		submitlayout.addComponent(login);
 		submitlayout.addComponent(register);
+		submitlayout.addComponent(forgotPass);
 		submitlayout.setComponentAlignment(register, Alignment.BOTTOM_RIGHT);
 		
 		form.addStyleName("outlined");
@@ -101,6 +108,18 @@ public class Login extends Window{
 			}
 		};
 	}
+	
+	public Button.ClickListener ForgotListener(){
+		return new Button.ClickListener() {
+
+			@Override
+			public void buttonClick(ClickEvent event) {
+				UI.getCurrent().addWindow(new ForgotPass(conn, props));
+				close();
+			}
+		};
+	}
+	
 	public Button.ClickListener LoginListener(){
 		return new Button.ClickListener() {
 
