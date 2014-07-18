@@ -21,6 +21,7 @@ public class Members extends VerticalLayout{
 	private Table table;
 	private DBConnection con;
 	private User userLogged;
+	private int count;
 	
 	public Members(DBConnection con, User userLogged){
 		table = new Table();
@@ -39,26 +40,9 @@ public class Members extends VerticalLayout{
 			table.addContainerProperty("Make admin", com.vaadin.ui.Button.class, "");
 		}
 		
-		
-		List<Item> items = new ArrayList<Item>();
-		int count=0;
 		for(User user : con.getUsers()){
-			Image image = user.getAvatarJpg();
-			image.setWidth("50%");
-			image.setHeight("50%");
-			if(userLogged.isAdmin()){
-				if(user.isAdmin()){
-					table.addItem(new Object[]{user.getName(),image,(user.isAdmin())?"Admin":"Member",new Button("remove Admin")},new Integer(count));
-				}else{
-					table.addItem(new Object[]{user.getName(),image,(user.isAdmin())?"Admin":"Member",new Button("make Admin")},new Integer(count));
-				}
-			}else{
-				table.addItem(new Object[]{user.getName(),image,(user.isAdmin())?"Admin":"Member"},new Integer(count));
-			}
+			addItem(user,count);
 			count++;
-		}
-		for(Item a : items){
-			System.out.println(a.toString());
 		}
 		
 		table.setFooterVisible(true);
@@ -66,6 +50,44 @@ public class Members extends VerticalLayout{
 		table.setColumnFooter("Avatar", count+++"");
 		addComponent(table);
 		
+	}
+	
+	public void addItem(User user, int count){
+		Image image = user.getAvatarJpg();
+		image.setWidth("50%");
+		image.setHeight("50%");
+		Button button = new Button();
+		button.addClickListener(setAdminMember(user, count));
+		if(userLogged.isAdmin()){
+			if(user.isAdmin()){
+				button.setCaption("remove Admin");
+				table.addItem(new Object[]{user.getName(),image,(user.isAdmin())?"Admin":"Member",button},new Integer(count));
+			}else{
+				button.setCaption("make admin");
+				table.addItem(new Object[]{user.getName(),image,(user.isAdmin())?"Admin":"Member",button},new Integer(count));
+			}
+		}else{
+			table.addItem(new Object[]{user.getName(),image,(user.isAdmin())?"Admin":"Member"},new Integer(count));
+		}
+	}
+	
+	public Button.ClickListener setAdminMember(final User user, final int itemId){
+		return new Button.ClickListener() {
+			
+			private static final long serialVersionUID = 2L;
+
+			@Override
+			public void buttonClick(com.vaadin.ui.Button.ClickEvent event) {
+				if(user.isAdmin()){
+					user.setAdmin(false);
+				}else{
+					user.setAdmin(true);
+				}
+				con.setUserAdmin(user);
+				table.removeItem(itemId);
+				addItem(user,itemId);
+			}
+		};
 	}
 
 }

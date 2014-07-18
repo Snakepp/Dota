@@ -27,7 +27,7 @@ public class PropertyManager {
 	/**
 	 * Change this dependent on the environment you will run the application
 	 */
-	private final static String ENVIRONMENT = ENVIRONMENT_TEST; 
+	private final static String ENVIRONMENT = ENVIRONMENT_LOCAL; 
 	
 	
 	
