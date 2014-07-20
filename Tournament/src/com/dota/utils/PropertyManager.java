@@ -21,13 +21,14 @@ public class PropertyManager {
 	private final static String CURRENT_PATH_PROP = "currentPath";
 	private final static String ENVIRONMENT_TEST = "TEST";
 	private final static String ENVIRONMENT_LOCAL = "LOCAL";
+	private boolean isProduction=false;
 //	private final static String ENVIRONMENT_PROD = "PROD";
 	
 	
 	/**
 	 * Change this dependent on the environment you will run the application
 	 */
-	private final static String ENVIRONMENT = ENVIRONMENT_TEST; 
+	private final static String ENVIRONMENT = ENVIRONMENT_LOCAL; 
 	
 	
 	
@@ -62,7 +63,7 @@ public class PropertyManager {
 			dir = VaadinService.getCurrent().getBaseDirectory().getAbsolutePath()+"/WEB-INF/configLocal.props";
 		}
 		String dataDir = getProperty("OPENSHIFT_DATA_DIR", "");
-		if(!dataDir.isEmpty()) {
+		if(dataDir!=null) {
 //			Production Environment
 			dir = dataDir+"config.props";
 		}
@@ -108,7 +109,8 @@ public class PropertyManager {
 			heroesPath = getCurrentpath()+"/VAADIN/themes/my-chameleon/images/Heroes/";
 		}else if(ENVIRONMENT.equals(ENVIRONMENT_LOCAL)){
 			heroesPath = getCurrentpath()+"/VAADIN/themes/my-chameleon/images/Heroes/";
-		}else{
+		}
+		if(isProduction){
 			heroesPath = getCurrentpath()+"/images/images/Heroes/";
 		}
 		return heroesPath;
@@ -119,7 +121,7 @@ public class PropertyManager {
 			heroesPath = getCurrentpath()+"/VAADIN/themes/my-chameleon/images/Heroes/Icons/";
 		}else if(ENVIRONMENT.equals(ENVIRONMENT_LOCAL)){
 			heroesPath = getCurrentpath()+"/VAADIN/themes/my-chameleon/images/Heroes/Icons/";
-		}else{
+		}if(isProduction){
 			heroesPath = getCurrentpath()+"/images/images/Heroes/Icons/";
 		}
 		return heroesPath;
@@ -130,7 +132,7 @@ public class PropertyManager {
 			heroesPath = getCurrentpath()+"/VAADIN/themes/my-chameleon/images/logo/";
 		}else if(ENVIRONMENT.equals(ENVIRONMENT_LOCAL)){
 			heroesPath = getCurrentpath()+"/VAADIN/themes/my-chameleon/images/logo/";
-		}else{
+		}if(isProduction){
 			heroesPath = getCurrentpath()+"/images/images/logo/";
 		}
 		return heroesPath;

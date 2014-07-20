@@ -60,6 +60,7 @@ public class Menu extends HorizontalLayout {
 		tournament.addClickListener(tournamentClick());
 		userProfile.addClickListener(userProfileClick());
 		members.addClickListener(memebersClick());
+		admin.addClickListener(administratorClick());
 		
 		addComponent(tournament);
 		addComponent(stats);
@@ -131,11 +132,11 @@ public class Menu extends HorizontalLayout {
 			public void buttonClick(com.vaadin.ui.Button.ClickEvent event) {
 				if(bodylayout.getComponentCount()!=0){
 					bodylayout.removeAllComponents();
-					generateMembers();
+					generateAdminPage();
 				}else{
-					generateMembers();
+					generateAdminPage();
 				}
-				navigator.navigateTo("/members");
+				navigator.navigateTo("/administration");
 			}
 		};
 	}
